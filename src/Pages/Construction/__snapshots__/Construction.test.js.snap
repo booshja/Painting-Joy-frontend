@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM bfNuOb"
+  >
+    <h1
+      class="sc-gtsrHT jXymxE"
+    >
+      Masterpiece In Progress...
+    </h1>
+    <img
+      alt="Paintbrush and paint can"
+      class="sc-dlnjwi jfTtog"
+      src="paint-bucket.png"
+    />
+    <p
+      class="sc-hKFxyN ktZtmE"
+    >
+      In the meantime, find me on 
+      <a
+        class="sc-eCApnc hliTlW"
+        href="https://www.instagram.com/paintingjoymuralco/"
+      >
+        Instagram,
+      </a>
+    </p>
+    <p
+      class="sc-hKFxyN ktZtmE"
+    >
+      Or shoot me an email at: 
+      <a
+        class="sc-eCApnc hliTlW"
+        href="mailto:paintingjoymuralco@gmail.com"
+      >
+        paintingjoymuralco@gmail.com
+      </a>
+    </p>
+    <p
+      class="sc-jSFjdj eLTBFC"
+    >
+      © 2021 - Painting Joy Mural Co.
+    </p>
+  </div>
+</DocumentFragment>
+`;

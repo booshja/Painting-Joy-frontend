@@ -1,63 +1,67 @@
-# **README - SetPlaylist**
-
-## **_--This project us currently under development--_**
-
-<br>
+# **README - PaintingJoy**
 
 ## **About**
 
-_PaintingJoy.art_ ( Deployed [HERE](https://paintingjoy.art/) ) is a web app that is part e-commerce, part art portfolio, part custom CMS. Built for a local artist's mural painting business.
+### _[PaintingJoy.art](https://paintingjoy.art/)_
 
+A web app that is part Art Portfolio, part E-commerce, part custom CMS. Built for a local artist's mural painting business.
 <br>
 <br>
-
-## **Local Usage**
-
-<hr>
 <br>
 
-### **ENVs**:
+# **Local Usage**
 
-This app uses the following environmental variables that you will need in order to run the app:
+## **Environmental Variables**:
+
+This app uses the following environmental variables that you will need in order to run the app
 | ENV | Value |
-| --------------------- | --------------------------------------------------------- |
+| - | - |
 | - | - |
 
 <hr>
 <br>
 
-### **Testing**:
+## **Testing**:
 
-In order to run the tests for this project, use the `npm test` command from the root directory. This project uses React-Testing-Library for Smoke Tests, Snapshot Tests, and Unit Tests.
-
-<hr>
-<br>
-
-### **Formatting/Linting/Pre-Commit Hooks**:
-
-This project uses pre-commit hooks with Prettier and ESLint. You can find the config and ignore files in the root directory.
+This app uses React Testing Library for Smoke and Snapshot Tests, and Jest for unit testing. Tests can be run using `npm test`
 
 <hr>
 <br>
 
-### **Features**:
+## **Formatting/Linting/Pre-Commit Hooks**:
+
+This project uses pre-commit hooks with ESLint and Prettier.
+
+<br>
+<br>
+<br>
+
+# **General Information**
+
+## **Features**:
+
+_Browse Murals/General Art_: Browse through all the posts to see the artist's murals and other art.
+
+_E-Commerce_: Uses the Stripe API to process payments for an online art store.
+
+_Custom CMS_: On the Admin side, I've created a custom CMS for the artist to manage their posts, homepage, as well as the store.
+
+<hr>
+
+## **APIs**:
+
+1. [Back End API](https://github.com/booshja/Painting-Joy-backend)
 
 <hr>
 <br>
 
-### **APIs**:
-
-<hr>
-<br>
-
-### **Tech Stack**:
+## **Tech Stack**:
 
 -   JavaScript, JSX
 -   [React](https://reactjs.org/)
     -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-        -   [jest](https://jestjs.io/)
 -   CSS
-    -   [Styled Components](https://styled-components.com/)
+    -   [Styled-Components](https://styled-components.com/)
 -   [Cloudflare](https://www.cloudflare.com/cdn/) (Static Front-End Deployment)
 -   [VSCode](https://code.visualstudio.com/)
 

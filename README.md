@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# **README - SetPlaylist**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **_--This project us currently under development--_**
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## **About**
 
-### `npm start`
+_PaintingJoy.art_ ( Deployed [HERE](https://paintingjoy.art/) ) is a web app that is part e-commerce, part art portfolio, part custom CMS. Built for a local artist's mural painting business.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## **Local Usage**
 
-### `npm test`
+<hr>
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **ENVs**:
 
-### `npm run build`
+This app uses the following environmental variables that you will need in order to run the app:
+| ENV | Value |
+| --------------------- | --------------------------------------------------------- |
+| - | - |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Testing**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In order to run the tests for this project, use the `npm test` command from the root directory. This project uses React-Testing-Library for Smoke Tests, Snapshot Tests, and Unit Tests.
 
-### `npm run eject`
+<hr>
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **Formatting/Linting/Pre-Commit Hooks**:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project uses pre-commit hooks with Prettier and ESLint. You can find the config and ignore files in the root directory.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr>
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### **Features**:
 
-## Learn More
+<hr>
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **APIs**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<hr>
+<br>
 
-### Code Splitting
+### **Tech Stack**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-   JavaScript, JSX
+-   [React](https://reactjs.org/)
+    -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+        -   [jest](https://jestjs.io/)
+-   CSS
+    -   [Styled Components](https://styled-components.com/)
+-   [Cloudflare](https://www.cloudflare.com/cdn/) (Static Front-End Deployment)
+-   [VSCode](https://code.visualstudio.com/)
 
-### Analyzing the Bundle Size
+<hr>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## **Support**
 
-### Making a Progressive Web App
+Reach out to me at the following places:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-   Website: [jacobandes.dev](jacobandes.dev)
+-   Twitter: [@booshja](https://twitter.com/booshja)
+-   Email: [jacob.andes@gmail.com](mailto:jacob.andes@gmail.com)
 
-### Advanced Configuration
+<hr>
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright &#169; [Jacob Andes](jacobandes.dev), 2021

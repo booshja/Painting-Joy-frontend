@@ -4,6 +4,8 @@ import React from "react";
 import AdminContext from "./context/AdminContext";
 // router
 import Router from "./Router";
+// global styles
+import GlobalStyle from "./globalStyles";
 
 function App() {
     return (

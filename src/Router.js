@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // protected route wrapper
 // import ProtectedRoute from "./containers/ProtectedRoute/ProtectedRoute";
 // routes
-import Homepage from "./containers/Hompage/Homepage";
+// import Homepage from "./containers/Hompage/Homepage";
 // import Murals from "./containers/Murals/Murals";
 // import Mural from "./containers/Mural/Mural";
 // import MoreArt from "./containers/MoreArt/MoreArt";
@@ -14,22 +14,25 @@ import Homepage from "./containers/Hompage/Homepage";
 // import Cart from "./containers/Cart/Cart";
 // import Checkout from "./containers/Checkout/Checkout";
 // components
-import PublicNavbar from "./Components/Navbar/Navbar";
+// import PublicNavbar from "./Components/Navbar/Navbar";
 // import AdminNavbar from "./Components/AdminNavbar/AdminNavbar";
-import PublicFooter from "./Components/Footer/Footer";
+// import PublicFooter from "./Components/Footer/Footer";
+
+import TitleLogo from "./components/TitleLogo";
 
 const Router = () => (
     <div className="App">
         <BrowserRouter>
-            <PublicNavbar />
+            {/* <PublicNavbar /> */}
             <main>
                 <Switch>
                     <Route exact path="/">
-                        <Homepage />
+                        {/* <Homepage /> */}
+                        <TitleLogo />
                     </Route>
                 </Switch>
             </main>
-            <PublicFooter />
+            {/* <PublicFooter /> */}
         </BrowserRouter>
     </div>
 );

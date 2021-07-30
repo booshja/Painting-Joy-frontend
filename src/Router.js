@@ -18,7 +18,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // import AdminNavbar from "./Components/AdminNavbar/AdminNavbar";
 // import PublicFooter from "./Components/Footer/Footer";
 
-import TitleLogo from "./components/TitleLogo";
+import { TitleLogo } from "./components";
 
 const Router = () => (
     <div className="App">

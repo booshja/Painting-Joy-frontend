@@ -15,7 +15,7 @@ const StyledTitleLogo = styled.div`
 const StyledTitle = styled.h1`
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 3.2rem;
     letter-spacing: 2%;
 `;
 

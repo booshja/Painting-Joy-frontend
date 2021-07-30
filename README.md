@@ -57,8 +57,10 @@ _Custom CMS_: On the Admin side, I've created a custom CMS for the artist to man
 
 ## **Tech Stack**:
 
--   JavaScript, JSX
+-   JavaScript
+-   JSX
 -   [React](https://reactjs.org/)
+    -   [Concurrently](https://github.com/open-cli-tools/concurrently)
     -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 -   CSS
     -   [Styled-Components](https://styled-components.com/)

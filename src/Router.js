@@ -2,9 +2,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
-import { Navbar, TitleLogo, NavFooter, NewDisplay } from "./components";
+import {
+    Navbar,
+    TitleLogo,
+    NavFooter,
+    NewDisplay,
+    AboutMe,
+} from "./components";
 // containers
-import { Header } from "./containers";
+import { Header, Homepage } from "./containers";
 
 const Router = () => (
     <>
@@ -15,11 +21,13 @@ const Router = () => (
                 {/* <Navbar /> */}
                 <Switch>
                     <Route exact path="/">
-                        {/* <NewDisplay variant="mural" />
+                        <Homepage>
+                            {/* <NewDisplay variant="mural" />
                         <NewDisplay variant="store" /> */}
+                            <AboutMe />
+                        </Homepage>
                     </Route>
                 </Switch>
-                <NavFooter />
             </main>
             {/* <Footer /> */}
         </BrowserRouter>

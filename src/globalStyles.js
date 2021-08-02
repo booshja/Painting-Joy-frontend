@@ -25,7 +25,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	min-height: 100vh;
-	overflow: hidden;
 }
 ol, ul, nav {
 	list-style: none;

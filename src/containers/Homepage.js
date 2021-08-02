@@ -5,17 +5,18 @@ import styled from "styled-components";
 
 const BACKEND_URL = process.env.BACKEND_URL;
 
-const Homepage = () => {
+const Center = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Homepage = ({ children }) => {
     // set up states
     const [isLoading, setIsLoading] = useState(true);
     const [newestMural, setNewestMural] = useState({});
     const [newestItem, setNewestItem] = useState([]);
-    return (
-        <div>
-            {/*  */}
-            {/*  */}
-        </div>
-    );
+    return <Center>{children}</Center>;
 };
 
 export default Homepage;

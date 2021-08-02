@@ -1,3 +1,4 @@
+import AboutMe from "./AboutMe";
 import Burger from "./Burger";
 import MobileMenu from "./MobileMenu";
 import Navbar from "./Navbar";
@@ -8,6 +9,7 @@ import TitleLogo from "./TitleLogo";
 import TitleLogoFooter from "./TitleLogoFooter";
 
 export {
+    AboutMe,
     Burger,
     MobileMenu,
     Navbar,

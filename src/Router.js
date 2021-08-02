@@ -2,12 +2,12 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
-import { Navbar, TitleLogo, NavFooter } from "./components";
+import { Navbar, TitleLogo, NavFooter, NewDisplay } from "./components";
 // containers
 import { Header } from "./containers";
 
 const Router = () => (
-    <div className="App">
+    <>
         <BrowserRouter>
             <Header />
             <main>
@@ -15,15 +15,15 @@ const Router = () => (
                 {/* <Navbar /> */}
                 <Switch>
                     <Route exact path="/">
-                        {/* <Homepage /> */}
-                        <p>hi.</p>
+                        {/* <NewDisplay variant="mural" />
+                        <NewDisplay variant="store" /> */}
                     </Route>
                 </Switch>
                 <NavFooter />
             </main>
             {/* <Footer /> */}
         </BrowserRouter>
-    </div>
+    </>
 );
 
 export default Router;

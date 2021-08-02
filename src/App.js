@@ -1,18 +1,21 @@
 // dependencies
-import React from "react";
+import React, { useState } from "react";
 // context
-import AdminContext from "./context/AdminContext";
+// import AdminContext from "./context/AdminContext";
+import MenuContext from "./context/MenuContext";
 // router
 import Router from "./Router";
 // global styles
 import GlobalStyle from "./globalStyles";
 
 function App() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
-        <AdminContext.Provider>
+        <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
             <GlobalStyle />
             <Router />
-        </AdminContext.Provider>
+        </MenuContext.Provider>
     );
 }
 

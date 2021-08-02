@@ -14,25 +14,25 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // import Cart from "./containers/Cart/Cart";
 // import Checkout from "./containers/Checkout/Checkout";
 // components
-// import PublicNavbar from "./Components/Navbar/Navbar";
-// import AdminNavbar from "./Components/AdminNavbar/AdminNavbar";
-// import PublicFooter from "./Components/Footer/Footer";
-
-import { TitleLogo } from "./components";
+import { TitleLogo, Navbar, Burger, Menu } from "./components";
 
 const Router = () => (
     <div className="App">
         <BrowserRouter>
-            {/* <PublicNavbar /> */}
+            <header>
+                {/* <TitleLogo /> */}
+                {/* <Navbar /> */}
+                <Burger />
+                <Menu />
+            </header>
             <main>
                 <Switch>
                     <Route exact path="/">
                         {/* <Homepage /> */}
-                        <TitleLogo />
                     </Route>
                 </Switch>
             </main>
-            {/* <PublicFooter /> */}
+            {/* <Footer /> */}
         </BrowserRouter>
     </div>
 );

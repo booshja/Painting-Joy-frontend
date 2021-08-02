@@ -7,10 +7,10 @@ import { NavLink as ReactNavLink } from "react-router-dom";
 const StyledLink = styled(ReactNavLink)`
     font-family: "News Cycle", sans-serif;
     font-weight: 400;
-    font-size: 1.8rem;
-    letter-spacing: 2%;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
 
-    &::active {
+    &.active {
         font-weight: 700;
     }
 `;

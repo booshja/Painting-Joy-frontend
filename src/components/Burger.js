@@ -1,13 +1,14 @@
 // dependencies
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { breakpoints } from "../breakpoints";
 // context
 import MenuContext from "../context/MenuContext";
 
 const StyledBurger = styled.button`
-    position: absolute;
+    /* position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 1rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -26,7 +27,7 @@ const StyledBurger = styled.button`
     div {
         width: 2rem;
         height: 0.3rem;
-        background-color: ${({ open }) => (open ? "#ffffff" : "#207a7a")};
+        background-color: ${({ open }) => (open ? "#ffffff" : "#0E6500")};
         border-radius: 10px;
         transition: all 0.3s linear;
         position: relative;
@@ -46,6 +47,10 @@ const StyledBurger = styled.button`
             transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
         }
     }
+
+    /* @media (min-width: ${breakpoints.desktopSm}px) {
+        display: none;
+    } */
 `;
 
 const Burger = () => {

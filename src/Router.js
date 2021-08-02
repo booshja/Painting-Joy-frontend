@@ -14,21 +14,20 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // import Cart from "./containers/Cart/Cart";
 // import Checkout from "./containers/Checkout/Checkout";
 // components
-import { TitleLogo, Navbar, Burger, Menu } from "./components";
+import { TitleLogo, Navbar, Burger, MobileMenu } from "./components";
+import { Header } from "./containers";
 
 const Router = () => (
     <div className="App">
         <BrowserRouter>
-            <header>
-                {/* <TitleLogo /> */}
-                {/* <Navbar /> */}
-                <Burger />
-                <Menu />
-            </header>
+            <Header />
             <main>
+                <TitleLogo />
+                {/* <Navbar /> */}
                 <Switch>
                     <Route exact path="/">
                         {/* <Homepage /> */}
+                        <p>hi.</p>
                     </Route>
                 </Switch>
             </main>

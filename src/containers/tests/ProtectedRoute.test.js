@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "../ProtectedRoute";
 
 /** Smoke Test */
 it("renders without crashing", () => {

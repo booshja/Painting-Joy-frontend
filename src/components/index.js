@@ -1,7 +1,7 @@
 import Burger from "./Burger";
-import Menu from "./Menu";
+import MobileMenu from "./MobileMenu";
 import Navbar from "./Navbar";
 import NavLink from "./NavLink";
 import TitleLogo from "./TitleLogo";
 
-export { Burger, Menu, Navbar, NavLink, TitleLogo };
+export { Burger, MobileMenu, Navbar, NavLink, TitleLogo };

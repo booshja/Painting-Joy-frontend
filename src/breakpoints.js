@@ -1,4 +1,4 @@
-export default breakpoints = {
+const breakpoints = {
     mobileSm: 360,
     mobileLg: 414,
     tablet: 768,
@@ -6,3 +6,5 @@ export default breakpoints = {
     desktopMd: 1280,
     desktopLg: 1440,
 };
+
+export { breakpoints };

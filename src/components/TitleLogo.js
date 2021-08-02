@@ -16,7 +16,7 @@ const StyledTitle = styled.h1`
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
     font-size: 2rem;
-    letter-spacing: 2%;
+    letter-spacing: 1px;
 `;
 
 const StyledLogo = styled.img`

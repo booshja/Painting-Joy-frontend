@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     height: 60px;
     padding: 0 1rem;
-    border-bottom: 1px solid #0e6500;
+    border-bottom: 1px solid #207070;
 `;
 
 const StyledP = styled.p`
@@ -18,7 +18,7 @@ const StyledP = styled.p`
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #0e6500;
+    color: #207070;
 `;
 
 const Header = () => {

@@ -8,6 +8,7 @@ import {
     NavFooter,
     NewDisplay,
     AboutMe,
+    PageTitle,
 } from "./components";
 // containers
 import { Header, Homepage } from "./containers";

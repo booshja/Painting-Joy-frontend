@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe";
 import Burger from "./Burger";
+import GoBack from "./GoBack";
 import MobileMenu from "./MobileMenu";
 import Navbar from "./Navbar";
 import NavFooter from "./NavFooter";
@@ -12,6 +13,7 @@ import TitleLogoFooter from "./TitleLogoFooter";
 export {
     AboutMe,
     Burger,
+    GoBack,
     MobileMenu,
     Navbar,
     NavFooter,

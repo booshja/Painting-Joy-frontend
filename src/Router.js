@@ -9,6 +9,7 @@ import {
     NewDisplay,
     AboutMe,
     PageTitle,
+    GoBack,
 } from "./components";
 // containers
 import { Header, Homepage } from "./containers";
@@ -23,6 +24,7 @@ const Router = () => (
                 <Switch>
                     <Route exact path="/">
                         <Homepage>
+                            <GoBack />
                             {/* <NewDisplay variant="mural" />
                         <NewDisplay variant="store" /> */}
                             <AboutMe />

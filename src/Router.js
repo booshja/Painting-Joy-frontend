@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
-import { TitleLogo } from "./components";
+import { TitleLogo, Footer } from "./components";
 // containers
 import { Header, Homepage } from "./containers";
 
@@ -19,7 +19,7 @@ const Router = () => (
                     </Route>
                 </Switch>
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </BrowserRouter>
     </>
 );

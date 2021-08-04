@@ -2,16 +2,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
-import {
-    Navbar,
-    TitleLogo,
-    NavFooter,
-    NewDisplay,
-    AboutMe,
-    PageTitle,
-    GoBack,
-    ContactForm,
-} from "./components";
+import { TitleLogo } from "./components";
 // containers
 import { Header, Homepage } from "./containers";
 
@@ -25,11 +16,9 @@ const Router = () => (
                 <Switch>
                     <Route exact path="/">
                         <Homepage>
-                            <GoBack />
                             {/* <NewDisplay variant="mural" />
                         <NewDisplay variant="store" /> */}
                             {/* <AboutMe /> */}
-                            <ContactForm />
                         </Homepage>
                     </Route>
                 </Switch>

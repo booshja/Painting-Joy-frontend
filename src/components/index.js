@@ -8,6 +8,7 @@ import NavFooter from "./NavFooter";
 import NavLink from "./NavLink";
 import NewDisplay from "./NewDisplay";
 import PageTitle from "./PageTitle";
+import StoreItem from "./StoreItem";
 import TitleLogo from "./TitleLogo";
 import TitleLogoFooter from "./TitleLogoFooter";
 
@@ -22,6 +23,7 @@ export {
     NavLink,
     NewDisplay,
     PageTitle,
+    StoreItem,
     TitleLogo,
     TitleLogoFooter,
 };

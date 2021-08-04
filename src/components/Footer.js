@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
     height: 150px;
 `;
 
-const StyledTitle = styled.p`
+const StyledTitle = styled(Link)`
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
@@ -37,7 +37,7 @@ const StyledCopyright = styled.p`
 const Footer = () => {
     return (
         <StyledFooter>
-            <StyledTitle>Painting Joy Mural Co.</StyledTitle>
+            <StyledTitle to="/">Painting Joy Mural Co.</StyledTitle>
             <StyledLink to="/contact">Contact Me</StyledLink>
             <StyledCopyright>
                 Copyright &copy; 2021 - Painting Joy Mural Co.

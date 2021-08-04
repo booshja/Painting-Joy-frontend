@@ -12,7 +12,6 @@ const Router = () => (
             <Header />
             <main>
                 <TitleLogo />
-                {/* <Navbar /> */}
                 <Switch>
                     <Route exact path="/">
                         <Homepage />

@@ -1,5 +1,6 @@
 // dependencies
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
@@ -10,6 +11,7 @@ const StyledDiv = styled.div`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     margin: 1rem 0;
+    cursor: pointer;
 `;
 
 const StyledImg = styled.img`
@@ -31,9 +33,18 @@ const StyledText = styled.p`
     letter-spacing: 1px;
 `;
 
-const NewDisplay = ({ variant, title, image }) => {
+const NewDisplay = ({ variant, title, image, id }) => {
+    const history = useHistory();
+
+    const link =
+        variant === "mural" ? `/murals/mural/${id}` : `/store/item/${id}`;
+
+    const handleClick = () => {
+        history.push(link);
+    };
+
     return (
-        <StyledDiv>
+        <StyledDiv onClick={() => handleClick()}>
             <StyledImg src={image} alt={title} />
             <StyledTextBox>
                 <StyledText>

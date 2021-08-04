@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
 import { TitleLogo, Footer } from "./components";
 // containers
-import { Header, Homepage } from "./containers";
+import { Header, Homepage, Murals } from "./containers";
 
 const Router = () => (
     <>
@@ -15,6 +15,9 @@ const Router = () => (
                 <Switch>
                     <Route exact path="/">
                         <Homepage />
+                    </Route>
+                    <Route exact path="/murals">
+                        <Murals />
                     </Route>
                 </Switch>
             </main>

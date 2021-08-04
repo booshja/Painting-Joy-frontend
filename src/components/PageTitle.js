@@ -12,8 +12,8 @@ const StyledTitle = styled.h1`
     padding: 1rem 0;
 `;
 
-const PageTitle = ({ title }) => {
-    return <StyledTitle>{title}</StyledTitle>;
+const PageTitle = ({ children }) => {
+    return <StyledTitle>{children}</StyledTitle>;
 };
 
 export default PageTitle;

@@ -5,7 +5,7 @@ import axios from "axios";
 // components
 import { AboutMe, NewDisplay } from "../components";
 
-const StyledHomepage = styled.div`
+const StyledHomepage = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;

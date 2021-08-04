@@ -1,13 +1,13 @@
 import { render } from "@testing-library/react";
-import Homepage from "../Homepage";
+import Murals from "../Murals";
 
 /** Smoke Test */
 it("renders without crashing", () => {
-    render(<Homepage />);
+    render(<Murals />);
 });
 
 /** Snapshot Test */
 it("matches snapshot", () => {
-    const { asFragment } = render(<Homepage />);
+    const { asFragment } = render(<Murals />);
     expect(asFragment()).toMatchSnapshot();
 });

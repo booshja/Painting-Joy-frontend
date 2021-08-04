@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const BACKEND_URL = process.env.BACKEND_URL;
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Center = styled.div`
     display: flex;

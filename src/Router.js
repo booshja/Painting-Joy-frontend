@@ -10,6 +10,7 @@ import {
     AboutMe,
     PageTitle,
     GoBack,
+    ContactForm,
 } from "./components";
 // containers
 import { Header, Homepage } from "./containers";
@@ -27,7 +28,8 @@ const Router = () => (
                             <GoBack />
                             {/* <NewDisplay variant="mural" />
                         <NewDisplay variant="store" /> */}
-                            <AboutMe />
+                            {/* <AboutMe /> */}
+                            <ContactForm />
                         </Homepage>
                     </Route>
                 </Switch>

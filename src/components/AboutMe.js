@@ -2,13 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import image from "../images/Selection_002.png";
-const homepage = {
-    greeting: "Hi! I'm Beth!",
-    message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra, velit nec aliquam pellentesque, eros velit laoreet massa, id consequat neque dolor sit amet sapien. Donec fermentum porta mi.",
-};
-
 const StyledContainer = styled.section`
     display: flex;
     flex-direction: column;
@@ -47,12 +40,12 @@ const StyledTextDiv = styled.div`
     margin-bottom: 1rem;
 `;
 
-const AboutMe = () => {
+const AboutMe = ({ greeting, message, image }) => {
     return (
         <StyledContainer>
             <StyledTextDiv>
-                <StyledGreeting>{homepage.greeting}</StyledGreeting>
-                <StyledText>{homepage.message}</StyledText>
+                <StyledGreeting>{greeting}</StyledGreeting>
+                <StyledText>{message}</StyledText>
             </StyledTextDiv>
             <StyledImage src={image} alt="Beth" />
         </StyledContainer>

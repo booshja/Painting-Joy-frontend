@@ -13,6 +13,7 @@ const StyledMenu = styled.nav`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;

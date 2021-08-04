@@ -15,11 +15,7 @@ const Router = () => (
                 {/* <Navbar /> */}
                 <Switch>
                     <Route exact path="/">
-                        <Homepage>
-                            {/* <NewDisplay variant="mural" />
-                        <NewDisplay variant="store" /> */}
-                            {/* <AboutMe /> */}
-                        </Homepage>
+                        <Homepage />
                     </Route>
                 </Switch>
             </main>

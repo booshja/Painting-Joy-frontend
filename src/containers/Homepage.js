@@ -1,22 +1,56 @@
 // dependencies
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
+// components
+import { AboutMe, NewDisplay } from "../components";
 
-const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
-const Center = styled.div`
+const StyledHomepage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 `;
 
-const Homepage = ({ children }) => {
+const Homepage = () => {
     // set up states
     const [isLoading, setIsLoading] = useState(true);
-    const [newestMural, setNewestMural] = useState({});
-    const [newestItem, setNewestItem] = useState([]);
-    return <Center>{children}</Center>;
+    const [homepage, setHomepage] = useState({});
+
+    useEffect(() => {
+        async function getData() {
+            const res = await axios.get(
+                process.env.REACT_APP_BACKEND_URL + "homepage/"
+            );
+            setHomepage(res.data.homepage);
+            setIsLoading((loading) => !loading);
+        }
+        getData();
+    }, []);
+
+    if (isLoading) {
+        return <p>Loading &hellip;</p>;
+    }
+
+    return (
+        <StyledHomepage>
+            <NewDisplay
+                variant="mural"
+                title={homepage.mural_title}
+                image={`http://localhost:5000/murals/mural/${homepage.mural_id}/image/1`}
+            />
+            <NewDisplay
+                variant="store"
+                title={homepage.item_title}
+                image={`http://localhost:5000/items/item/${homepage.item_id}/image`}
+            />
+            <AboutMe
+                greeting={homepage.greeting}
+                message={homepage.message}
+                image={`http://localhost:5000/homepage/image`}
+            />
+        </StyledHomepage>
+    );
 };
 
 export default Homepage;

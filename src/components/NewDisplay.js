@@ -9,6 +9,7 @@ const StyledDiv = styled.div`
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
     position: relative;
+    margin: 1rem 0;
 `;
 
 const StyledImg = styled.img`
@@ -30,10 +31,10 @@ const StyledText = styled.p`
     letter-spacing: 1px;
 `;
 
-const NewDisplay = ({ variant, object }) => {
+const NewDisplay = ({ variant, title, image }) => {
     return (
         <StyledDiv>
-            <StyledImg src={object.image} alt={object.title} />
+            <StyledImg src={image} alt={title} />
             <StyledTextBox>
                 <StyledText>
                     {variant == "mural"

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 // context
-import AdminContext from "../../context/AdminContext";
+import AdminContext from "../context/AdminContext";
 
 const ProtectedRoute = ({ children, ...rest }) => {
     // set up context

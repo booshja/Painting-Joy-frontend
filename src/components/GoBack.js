@@ -12,18 +12,20 @@ const StyledBtn = styled.button`
     font-weight: 700;
     cursor: pointer;
     border: none;
+    align-self: flex-start;
+    margin: 0.5rem 0 0.5rem 7.5%;
 
     i {
         margin-right: 0.5rem;
     }
 `;
 
-const GoBack = () => {
+const GoBack = ({ to }) => {
     const history = useHistory();
     return (
         <StyledBtn
             onClick={() => {
-                history.goBack();
+                history.push(to);
             }}
         >
             <i className="fas fa-long-arrow-alt-left"></i>

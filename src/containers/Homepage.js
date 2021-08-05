@@ -37,19 +37,25 @@ const Homepage = () => {
             <NewDisplay
                 variant="mural"
                 title={homepage.mural_title}
-                image={`http://localhost:5000/murals/mural/${homepage.mural_id}/image/1`}
+                image={
+                    process.env.REACT_APP_BACKEND_URL +
+                    `murals/mural/${homepage.mural_id}/image/1`
+                }
                 id={homepage.mural_id}
             />
             <NewDisplay
                 variant="store"
                 title={homepage.item_title}
-                image={`http://localhost:5000/items/item/${homepage.item_id}/image`}
+                image={
+                    process.env.REACT_APP_BACKEND_URL +
+                    `items/item/${homepage.item_id}/image`
+                }
                 id={homepage.item_id}
             />
             <AboutMe
                 greeting={homepage.greeting}
                 message={homepage.message}
-                image={`http://localhost:5000/homepage/image`}
+                image={process.env.REACT_APP_BACKEND_URL + `homepage/image`}
             />
         </StyledHomepage>
     );

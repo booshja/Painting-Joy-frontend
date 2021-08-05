@@ -36,8 +36,7 @@ const StyledText = styled.p`
 const NewDisplay = ({ variant, title, image, id }) => {
     const history = useHistory();
 
-    const link =
-        variant === "mural" ? `/murals/mural/${id}` : `/store/item/${id}`;
+    const link = variant === "mural" ? `/murals/${id}` : `/store/item/${id}`;
 
     const handleClick = () => {
         history.push(link);

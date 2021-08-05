@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
     color: #ffffff;
     padding: 1rem;
     height: 150px;
+    margin-top: 2rem;
 `;
 
 const StyledTitle = styled(Link)`
@@ -24,13 +25,13 @@ const StyledTitle = styled(Link)`
 
 const StyledLink = styled(Link)`
     font-family: "News Cycle", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
 `;
 
 const StyledCopyright = styled.p`
     font-family: "News Cycle", sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     letter-spacing: 1px;
 `;
 

@@ -49,7 +49,7 @@ const Murals = () => {
 
     const handleClick = (e) => {
         const id = e.target.id;
-        history.push(`/murals/mural/${id}`);
+        history.push(`/murals/${id}`);
     };
     return (
         <StyledMurals>

@@ -2,7 +2,8 @@
 import React from "react";
 import styled from "styled-components";
 // components
-import { Burger, MobileMenu } from "../components/index";
+import { Burger, MobileMenu } from "../components";
+import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -13,7 +14,7 @@ const StyledHeader = styled.header`
     border-bottom: 1px solid #207070;
 `;
 
-const StyledP = styled.p`
+const StyledLink = styled(Link)`
     font-family: "Barlow Condensed", sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
@@ -24,7 +25,7 @@ const StyledP = styled.p`
 const Header = () => {
     return (
         <StyledHeader>
-            <StyledP>Painting Joy Mural Co.</StyledP>
+            <StyledLink to="/">Painting Joy Mural Co.</StyledLink>
             <Burger />
             <MobileMenu />
         </StyledHeader>

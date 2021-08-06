@@ -1,6 +1,7 @@
 // dependencies
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router";
 
 const StyledDiv = styled.div`
     display: flex;
@@ -13,6 +14,7 @@ const StyledDiv = styled.div`
     padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
+    cursor: pointer;
 `;
 
 const StyledImg = styled.img`
@@ -52,12 +54,25 @@ const StyledPrice = styled.p`
 `;
 
 const StoreItem = ({ item }) => {
+    const history = useHistory();
+
+    const handleClick = (e) => {
+        history.push(`/store/item/${e.target.id.slice(2)}`);
+    };
+
     return (
-        <StyledDiv>
-            <StyledImg src={item.image} alt={item.title} />
+        <StyledDiv id={"d-" + item.id} onClick={(e) => handleClick(e)}>
+            <StyledImg
+                src={
+                    process.env.REACT_APP_BACKEND_URL +
+                    `items/item/${item.id}/image`
+                }
+                alt={item.title}
+                id={"i-" + item.id}
+            />
             {item.isSold && <StyledOverlay>Sold</StyledOverlay>}
-            <StyledTitle>{item.title}</StyledTitle>
-            <StyledPrice>
+            <StyledTitle id={"t-" + item.id}>{item.title}</StyledTitle>
+            <StyledPrice id={"p-" + item.id}>
                 ${item.price} + ${item.shipping} shipping
             </StyledPrice>
         </StyledDiv>

@@ -7,6 +7,7 @@ import Api from "./api";
 // import AdminContext from "./context/AdminContext";
 import MenuContext from "./context/MenuContext";
 import MuralsContext from "./context/MuralsContext";
+import ItemsContext from "./context/ItemsContext";
 // router
 import Router from "./Router";
 // global styles
@@ -24,10 +25,10 @@ function App() {
                     process.env.REACT_APP_BACKEND_URL + "murals/active"
                 );
                 setMurals(muralRes.data.murals);
-                // const itemRes = await axios.get(
-                //     process.env.REACT_APP_BACKEND_URL + "/items/"
-                // );
-                // setItems(itemRes.data.items);
+                const itemRes = await axios(
+                    process.env.REACT_APP_BACKEND_URL + "items/"
+                );
+                setItems(itemRes.data.items);
             } catch (err) {
                 console.log(err);
             }
@@ -38,8 +39,10 @@ function App() {
     return (
         <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
             <MuralsContext.Provider value={{ murals }}>
-                <GlobalStyle />
-                <Router />
+                <ItemsContext.Provider value={{ items }}>
+                    <GlobalStyle />
+                    <Router />
+                </ItemsContext.Provider>
             </MuralsContext.Provider>
         </MenuContext.Provider>
     );

@@ -12,6 +12,7 @@ import {
     Homepage,
     Murals,
     Mural,
+    Store,
 } from "./containers";
 
 const Router = () => (
@@ -38,6 +39,9 @@ const Router = () => (
                     </Route>
                     <Route exact path="/contact/oops">
                         <ContactOops />
+                    </Route>
+                    <Route exact path="/store">
+                        <Store />
                     </Route>
                 </Switch>
             </main>

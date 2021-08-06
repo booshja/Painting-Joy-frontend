@@ -13,6 +13,7 @@ import {
     Murals,
     Mural,
     Store,
+    StoreItem,
 } from "./containers";
 
 const Router = () => (
@@ -42,6 +43,9 @@ const Router = () => (
                     </Route>
                     <Route exact path="/store">
                         <Store />
+                    </Route>
+                    <Route exact path="/store/item/:itemId">
+                        <StoreItem />
                     </Route>
                 </Switch>
             </main>

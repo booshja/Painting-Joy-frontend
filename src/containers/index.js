@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import Murals from "./Murals";
 import Mural from "./Mural";
 import Store from "./Store";
+import StoreItem from "./StoreItem";
 
 export {
     ContactMe,
@@ -16,4 +17,5 @@ export {
     Murals,
     Mural,
     Store,
+    StoreItem,
 };

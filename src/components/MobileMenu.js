@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import Clouds from "../assets/wall_image_complete.jpg";
 // context
 import MenuContext from "../context/MenuContext";
+import CartContext from "../context/CartContext";
 
 const StyledMenu = styled.nav`
     background-image: url(${Clouds});
@@ -53,6 +54,7 @@ const MenuWrapper = styled.div`
 
 const Menu = () => {
     const { menuOpen, setMenuOpen } = useContext(MenuContext);
+    const { cart } = useContext(CartContext);
 
     return (
         <StyledMenu open={menuOpen}>
@@ -71,6 +73,9 @@ const Menu = () => {
                 </StyledLink>
                 <StyledLink to="/store" onClick={() => setMenuOpen(false)}>
                     Store
+                </StyledLink>
+                <StyledLink to="/cart" onClick={() => setMenuOpen(false)}>
+                    Cart ({cart.length})
                 </StyledLink>
             </MenuWrapper>
         </StyledMenu>

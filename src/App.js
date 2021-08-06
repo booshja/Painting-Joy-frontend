@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // api
-import Api from "./api";
+// ? import Api from "./api";
 // context
 // import AdminContext from "./context/AdminContext";
 import MenuContext from "./context/MenuContext";
 import MuralsContext from "./context/MuralsContext";
 import ItemsContext from "./context/ItemsContext";
+import CartContext from "./context/CartContext";
 // router
 import Router from "./Router";
 // global styles
@@ -17,6 +18,7 @@ function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [murals, setMurals] = useState([]);
     const [items, setItems] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         async function getData() {
@@ -40,8 +42,10 @@ function App() {
         <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
             <MuralsContext.Provider value={{ murals }}>
                 <ItemsContext.Provider value={{ items }}>
-                    <GlobalStyle />
-                    <Router />
+                    <CartContext.Provider value={{ cart, setCart }}>
+                        <GlobalStyle />
+                        <Router />
+                    </CartContext.Provider>
                 </ItemsContext.Provider>
             </MuralsContext.Provider>
         </MenuContext.Provider>

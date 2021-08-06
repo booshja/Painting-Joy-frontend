@@ -4,7 +4,15 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 // components
 import { TitleLogo, Footer } from "./components";
 // containers
-import { Header, Homepage, Murals, Mural } from "./containers";
+import {
+    ContactMe,
+    ContactOops,
+    ContactSuccess,
+    Header,
+    Homepage,
+    Murals,
+    Mural,
+} from "./containers";
 
 const Router = () => (
     <>
@@ -21,6 +29,15 @@ const Router = () => (
                     </Route>
                     <Route exact path="/murals/:muralId">
                         <Mural />
+                    </Route>
+                    <Route exact path="/contact">
+                        <ContactMe />
+                    </Route>
+                    <Route exact path="/contact/success">
+                        <ContactSuccess />
+                    </Route>
+                    <Route exact path="/contact/oops">
+                        <ContactOops />
                     </Route>
                 </Switch>
             </main>

@@ -34,21 +34,24 @@ const StyledField = styled.textarea`
     font-size: 1.4rem;
     letter-spacing: 1px;
     margin-bottom: 1rem;
+    resize: none;
 `;
 
 const StyledButton = styled.button`
     background-color: #207070;
     border: none;
     border-radius: 4px;
-    padding: 2.5px 10px;
+    padding: 0.5px 8px;
     color: #ffffff;
     font-family: "News Cycle", sans-serif;
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: 1px;
     align-self: flex-end;
+    cursor: pointer;
+    border: 2px solid #207070;
 
-    &::hover {
+    &:hover {
         background-color: #ffffff;
         color: #207070;
     }
@@ -64,7 +67,6 @@ const StyledError = styled.p`
 `;
 
 const ContactForm = () => {
-    // TODO: HANDLE POST REQUEST
     const {
         register,
         handleSubmit,
@@ -74,13 +76,14 @@ const ContactForm = () => {
 
     const handleDataSubmit = async (data) => {
         try {
-            const res = await axios.post(
-                process.env.REACT_APP_BACKEND_URL + "/messages",
+            await axios.post(
+                process.env.REACT_APP_BACKEND_URL + "messages",
                 data
             );
-            console.log("RESSSS", res);
+            history.push("/contact/success");
         } catch (err) {
-            console.log("ERRORRRRR", err);
+            console.log("Message Error:", err);
+            history.push("/contact/oops");
         }
     };
     return (
@@ -109,6 +112,8 @@ const ContactForm = () => {
             <StyledField
                 placeholder="Message"
                 id="message"
+                maxLength="200"
+                rows="4"
                 {...register("message", {
                     required: "Message is required",
                     maxLength: {

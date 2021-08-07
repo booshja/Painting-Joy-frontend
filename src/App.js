@@ -38,11 +38,20 @@ function App() {
         getData();
     }, []);
 
+    const removeFromCart = (id) => {
+        const idx = cart.findIndex((item) => item.id === id);
+        const cartContents = [...cart];
+        cartContents.splice(idx, 1);
+        setCart(() => cartContents);
+    };
+
     return (
         <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
             <MuralsContext.Provider value={{ murals }}>
                 <ItemsContext.Provider value={{ items }}>
-                    <CartContext.Provider value={{ cart, setCart }}>
+                    <CartContext.Provider
+                        value={{ cart, setCart, removeFromCart }}
+                    >
                         <GlobalStyle />
                         <Router />
                     </CartContext.Provider>

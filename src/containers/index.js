@@ -1,3 +1,4 @@
+import Cart from "./Cart";
 import ContactMe from "./ContactMe";
 import ContactOops from "./ContactOops";
 import ContactSuccess from "./ContactSuccess";
@@ -9,6 +10,7 @@ import Store from "./Store";
 import StoreItem from "./StoreItem";
 
 export {
+    Cart,
     ContactMe,
     ContactOops,
     ContactSuccess,

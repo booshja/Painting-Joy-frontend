@@ -103,7 +103,10 @@ const StoreItem = () => {
             <StyledTitle>{item.name}</StyledTitle>
             <StyledText>{item.description}</StyledText>
             {item.isSold ? (
-                <StyledText>Sold out!</StyledText>
+                <>
+                    <StyledText>${item.price}</StyledText>
+                    <StyledText>Sold out!</StyledText>
+                </>
             ) : (
                 <>
                     <StyledText>

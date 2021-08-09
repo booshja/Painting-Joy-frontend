@@ -1,10 +1,12 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 // components
 import { GoBack } from "../components";
+// context
+import CartContext from "../context/CartContext";
 
 const StyledStoreItem = styled.div`
     display: flex;
@@ -56,11 +58,18 @@ const StyledButton = styled.button`
 `;
 
 const StoreItem = () => {
+    // set up states
     const [isLoading, setIsLoading] = useState(true);
     const [item, setItem] = useState({});
+    // set up history
+    const history = useHistory();
+    // get itemId from query string
     const { itemId } = useParams();
+    // get setCart from Context
+    const { setCart } = useContext(CartContext);
 
     useEffect(() => {
+        // when component mounts, get the item data
         async function getItem() {
             const res = await axios(
                 process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`
@@ -72,9 +81,9 @@ const StoreItem = () => {
     }, []);
 
     const handleClick = () => {
-        // TODO - add item to cart
-        // TODO - need to add state for cart in App
-        // TODO - need to add cart to mobile menu
+        // add item to cart state
+        setCart((cart) => [...cart, item]);
+        history.push("/cart");
     };
 
     if (isLoading) {
@@ -93,10 +102,20 @@ const StoreItem = () => {
             />
             <StyledTitle>{item.name}</StyledTitle>
             <StyledText>{item.description}</StyledText>
-            <StyledText>
-                ${item.price} + ${item.shipping} shipping
-            </StyledText>
-            <StyledButton onClick={handleClick}>Buy Me!</StyledButton>
+            {item.isSold ? (
+                <>
+                    <StyledText>${item.price}</StyledText>
+                    <StyledText>Sold out!</StyledText>
+                </>
+            ) : (
+                <>
+                    <StyledText>
+                        ${item.price} + ${item.shipping} shipping
+                    </StyledText>
+                    <StyledText>Amount Available: {item.quantity}</StyledText>
+                    <StyledButton onClick={handleClick}>Buy Me!</StyledButton>
+                </>
+            )}
         </StyledStoreItem>
     );
 };

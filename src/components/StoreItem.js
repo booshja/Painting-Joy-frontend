@@ -51,6 +51,7 @@ const StyledPrice = styled.p`
     font-size: 1rem;
     letter-spacing: 1px;
     text-align: center;
+    padding-top: 0.25rem;
 `;
 
 const StoreItem = ({ item }) => {
@@ -72,9 +73,13 @@ const StoreItem = ({ item }) => {
             />
             {item.isSold && <StyledOverlay>Sold</StyledOverlay>}
             <StyledTitle id={"t-" + item.id}>{item.title}</StyledTitle>
-            <StyledPrice id={"p-" + item.id}>
-                ${item.price} + ${item.shipping} shipping
-            </StyledPrice>
+            {item.isSold ? (
+                <StyledPrice id={"p-" + item.id}>${item.price}</StyledPrice>
+            ) : (
+                <StyledPrice id={"p-" + item.id}>
+                    ${item.price} + ${item.shipping} shipping
+                </StyledPrice>
+            )}
         </StyledDiv>
     );
 };

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { TitleLogo, Footer } from "./components";
 // containers
 import {
+    Cart,
     ContactMe,
     ContactOops,
     ContactSuccess,
@@ -46,6 +47,9 @@ const Router = () => (
                     </Route>
                     <Route exact path="/store/item/:itemId">
                         <StoreItem />
+                    </Route>
+                    <Route exact path="/cart">
+                        <Cart />
                     </Route>
                 </Switch>
             </main>

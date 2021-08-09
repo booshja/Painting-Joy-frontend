@@ -39,7 +39,7 @@ const TotalDiv = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
     border: 2px solid #207070;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     align-self: flex-end;
@@ -51,6 +51,7 @@ const TotalText = styled.p`
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 1px;
+    margin-bottom: 0.25rem;
 `;
 
 const StyledSpan = styled.span`
@@ -78,20 +79,20 @@ const StyledButton = styled.button`
 const Cart = () => {
     // set up state
     const [shipping, setShipping] = useState(0);
-    const [subtotal, setSubtotal] = useState(0);
+    const [priceTotal, setPriceTotal] = useState(0);
     // set up context
     const { cart } = useContext(CartContext);
 
     useEffect(() => {
-        // on component mount, sum shipping and subtotal
+        // on component mount, sum shipping and price
         let shippingTotal = 0;
-        let subtotalTotal = 0;
+        let priceTotal = 0;
         for (let item of cart) {
             shippingTotal = shippingTotal + +item.shipping;
-            subtotalTotal = subtotalTotal + +item.price;
+            priceTotal = priceTotal + +item.price;
         }
         setShipping(shippingTotal.toFixed(2));
-        setSubtotal(subtotalTotal.toFixed(2));
+        setPriceTotal(priceTotal.toFixed(2));
     }, [cart]);
 
     return (
@@ -116,7 +117,11 @@ const Cart = () => {
                             Shipping: <StyledSpan>${shipping}</StyledSpan>
                         </TotalText>
                         <TotalText>
-                            Subtotal: <StyledSpan>${subtotal}</StyledSpan>
+                            Items: <StyledSpan>${priceTotal}</StyledSpan>
+                        </TotalText>
+                        <TotalText>
+                            Subtotal:{" "}
+                            <StyledSpan>${+priceTotal + +shipping}</StyledSpan>
                         </TotalText>
                     </TotalDiv>
                     <StyledButton>Checkout</StyledButton>

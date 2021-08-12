@@ -17,6 +17,7 @@ import {
     Mural,
     Store,
     StoreItem,
+    CheckoutSuccess,
 } from "./containers";
 
 const Router = () => (
@@ -58,6 +59,9 @@ const Router = () => (
                     </Route>
                     <Route exact path="/store/order/cancel">
                         <CheckoutCancel />
+                    </Route>
+                    <Route exact path="/store/order/success">
+                        <CheckoutSuccess />
                     </Route>
                 </Switch>
             </main>

@@ -6,6 +6,8 @@ import { TitleLogo, Footer } from "./components";
 // containers
 import {
     Cart,
+    Checkout,
+    CheckoutCancel,
     ContactMe,
     ContactOops,
     ContactSuccess,
@@ -50,6 +52,12 @@ const Router = () => (
                     </Route>
                     <Route exact path="/cart">
                         <Cart />
+                    </Route>
+                    <Route exact path="/checkout">
+                        <Checkout />
+                    </Route>
+                    <Route exact path="/store/order/cancel">
+                        <CheckoutCancel />
                     </Route>
                 </Switch>
             </main>

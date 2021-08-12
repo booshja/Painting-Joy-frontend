@@ -1,4 +1,6 @@
 import Cart from "./Cart";
+import Checkout from "./Checkout";
+import CheckoutCancel from "./CheckoutCancel";
 import ContactMe from "./ContactMe";
 import ContactOops from "./ContactOops";
 import ContactSuccess from "./ContactSuccess";
@@ -11,6 +13,8 @@ import StoreItem from "./StoreItem";
 
 export {
     Cart,
+    Checkout,
+    CheckoutCancel,
     ContactMe,
     ContactOops,
     ContactSuccess,

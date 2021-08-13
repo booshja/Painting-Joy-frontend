@@ -1,6 +1,7 @@
 import AboutMe from "./AboutMe";
 import Burger from "./Burger";
 import CartItem from "./CartItem";
+import CheckoutForm from "./CheckoutForm";
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import GoBack from "./GoBack";
@@ -18,6 +19,7 @@ export {
     AboutMe,
     Burger,
     CartItem,
+    CheckoutForm,
     ContactForm,
     Footer,
     GoBack,

@@ -1,9 +1,10 @@
 // dependencies
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 // components
 import { GoBack, CartItem } from "../components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // context
 import CartContext from "../context/CartContext";
 
@@ -81,7 +82,9 @@ const Cart = () => {
     const [shipping, setShipping] = useState(0);
     const [priceTotal, setPriceTotal] = useState(0);
     // set up context
-    const { cart } = useContext(CartContext);
+    const { cart, setOrderId } = useContext(CartContext);
+    // set up history
+    const history = useHistory();
 
     useEffect(() => {
         // on component mount, sum shipping and price
@@ -94,6 +97,38 @@ const Cart = () => {
         setShipping(shippingTotal.toFixed(2));
         setPriceTotal(priceTotal.toFixed(2));
     }, [cart]);
+
+    const handleClick = () => {
+        const checkCart = async () => {
+            // when "Checkout" button clicked create order,
+            try {
+                const res = await axios.post(
+                    process.env.REACT_APP_BACKEND_URL + "orders/checkout",
+                    cart
+                );
+                // if items not added, abort order and send user to cart error page
+                if (res.data.notAdded.length > 0) {
+                    await axios.delete(
+                        process.env.REACT_APP_BACKEND_URL +
+                            `orders/order/${res.data.order.id}/abort`
+                    );
+                    history.push("/cart/error");
+                } else {
+                    // if no cart error, set state for order id and send user
+                    // to next step of checkout process
+                    setOrderId(res.data.order.id);
+                    history.push("/checkout");
+                }
+            } catch (err) {
+                console.log("Checkout Error:", err);
+                history.push("/cart");
+            }
+        };
+        // check cart for items that are out of stock
+        checkCart();
+        // if no errors, send user to next step of checkout
+        history.push(`/checkout`);
+    };
 
     return (
         <StyledCart>
@@ -121,10 +156,12 @@ const Cart = () => {
                         </TotalText>
                         <TotalText>
                             Subtotal:{" "}
-                            <StyledSpan>${+priceTotal + +shipping}</StyledSpan>
+                            <StyledSpan>
+                                ${(+priceTotal + +shipping).toFixed(2)}
+                            </StyledSpan>
                         </TotalText>
                     </TotalDiv>
-                    <StyledButton>Checkout</StyledButton>
+                    <StyledButton onClick={handleClick}>Checkout</StyledButton>
                 </>
             ) : null}
         </StyledCart>

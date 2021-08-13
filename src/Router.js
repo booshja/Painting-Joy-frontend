@@ -1,11 +1,14 @@
 // dependencies
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
 // components
 import { TitleLogo, Footer } from "./components";
+import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
     Cart,
+    CartError,
     Checkout,
     CheckoutCancel,
     ContactMe,
@@ -19,6 +22,8 @@ import {
     StoreItem,
     CheckoutSuccess,
 } from "./containers";
+
+const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
 const Router = () => (
     <>
@@ -55,13 +60,18 @@ const Router = () => (
                         <Cart />
                     </Route>
                     <Route exact path="/checkout">
-                        <Checkout />
+                        <Elements stripe={promise}>
+                            <Checkout />
+                        </Elements>
                     </Route>
                     <Route exact path="/store/order/cancel">
                         <CheckoutCancel />
                     </Route>
                     <Route exact path="/store/order/success">
                         <CheckoutSuccess />
+                    </Route>
+                    <Route exact path="/cart/error">
+                        <CartError />
                     </Route>
                 </Switch>
             </main>

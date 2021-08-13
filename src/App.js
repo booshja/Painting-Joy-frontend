@@ -15,28 +15,27 @@ import Router from "./Router";
 import GlobalStyle from "./globalStyles";
 
 function App() {
+    // set up states
     const [menuOpen, setMenuOpen] = useState(false);
     const [murals, setMurals] = useState([]);
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
+    const [orderId, setOrderId] = useState(null);
 
     useEffect(() => {
+        // on mount and when cart changes, get mural data
         async function getData() {
             try {
                 const muralRes = await axios(
                     process.env.REACT_APP_BACKEND_URL + "murals/active"
                 );
                 setMurals(muralRes.data.murals);
-                const itemRes = await axios(
-                    process.env.REACT_APP_BACKEND_URL + "items/"
-                );
-                setItems(itemRes.data.items);
             } catch (err) {
                 console.log(err);
             }
         }
         getData();
-    }, []);
+    }, [cart]);
 
     const removeFromCart = (id) => {
         const idx = cart.findIndex((item) => item.id === id);
@@ -48,9 +47,15 @@ function App() {
     return (
         <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
             <MuralsContext.Provider value={{ murals }}>
-                <ItemsContext.Provider value={{ items }}>
+                <ItemsContext.Provider value={{ items, setItems }}>
                     <CartContext.Provider
-                        value={{ cart, setCart, removeFromCart }}
+                        value={{
+                            cart,
+                            setCart,
+                            removeFromCart,
+                            orderId,
+                            setOrderId,
+                        }}
                     >
                         <GlobalStyle />
                         <Router />

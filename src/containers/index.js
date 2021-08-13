@@ -1,4 +1,5 @@
 import Cart from "./Cart";
+import CartError from "./CartError";
 import Checkout from "./Checkout";
 import CheckoutCancel from "./CheckoutCancel";
 import CheckoutSuccess from "./CheckoutSuccess";
@@ -14,6 +15,7 @@ import StoreItem from "./StoreItem";
 
 export {
     Cart,
+    CartError,
     Checkout,
     CheckoutCancel,
     CheckoutSuccess,

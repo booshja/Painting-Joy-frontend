@@ -71,7 +71,9 @@ const StoreItem = ({ item }) => {
                 alt={item.title}
                 id={"i-" + item.id}
             />
-            {item.isSold && <StyledOverlay>Sold</StyledOverlay>}
+            {item.isSold && (
+                <StyledOverlay id={"o-" + item.id}>Sold</StyledOverlay>
+            )}
             <StyledTitle id={"t-" + item.id}>{item.title}</StyledTitle>
             {item.isSold ? (
                 <StyledPrice id={"p-" + item.id}>${item.price}</StyledPrice>

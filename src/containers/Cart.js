@@ -82,7 +82,7 @@ const Cart = () => {
     const [shipping, setShipping] = useState(0);
     const [priceTotal, setPriceTotal] = useState(0);
     // set up context
-    const { cart, setOrderId } = useContext(CartContext);
+    const { cart, setCart, setOrderId } = useContext(CartContext);
     // set up history
     const history = useHistory();
 
@@ -106,12 +106,24 @@ const Cart = () => {
                     process.env.REACT_APP_BACKEND_URL + "orders/checkout",
                     cart
                 );
-                // if items not added, abort order and send user to cart error page
-                if (res.data.notAdded.length > 0) {
+                const notAdded = res.data.notAdded;
+                // if items not added, abort order, update cart,
+                // and send user to cart error page
+                if (notAdded.length > 0) {
+                    // abort order
                     await axios.delete(
                         process.env.REACT_APP_BACKEND_URL +
                             `orders/order/${res.data.order.id}/abort`
                     );
+                    // reset cart to only items that are available
+                    for (let id of notAdded) {
+                        let newCart = cart;
+                        let idx = cart.findIndex(
+                            (cartItem) => cartItem.id === id
+                        );
+                        newCart.splice(idx, 1);
+                        setCart(() => newCart);
+                    }
                     history.push("/cart/error");
                 } else {
                     // if no cart error, set state for order id and send user

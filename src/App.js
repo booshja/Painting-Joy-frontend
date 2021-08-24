@@ -9,6 +9,8 @@ import MenuContext from "./context/MenuContext";
 import MuralsContext from "./context/MuralsContext";
 import ItemsContext from "./context/ItemsContext";
 import CartContext from "./context/CartContext";
+// custom hooks
+import useLocalStorage from "./hooks/useLocalStorage";
 // router
 import Router from "./Router";
 // global styles
@@ -21,9 +23,16 @@ function App() {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
     const [orderId, setOrderId] = useState(null);
+    // set up custom hook
+    const [localStorageCart, setLocalStorageCart] = useLocalStorage();
 
     useEffect(() => {
-        // on mount and when cart changes, get mural data
+        // when localStorageCart changes, update cart and localStorage
+        setCart(localStorageCart);
+    }, [localStorageCart]);
+
+    useEffect(() => {
+        // on mount get mural data
         async function getData() {
             try {
                 const muralRes = await axios(
@@ -35,13 +44,13 @@ function App() {
             }
         }
         getData();
-    }, [cart]);
+    }, []);
 
     const removeFromCart = (id) => {
         const idx = cart.findIndex((item) => item.id === id);
         const cartContents = [...cart];
         cartContents.splice(idx, 1);
-        setCart(() => cartContents);
+        setLocalStorageCart(() => cartContents);
     };
 
     return (
@@ -51,7 +60,7 @@ function App() {
                     <CartContext.Provider
                         value={{
                             cart,
-                            setCart,
+                            setLocalStorageCart,
                             removeFromCart,
                             orderId,
                             setOrderId,

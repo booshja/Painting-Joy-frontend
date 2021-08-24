@@ -82,7 +82,7 @@ const Cart = () => {
     const [shipping, setShipping] = useState(0);
     const [priceTotal, setPriceTotal] = useState(0);
     // set up context
-    const { cart, setCart, setOrderId } = useContext(CartContext);
+    const { cart, setLocalStorageCart, setOrderId } = useContext(CartContext);
     // set up history
     const history = useHistory();
 
@@ -122,7 +122,7 @@ const Cart = () => {
                             (cartItem) => cartItem.id === id
                         );
                         newCart.splice(idx, 1);
-                        setCart(() => newCart);
+                        setLocalStorageCart(() => newCart);
                     }
                     history.push("/cart/error");
                 } else {

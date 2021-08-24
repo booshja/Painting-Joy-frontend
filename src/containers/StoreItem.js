@@ -65,8 +65,8 @@ const StoreItem = () => {
     const history = useHistory();
     // get itemId from query string
     const { itemId } = useParams();
-    // get setCart from Context
-    const { setCart } = useContext(CartContext);
+    // get setLocalStorageCart from Context
+    const { setLocalStorageCart } = useContext(CartContext);
 
     useEffect(() => {
         // when component mounts, get the item data
@@ -82,7 +82,7 @@ const StoreItem = () => {
 
     const handleClick = () => {
         // add item to cart state
-        setCart((cart) => [...cart, item]);
+        setLocalStorageCart((cart) => [...cart, item]);
         history.push("/cart");
     };
 

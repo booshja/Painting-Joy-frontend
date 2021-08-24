@@ -186,7 +186,7 @@ const Checkout = () => {
     // set up history
     const history = useHistory();
     // set up context
-    const { cart, setCart, orderId } = useContext(CartContext);
+    const { cart, setLocalStorageCart, orderId } = useContext(CartContext);
     // set up Stripe
     const stripe = useStripe();
     const elements = useElements();
@@ -236,7 +236,7 @@ const Checkout = () => {
         };
         // after payment succeeds, clear the cart and send user to success page
         if (succeeded) {
-            setCart([]);
+            setLocalStorageCart([]);
             confirmOrder();
             history.push("/store/order/success");
         }

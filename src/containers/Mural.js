@@ -69,13 +69,19 @@ const Mural = () => {
     const [mural, setMural] = useState({});
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         async function getMural() {
             const res = await axios.get(
-                process.env.REACT_APP_BACKEND_URL + `murals/mural/${muralId}`
+                process.env.REACT_APP_BACKEND_URL + `murals/mural/${muralId}`,
+                { cancelToken: source.token }
             );
             setMural(res.data.mural);
         }
         getMural();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     const handleClick = (e) => {

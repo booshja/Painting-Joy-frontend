@@ -32,6 +32,7 @@ function App() {
     }, [localStorageCart]);
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         // on mount get mural data
         async function getData() {
             try {
@@ -44,6 +45,10 @@ function App() {
             }
         }
         getData();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     const removeFromCart = (id) => {

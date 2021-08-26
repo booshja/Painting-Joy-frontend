@@ -30,14 +30,20 @@ const Store = () => {
     const { items, setItems } = useContext(ItemsContext);
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         // on mount, get items data from store
         const getItems = async () => {
             const itemRes = await axios(
-                process.env.REACT_APP_BACKEND_URL + "items/"
+                process.env.REACT_APP_BACKEND_URL + "items/",
+                { cancelToken: source.token }
             );
             setItems(itemRes.data.items);
         };
         getItems();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     return (

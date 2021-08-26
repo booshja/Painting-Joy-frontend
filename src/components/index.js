@@ -3,6 +3,7 @@ import Burger from "./Burger";
 import CartItem from "./CartItem";
 import CheckoutForm from "./CheckoutForm";
 import ContactForm from "./ContactForm";
+import Countdown from "./Countdown";
 import Footer from "./Footer";
 import GoBack from "./GoBack";
 import MobileMenu from "./MobileMenu";
@@ -21,6 +22,7 @@ export {
     CartItem,
     CheckoutForm,
     ContactForm,
+    Countdown,
     Footer,
     GoBack,
     MobileMenu,

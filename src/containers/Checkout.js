@@ -5,7 +5,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // components
-import { CheckoutForm, PageTitle } from "../components";
+import { CheckoutForm, Countdown, PageTitle } from "../components";
 // context
 import CartContext from "../context/CartContext";
 
@@ -193,13 +193,16 @@ const Checkout = () => {
     const elements = useElements();
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
+
         const generatePaymentIntent = async () => {
             // get payment intent from server
             try {
                 const res = await axios.post(
                     process.env.REACT_APP_BACKEND_URL +
                         "orders/create-payment-intent",
-                    cart
+                    cart,
+                    { cancelToken: source.token }
                 );
                 setClientSecret(res.data.clientSecret);
                 const amount =
@@ -221,15 +224,22 @@ const Checkout = () => {
             // if items in cart, get payment intent from server/stripe
             generatePaymentIntent();
         }
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
+
         const confirmOrder = async () => {
             try {
                 await axios.patch(
                     process.env.REACT_APP_BACKEND_URL +
                         `orders/order/${orderId}/confirm`,
-                    { transactionId }
+                    { transactionId },
+                    { cancelToken: source.token }
                 );
             } catch (err) {
                 console.log("Confirmation Error:", err);
@@ -241,6 +251,10 @@ const Checkout = () => {
             confirmOrder();
             history.push("/store/order/success");
         }
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, [succeeded]);
 
     const cardStyle = {
@@ -303,7 +317,7 @@ const Checkout = () => {
     };
 
     const handleCancel = async (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
         try {
             await axios.delete(
                 process.env.REACT_APP_BACKEND_URL +
@@ -319,6 +333,7 @@ const Checkout = () => {
     return (
         <StyledCheckout>
             <PageTitle>Checkout</PageTitle>
+            <Countdown handleCancel={handleCancel} />
             {activeStep === 0 ? (
                 <CheckoutForm nextStep={nextStep} amount={totalAmount} />
             ) : (

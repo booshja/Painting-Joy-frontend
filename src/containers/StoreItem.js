@@ -69,15 +69,21 @@ const StoreItem = () => {
     const { setLocalStorageCart } = useContext(CartContext);
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         // when component mounts, get the item data
         async function getItem() {
             const res = await axios(
-                process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`
+                process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
+                { cancelToken: source.token }
             );
             setItem(() => res.data.item);
         }
         getItem();
         setIsLoading(false);
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     const handleClick = () => {

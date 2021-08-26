@@ -10,6 +10,8 @@ import Header from "./Header";
 import Homepage from "./Homepage";
 import Murals from "./Murals";
 import Mural from "./Mural";
+import ProtectedRoute from "./ProtectedRoute";
+import PublicRoute from "./PublicRoute";
 import Store from "./Store";
 import StoreItem from "./StoreItem";
 
@@ -26,6 +28,8 @@ export {
     Homepage,
     Murals,
     Mural,
+    ProtectedRoute,
+    PublicRoute,
     Store,
     StoreItem,
 };

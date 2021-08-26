@@ -9,11 +9,12 @@ import { CheckoutForm, PageTitle } from "../components";
 // context
 import CartContext from "../context/CartContext";
 
-const StyledCheckout = styled.div`
+const StyledCheckout = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 45vh;
+    padding: 2rem 0 3rem 0;
 `;
 
 const StyledPaymentButton = styled.button`

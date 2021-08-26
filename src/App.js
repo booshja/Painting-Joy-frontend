@@ -23,7 +23,7 @@ function App() {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
     const [orderId, setOrderId] = useState(null);
-    // set up custom hook
+    // set up custom hooks
     const [localStorageCart, setLocalStorageCart] = useLocalStorage();
 
     useEffect(() => {

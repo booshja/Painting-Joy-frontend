@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 // components
-import { TitleLogo, Footer } from "./components";
 import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
@@ -14,10 +13,11 @@ import {
     ContactMe,
     ContactOops,
     ContactSuccess,
-    Header,
     Homepage,
     Murals,
     Mural,
+    PublicRoute,
+    ProtectedRoute,
     Store,
     StoreItem,
     CheckoutSuccess,
@@ -28,54 +28,52 @@ const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 const Router = () => (
     <>
         <BrowserRouter>
-            <Header />
-            <main>
-                <TitleLogo />
-                <Switch>
-                    <Route exact path="/">
-                        <Homepage />
-                    </Route>
-                    <Route exact path="/murals">
-                        <Murals />
-                    </Route>
-                    <Route exact path="/murals/:muralId">
-                        <Mural />
-                    </Route>
-                    <Route exact path="/contact">
-                        <ContactMe />
-                    </Route>
-                    <Route exact path="/contact/success">
-                        <ContactSuccess />
-                    </Route>
-                    <Route exact path="/contact/oops">
-                        <ContactOops />
-                    </Route>
-                    <Route exact path="/store">
-                        <Store />
-                    </Route>
-                    <Route exact path="/store/item/:itemId">
-                        <StoreItem />
-                    </Route>
-                    <Route exact path="/cart">
-                        <Cart />
-                    </Route>
-                    <Route exact path="/checkout">
-                        <Elements stripe={promise}>
-                            <Checkout />
-                        </Elements>
-                    </Route>
-                    <Route exact path="/store/order/cancel">
-                        <CheckoutCancel />
-                    </Route>
-                    <Route exact path="/store/order/success">
-                        <CheckoutSuccess />
-                    </Route>
-                    <Route exact path="/cart/error">
-                        <CartError />
-                    </Route>
-                </Switch>
-            </main>
-            <Footer />
+            <Switch>
+                <PublicRoute exact path="/">
+                    <Homepage />
+                </PublicRoute>
+                <PublicRoute exact path="/murals">
+                    <Murals />
+                </PublicRoute>
+                <PublicRoute exact path="/murals/:muralId">
+                    <Mural />
+                </PublicRoute>
+                <PublicRoute exact path="/contact">
+                    <ContactMe />
+                </PublicRoute>
+                <PublicRoute exact path="/contact/success">
+                    <ContactSuccess />
+                </PublicRoute>
+                <PublicRoute exact path="/contact/oops">
+                    <ContactOops />
+                </PublicRoute>
+                <PublicRoute exact path="/store">
+                    <Store />
+                </PublicRoute>
+                <PublicRoute exact path="/store/item/:itemId">
+                    <StoreItem />
+                </PublicRoute>
+                <PublicRoute exact path="/cart">
+                    <Cart />
+                </PublicRoute>
+                <Route exact path="/checkout">
+                    <Elements stripe={promise}>
+                        <Checkout />
+                    </Elements>
+                </Route>
+                <PublicRoute exact path="/store/order/cancel">
+                    <CheckoutCancel />
+                </PublicRoute>
+                <PublicRoute exact path="/store/order/success">
+                    <CheckoutSuccess />
+                </PublicRoute>
+                <PublicRoute exact path="/cart/error">
+                    <CartError />
+                </PublicRoute>
+                <Route>
+                    <Redirect to="/" />
+                </Route>
+            </Switch>
         </BrowserRouter>
     </>
 );

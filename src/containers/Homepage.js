@@ -18,14 +18,21 @@ const Homepage = () => {
     const [homepage, setHomepage] = useState({});
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
+
         async function getData() {
             const res = await axios.get(
-                process.env.REACT_APP_BACKEND_URL + "homepage/"
+                process.env.REACT_APP_BACKEND_URL + "homepage/",
+                { cancelToken: source.token }
             );
             setHomepage(res.data.homepage);
             setIsLoading((loading) => !loading);
         }
         getData();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     if (isLoading) {

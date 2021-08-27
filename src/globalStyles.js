@@ -53,6 +53,10 @@ table {
 input, select {
 	vertical-align: middle;
 }
+
+.hidden {
+	display: none;
+}
 `;
 
 export default GlobalStyle;

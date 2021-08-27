@@ -1,6 +1,7 @@
 // dependencies
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 // components
 import { PageTitle, StoreItem } from "../components";
 // context
@@ -25,7 +26,26 @@ const StyledP = styled.p`
 `;
 
 const Store = () => {
-    const { items } = useContext(ItemsContext);
+    // set up context
+    const { items, setItems } = useContext(ItemsContext);
+
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        // on mount, get items data from store
+        const getItems = async () => {
+            const itemRes = await axios(
+                process.env.REACT_APP_BACKEND_URL + "items/",
+                { cancelToken: source.token }
+            );
+            setItems(itemRes.data.items);
+        };
+        getItems();
+
+        return function cleanup() {
+            source.cancel();
+        };
+    }, []);
+
     return (
         <StyledStore>
             <PageTitle>Store</PageTitle>

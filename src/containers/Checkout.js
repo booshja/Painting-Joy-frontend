@@ -241,19 +241,20 @@ const Checkout = () => {
                     { transactionId },
                     { cancelToken: source.token }
                 );
+                history.push("store/order/success");
             } catch (err) {
                 console.log("Confirmation Error:", err);
             }
         };
+
         // after payment succeeds, clear the cart and send user to success page
-        if (succeeded) {
+        if (succeeded === true) {
             setLocalStorageCart([]);
             confirmOrder();
-            history.push("/store/order/success");
         }
 
         return function cleanup() {
-            source.cancel();
+            source.cancel("Operation cancelled by cleanup function.");
         };
     }, [succeeded]);
 

@@ -52,7 +52,7 @@ const Countdown = ({ handleCancel }) => {
     const getDeadTime = () => {
         let deadline = new Date();
 
-        deadline.setMinutes(deadline.getMinutes() + 1);
+        deadline.setMinutes(deadline.getMinutes() + 5);
         return deadline;
     };
 

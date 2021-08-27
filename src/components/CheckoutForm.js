@@ -1,9 +1,10 @@
 // dependencies
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 // context
 import CartContext from "../context/CartContext";
 // assets
@@ -116,8 +117,14 @@ const CheckoutForm = ({ nextStep, amount }) => {
     const history = useHistory();
     // set up context
     const { orderId } = useContext(CartContext);
+    // set up ref
+    const reRef = useRef();
 
     const handleDataSubmit = async (data) => {
+        // get recaptcha token
+        const token = await reRef.current.executeAsync();
+        reRef.current.reset();
+
         // when form submits, send data to back end, trigger next step
         try {
             await axios.post(
@@ -133,6 +140,7 @@ const CheckoutForm = ({ nextStep, amount }) => {
                     zipcode: +data.zipcode,
                     phone: +data.phone,
                     amount: +amount,
+                    token,
                 }
             );
             nextStep(data.email);
@@ -163,6 +171,11 @@ const CheckoutForm = ({ nextStep, amount }) => {
                 handleDataSubmit(data);
             })}
         >
+            <ReCAPTCHA
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                size="invisible"
+                ref={reRef}
+            />
             <StyledLabel htmlFor="fullName">Name:</StyledLabel>
             <StyledInput
                 type="text"

@@ -1,9 +1,10 @@
 // dependencies
-import React from "react";
+import React, { useRef } from "react";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const StyledForm = styled.form`
     display: flex;
@@ -67,31 +68,45 @@ const StyledError = styled.p`
 `;
 
 const ContactForm = () => {
+    // set up react-hook-form
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+    // set up history
     const history = useHistory();
+    // set up ref
+    const reRef = useRef();
 
     const handleDataSubmit = async (data) => {
+        // get recaptcha token
+        const token = await reRef.current.executeAsync();
+        reRef.current.reset();
+
         try {
-            await axios.post(
-                process.env.REACT_APP_BACKEND_URL + "messages",
-                data
-            );
+            await axios.post(process.env.REACT_APP_BACKEND_URL + "messages", {
+                ...data,
+                token,
+            });
             history.push("/contact/success");
         } catch (err) {
             console.log("Message Error:", err);
             history.push("/contact/oops");
         }
     };
+
     return (
         <StyledForm
             onSubmit={handleSubmit((data) => {
                 handleDataSubmit(data);
             })}
         >
+            <ReCAPTCHA
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                size="invisible"
+                ref={reRef}
+            />
             <StyledLabel htmlFor="name">Name:</StyledLabel>
             <StyledInput
                 type="text"

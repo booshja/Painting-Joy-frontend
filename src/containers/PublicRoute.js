@@ -1,12 +1,19 @@
 // dependencies
-import React from "react";
+import React, { useContext } from "react";
 import { Route } from "react-router-dom";
 // components
 import { Header } from "./";
 import { Footer, TitleLogo } from "../components";
+// context
+import MenuContext from "../context/MenuContext";
 
 const PublicRoute = ({ children, ...rest }) => {
-    return (
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
+
+    return menuOpen ? (
+        <Header />
+    ) : (
         <>
             <Header />
             <main>

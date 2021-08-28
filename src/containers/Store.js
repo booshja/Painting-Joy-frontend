@@ -1,9 +1,9 @@
 // dependencies
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { PageTitle, StoreItem } from "../components";
+import { LoadingSpinner, PageTitle, StoreItem } from "../components";
 // context
 import ItemsContext from "../context/ItemsContext";
 
@@ -26,10 +26,13 @@ const StyledP = styled.p`
 `;
 
 const Store = () => {
+    // set up state
+    const [loading, setLoading] = useState(true);
     // set up context
     const { items, setItems } = useContext(ItemsContext);
 
     useEffect(() => {
+        // get cancel token for axios
         const source = axios.CancelToken.source();
         // on mount, get items data from store
         const getItems = async () => {
@@ -38,13 +41,23 @@ const Store = () => {
                 { cancelToken: source.token }
             );
             setItems(itemRes.data.items);
+            setLoading(false);
         };
         getItems();
 
         return function cleanup() {
+            // on unmount cancel any open axios requests
             source.cancel();
         };
     }, []);
+
+    if (loading)
+        return (
+            // if loading, return loading spinner
+            <StyledStore>
+                <LoadingSpinner />
+            </StyledStore>
+        );
 
     return (
         <StyledStore>

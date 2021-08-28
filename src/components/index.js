@@ -6,6 +6,7 @@ import ContactForm from "./ContactForm";
 import Countdown from "./Countdown";
 import Footer from "./Footer";
 import GoBack from "./GoBack";
+import LoadingSpinner from "./LoadingSpinner";
 import MobileMenu from "./MobileMenu";
 import Navbar from "./Navbar";
 import NavFooter from "./NavFooter";
@@ -25,6 +26,7 @@ export {
     Countdown,
     Footer,
     GoBack,
+    LoadingSpinner,
     MobileMenu,
     Navbar,
     NavFooter,

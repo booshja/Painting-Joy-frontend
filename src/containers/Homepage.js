@@ -3,13 +3,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { AboutMe, NewDisplay } from "../components";
+import { AboutMe, LoadingSpinner, NewDisplay } from "../components";
 
 const StyledHomepage = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    min-height: 42vh;
 `;
 
 const Homepage = () => {
@@ -26,7 +27,7 @@ const Homepage = () => {
                 { cancelToken: source.token }
             );
             setHomepage(res.data.homepage);
-            setIsLoading((loading) => !loading);
+            setIsLoading(false);
         }
         getData();
 
@@ -36,7 +37,11 @@ const Homepage = () => {
     }, []);
 
     if (isLoading) {
-        return <p>Loading &hellip;</p>;
+        return (
+            <StyledHomepage>
+                <LoadingSpinner />
+            </StyledHomepage>
+        );
     }
 
     return (

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 // components
-import { GoBack } from "../components";
+import { GoBack, LoadingSpinner } from "../components";
 import { Link } from "react-router-dom";
 
 const StyledMural = styled.main`
@@ -67,6 +67,7 @@ const Mural = () => {
     const { muralId } = useParams();
     const [display, setDisplay] = useState(1);
     const [mural, setMural] = useState({});
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -76,6 +77,7 @@ const Mural = () => {
                 { cancelToken: source.token }
             );
             setMural(res.data.mural);
+            setLoading(false);
         }
         getMural();
 
@@ -87,6 +89,13 @@ const Mural = () => {
     const handleClick = (e) => {
         setDisplay(e.target.id);
     };
+
+    if (loading)
+        return (
+            <StyledMural>
+                <LoadingSpinner />
+            </StyledMural>
+        );
 
     return (
         <StyledMural>

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { GoBack, CartItem } from "../components";
+import { GoBack, CartItem, LoadingSpinner } from "../components";
 import { Link, useHistory } from "react-router-dom";
 // context
 import CartContext from "../context/CartContext";
@@ -81,6 +81,7 @@ const Cart = () => {
     // set up state
     const [shipping, setShipping] = useState(0);
     const [priceTotal, setPriceTotal] = useState(0);
+    const [loading, setLoading] = useState(true);
     // set up context
     const { cart, setLocalStorageCart, setOrderId } = useContext(CartContext);
     // set up history
@@ -96,6 +97,7 @@ const Cart = () => {
         }
         setShipping(shippingTotal.toFixed(2));
         setPriceTotal(priceTotal.toFixed(2));
+        setLoading(false);
     }, [cart]);
 
     const handleClick = () => {
@@ -141,6 +143,13 @@ const Cart = () => {
         // if no errors, send user to next step of checkout
         history.push(`/checkout`);
     };
+
+    if (loading)
+        return (
+            <StyledCart>
+                <LoadingSpinner />
+            </StyledCart>
+        );
 
     return (
         <StyledCart>

@@ -1,6 +1,7 @@
 // dependencies
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styled from "styled-components";
 // api
 // ? import Api from "./api";
 // context
@@ -13,8 +14,18 @@ import CartContext from "./context/CartContext";
 import useLocalStorage from "./hooks/useLocalStorage";
 // router
 import Router from "./Router";
+// components
+import { LoadingSpinner } from "./components";
 // global styles
 import GlobalStyle from "./globalStyles";
+
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+`;
 
 function App() {
     // set up states
@@ -23,6 +34,7 @@ function App() {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState([]);
     const [orderId, setOrderId] = useState(null);
+    const [loading, setLoading] = useState(true);
     // set up custom hooks
     const [localStorageCart, setLocalStorageCart] = useLocalStorage();
 
@@ -40,6 +52,7 @@ function App() {
                     process.env.REACT_APP_BACKEND_URL + "murals/active"
                 );
                 setMurals(muralRes.data.murals);
+                setLoading(false);
             } catch (err) {
                 console.log(err);
             }
@@ -57,6 +70,13 @@ function App() {
         cartContents.splice(idx, 1);
         setLocalStorageCart(() => cartContents);
     };
+
+    if (loading)
+        return (
+            <StyledContainer>
+                <LoadingSpinner />
+            </StyledContainer>
+        );
 
     return (
         <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>

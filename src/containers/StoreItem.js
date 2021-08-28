@@ -4,7 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 // components
-import { GoBack } from "../components";
+import { GoBack, LoadingSpinner } from "../components";
 // context
 import CartContext from "../context/CartContext";
 
@@ -13,6 +13,7 @@ const StyledStoreItem = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 5%;
+    min-height: 45vh;
 `;
 
 const StyledImg = styled.img`
@@ -59,7 +60,7 @@ const StyledButton = styled.button`
 
 const StoreItem = () => {
     // set up states
-    const [isLoading, setIsLoading] = useState(true);
+    const [Loading, setLoading] = useState(true);
     const [item, setItem] = useState({});
     // set up history
     const history = useHistory();
@@ -79,7 +80,7 @@ const StoreItem = () => {
             setItem(() => res.data.item);
         }
         getItem();
-        setIsLoading(false);
+        setLoading(false);
 
         return function cleanup() {
             source.cancel();
@@ -92,9 +93,12 @@ const StoreItem = () => {
         history.push("/cart");
     };
 
-    if (isLoading) {
-        return <p>Loading...</p>;
-    }
+    if (Loading)
+        return (
+            <StyledStoreItem>
+                <LoadingSpinner />
+            </StyledStoreItem>
+        );
 
     return (
         <StyledStoreItem>

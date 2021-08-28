@@ -5,7 +5,12 @@ import axios from "axios";
 import styled from "styled-components";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // components
-import { CheckoutForm, Countdown, PageTitle } from "../components";
+import {
+    CheckoutForm,
+    Countdown,
+    LoadingSpinner,
+    PageTitle,
+} from "../components";
 // context
 import CartContext from "../context/CartContext";
 
@@ -177,6 +182,7 @@ const Checkout = () => {
     const [activeStep, setActiveStep] = useState(0);
     const [totalAmount, setTotalAmount] = useState(null);
     const [transactionId, setTransactionId] = useState("");
+    const [loading, setLoading] = useState(true);
     // set up Stripe states
     const [succeeded, setSucceeded] = useState(false);
     const [error, setError] = useState(null);
@@ -211,6 +217,7 @@ const Checkout = () => {
                     res.data.amount.slice(res.data.amount.length - 2);
                 // set the total amount calculated from server to state
                 setTotalAmount(+amount);
+                setLoading(false);
             } catch (err) {
                 console.log("Payment Intent Error:", err);
                 history.push("/cart");
@@ -330,6 +337,13 @@ const Checkout = () => {
             history.push("/store/order/cancel");
         }
     };
+
+    if (loading)
+        return (
+            <StyledCheckout>
+                <LoadingSpinner />
+            </StyledCheckout>
+        );
 
     return (
         <StyledCheckout>

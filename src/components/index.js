@@ -1,4 +1,5 @@
 import AboutMe from "./AboutMe";
+import AdminBurger from "./AdminBurger";
 import AdminMobileMenu from "./AdminMobileMenu";
 import Burger from "./Burger";
 import CartItem from "./CartItem";
@@ -20,6 +21,7 @@ import TitleLogoFooter from "./TitleLogoFooter";
 
 export {
     AboutMe,
+    AdminBurger,
     AdminMobileMenu,
     Burger,
     CartItem,

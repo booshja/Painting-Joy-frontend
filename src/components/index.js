@@ -1,4 +1,6 @@
 import AboutMe from "./AboutMe";
+import AdminBurger from "./AdminBurger";
+import AdminMobileMenu from "./AdminMobileMenu";
 import Burger from "./Burger";
 import CartItem from "./CartItem";
 import CheckoutForm from "./CheckoutForm";
@@ -19,6 +21,8 @@ import TitleLogoFooter from "./TitleLogoFooter";
 
 export {
     AboutMe,
+    AdminBurger,
+    AdminMobileMenu,
     Burger,
     CartItem,
     CheckoutForm,

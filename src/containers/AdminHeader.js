@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 // components
-import { Burger, MobileMenu } from "../components";
+import { AdminBurger, AdminMobileMenu } from "../components";
 import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
     height: 60px;
     padding: 0 1rem;
     border-bottom: 1px solid #207070;
+    background-color: #ffffff;
 `;
 
 const StyledLink = styled(Link)`
@@ -19,17 +20,19 @@ const StyledLink = styled(Link)`
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #207070;
+    color: #000000;
 `;
 
-const Header = () => {
+const AdminHeader = () => {
     return (
         <StyledHeader>
-            <StyledLink to="/">Painting Joy Mural Co.</StyledLink>
-            <Burger openColor="#ffffff" />
-            <MobileMenu />
+            <StyledLink to="/admin/dashboard">
+                Painting Joy Mural Co.
+            </StyledLink>
+            <AdminBurger openColor="#207070" />
+            <AdminMobileMenu />
         </StyledHeader>
     );
 };
 
-export default Header;
+export default AdminHeader;

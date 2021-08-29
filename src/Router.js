@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
+    AdminLogin,
     Cart,
     CartError,
     Checkout,
@@ -70,6 +71,9 @@ const Router = () => (
                 <PublicRoute exact path="/cart/error">
                     <CartError />
                 </PublicRoute>
+                <Route exact path="/admin/login">
+                    <AdminLogin />
+                </Route>
                 <Route>
                     <Redirect to="/" />
                 </Route>

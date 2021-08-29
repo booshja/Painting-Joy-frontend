@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe";
 import AdminBurger from "./AdminBurger";
+import AdminMessageCell from "./AdminMessageCell";
 import AdminMobileMenu from "./AdminMobileMenu";
 import AdminPageTitle from "./AdminPageTitle";
 import Burger from "./Burger";
@@ -24,6 +25,7 @@ import TitleLogoFooter from "./TitleLogoFooter";
 export {
     AboutMe,
     AdminBurger,
+    AdminMessageCell,
     AdminMobileMenu,
     AdminPageTitle,
     Burger,

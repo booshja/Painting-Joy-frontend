@@ -1,0 +1,170 @@
+// dependencies
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import axios from "axios";
+// components
+import { AdminMessageCell, AdminPageTitle } from "../components";
+// hooks
+import { useHistory } from "react-router-dom";
+
+const StyledAdminMessages = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f7f1;
+    min-height: 91.75vh;
+`;
+
+const StyledGreenSoloButton = styled.button`
+    background-color: #207070;
+    font-family: "News Cycle", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+`;
+
+const StyledHeadlineContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const StyledMessagesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin-bottom: 2rem;
+`;
+
+const StyledP = styled.p`
+    font-size: 1.2rem;
+    font-family: "News Cycle", sans-serif;
+    letter-spacing: 1px;
+    display: inline-block;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
+`;
+
+const AdminMessages = () => {
+    // set up state
+    const [activeMessages, setActiveMessages] = useState([]);
+    const [archivedMessages, setArchivedMessages] = useState([]);
+    const [showArchived, setShowArchived] = useState(false);
+    // set up history
+    const history = useHistory();
+
+    useEffect(() => {
+        // on component mount, get messages
+        async function getMessages() {
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_BACKEND_URL + "messages/"
+                );
+                // filter messages into archived and active
+                let archived = res.data.messages.filter(
+                    (message) => message.isArchived === true
+                );
+                let active = res.data.messages.filter(
+                    (message) => message.isArchived === false
+                );
+                // set states
+                setArchivedMessages(() => archived);
+                setActiveMessages(() => active);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        getMessages();
+    }, []);
+
+    const handleShowArchived = () => {
+        // flip boolean for showArchived
+        setShowArchived((val) => !val);
+    };
+
+    const handleArchive = async (id) => {
+        // send request to api to set message as archived
+        try {
+            await axios.patch(
+                process.env.REACT_APP_BACKEND_URL + `messages/archive/${id}`
+            );
+        } catch (err) {
+            console.log("Archive Error");
+        }
+        history.go(0);
+    };
+
+    const handleUnArchive = async (id) => {
+        // send request to api to set message as active
+        try {
+            await axios.patch(
+                process.env.REACT_APP_BACKEND_URL + `messages/unarchive/${id}`
+            );
+        } catch (err) {
+            console.log("UnArchive Error");
+        }
+        history.go(0);
+    };
+
+    const handleDelete = async (id) => {
+        // send request to api to delete message
+        try {
+            await axios.delete(
+                process.env.REACT_APP_BACKEND_URL + `messages/delete/${id}`
+            );
+        } catch (err) {
+            console.log("Delete Error");
+        }
+        history.go(0);
+    };
+
+    return (
+        <StyledAdminMessages>
+            <StyledHeadlineContainer>
+                <AdminPageTitle>Messages</AdminPageTitle>
+                <StyledGreenSoloButton onClick={() => handleShowArchived()}>
+                    {showArchived
+                        ? "See Active Messages"
+                        : "See Archived Messages"}
+                </StyledGreenSoloButton>
+            </StyledHeadlineContainer>
+            <StyledMessagesContainer>
+                {showArchived
+                    ? archivedMessages.map((message) => (
+                          <AdminMessageCell
+                              key={message.id}
+                              data={message}
+                              handleArchive={handleArchive}
+                              handleDelete={handleDelete}
+                              handleUnArchive={handleUnArchive}
+                              showArchived={showArchived}
+                          />
+                      ))
+                    : activeMessages.map((message) => (
+                          <AdminMessageCell
+                              key={message.id}
+                              data={message}
+                              handleArchive={handleArchive}
+                              handleDelete={handleDelete}
+                              handleUnArchive={handleUnArchive}
+                              showArchived={showArchived}
+                          />
+                      ))}
+                {showArchived && archivedMessages.length === 0 && (
+                    <StyledP>No archived messages!</StyledP>
+                )}
+                {!showArchived && activeMessages.length === 0 && (
+                    <StyledP>No active messages!</StyledP>
+                )}
+            </StyledMessagesContainer>
+        </StyledAdminMessages>
+    );
+};
+
+export default AdminMessages;

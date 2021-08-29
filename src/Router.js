@@ -7,21 +7,22 @@ import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
     AdminLogin,
+    AdminMessages,
     Cart,
     CartError,
     Checkout,
     CheckoutCancel,
+    CheckoutSuccess,
     ContactMe,
     ContactOops,
     ContactSuccess,
     Homepage,
     Murals,
     Mural,
-    PublicRoute,
     ProtectedRoute,
+    PublicRoute,
     Store,
     StoreItem,
-    CheckoutSuccess,
 } from "./containers";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
@@ -74,6 +75,9 @@ const Router = () => (
                 <Route exact path="/admin/login">
                     <AdminLogin />
                 </Route>
+                <ProtectedRoute exact path="/admin/messages">
+                    <AdminMessages />
+                </ProtectedRoute>
                 <Route>
                     <Redirect to="/" />
                 </Route>

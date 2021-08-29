@@ -2,14 +2,14 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 // components
-// import { AdminHeader } from "./";
+import { AdminHeader } from "./";
 // context
-import AdminContext from "../context/AdminContext";
+// import AdminContext from "../context/AdminContext";
 import MenuContext from "../context/MenuContext";
 
 const ProtectedRoute = ({ children, ...rest }) => {
     // set up context
-    const { admin } = useContext(AdminContext);
+    // const { admin } = useContext(AdminContext);
     const { menuOpen } = useContext(MenuContext);
 
     return menuOpen ? (
@@ -18,10 +18,11 @@ const ProtectedRoute = ({ children, ...rest }) => {
         <>
             <AdminHeader />
             <main>
-                <Route
+                {/* <Route
                     {...rest}
                     render={() => (admin ? children : <Redirect to="/" />)}
-                />
+                /> */}
+                <Route {...rest} render={() => children} />
             </main>
         </>
     );

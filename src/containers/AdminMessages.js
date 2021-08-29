@@ -4,6 +4,8 @@ import styled from "styled-components";
 import axios from "axios";
 // components
 import { AdminMessageCell, AdminPageTitle } from "../components";
+import { StyledGreenSoloButton } from "./styles/adminButtons";
+import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router-dom";
 
@@ -13,18 +15,6 @@ const StyledAdminMessages = styled.div`
     align-items: center;
     background-color: #f6f7f1;
     min-height: 91.75vh;
-`;
-
-const StyledGreenSoloButton = styled.button`
-    background-color: #207070;
-    font-family: "News Cycle", sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
 `;
 
 const StyledHeadlineContainer = styled.div`
@@ -39,15 +29,6 @@ const StyledMessagesContainer = styled.div`
     align-items: center;
     width: 85%;
     margin-bottom: 2rem;
-`;
-
-const StyledP = styled.p`
-    font-size: 1.2rem;
-    font-family: "News Cycle", sans-serif;
-    letter-spacing: 1px;
-    display: inline-block;
-    word-break: break-word;
-    margin-bottom: 0.5rem;
 `;
 
 const AdminMessages = () => {

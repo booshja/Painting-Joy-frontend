@@ -1,6 +1,9 @@
 // dependencies
 import React from "react";
 import styled from "styled-components";
+// components
+import { StyledOutlineButton } from "../containers/styles/adminButtons";
+import { StyledP } from "../containers/styles/adminTypography";
 
 const StyledCell = styled.div`
     display: flex;
@@ -12,29 +15,14 @@ const StyledCell = styled.div`
     background-color: #ffffff;
 `;
 
-const StyledP = styled.p`
-    font-size: 1.2rem;
-    font-family: "News Cycle", sans-serif;
-    letter-spacing: 1px;
+const StyledInlineBlockP = styled(StyledP)`
     display: inline-block;
     word-break: break-word;
     margin-bottom: 0.5rem;
 `;
 
-const StyledBoldP = styled(StyledP)`
+const StyledBoldP = styled(StyledInlineBlockP)`
     font-weight: 700;
-`;
-
-const StyledOutlineButton = styled.button`
-    border-radius: 4px;
-    background-color: #ffffff;
-    font-family: "News Cycle", sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    padding: 2.5px 5px;
-    border: 2px solid ${(props) => props.color};
-    color: ${(props) => props.color};
 `;
 
 const StyledButtonContainer = styled.div`
@@ -56,8 +44,8 @@ const AdminMessageCell = ({
     return (
         <StyledCell>
             <StyledBoldP>{name}</StyledBoldP>
-            <StyledP>{email}</StyledP>
-            <StyledP>{message}</StyledP>
+            <StyledInlineBlockP>{email}</StyledInlineBlockP>
+            <StyledInlineBlockP>{message}</StyledInlineBlockP>
             <StyledButtonContainer showArchived={showArchived}>
                 {showArchived ? (
                     <StyledOutlineButton

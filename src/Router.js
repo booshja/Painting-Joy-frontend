@@ -8,6 +8,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import {
     AdminLogin,
     AdminMessages,
+    AdminMurals,
     Cart,
     CartError,
     Checkout,
@@ -77,6 +78,9 @@ const Router = () => (
                 </Route>
                 <ProtectedRoute exact path="/admin/messages">
                     <AdminMessages />
+                </ProtectedRoute>
+                <ProtectedRoute exact path="/admin/murals">
+                    <AdminMurals />
                 </ProtectedRoute>
                 <Route>
                     <Redirect to="/" />

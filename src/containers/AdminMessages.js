@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { AdminMessageCell, AdminPageTitle } from "../components";
+import {
+    AdminMessageCell,
+    AdminPageTitle,
+    LoadingSpinner,
+} from "../components";
 import { StyledGreenSoloButton } from "./styles/adminButtons";
 import { StyledP } from "./styles/adminTypography";
 // hooks
@@ -36,32 +40,40 @@ const AdminMessages = () => {
     const [activeMessages, setActiveMessages] = useState([]);
     const [archivedMessages, setArchivedMessages] = useState([]);
     const [showArchived, setShowArchived] = useState(false);
+    const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         // on component mount, get messages
         async function getMessages() {
             try {
                 const res = await axios.get(
-                    process.env.REACT_APP_BACKEND_URL + "messages/"
+                    process.env.REACT_APP_BACKEND_URL + "messages/",
+                    { cancelToken: source.token }
                 );
                 // filter messages into archived and active
-                let archived = res.data.messages.filter(
+                const archived = res.data.messages.filter(
                     (message) => message.isArchived === true
                 );
-                let active = res.data.messages.filter(
+                const active = res.data.messages.filter(
                     (message) => message.isArchived === false
                 );
                 // set states
                 setArchivedMessages(() => archived);
                 setActiveMessages(() => active);
+                setLoading(false);
             } catch (err) {
                 console.log(err);
             }
         }
 
         getMessages();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     const handleShowArchived = () => {
@@ -104,6 +116,13 @@ const AdminMessages = () => {
         }
         history.go(0);
     };
+
+    if (loading)
+        return (
+            <StyledAdminMessage>
+                <LoadingSpinner />
+            </StyledAdminMessage>
+        );
 
     return (
         <StyledAdminMessages>

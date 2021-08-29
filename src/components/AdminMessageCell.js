@@ -4,16 +4,7 @@ import styled from "styled-components";
 // components
 import { StyledOutlineButton } from "../containers/styles/adminButtons";
 import { StyledP } from "../containers/styles/adminTypography";
-
-const StyledCell = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #207070;
-    width: 100%;
-    padding: 1rem;
-    background-color: #ffffff;
-`;
+import { StyledCell } from "../containers/styles/adminContainers";
 
 const StyledInlineBlockP = styled(StyledP)`
     display: inline-block;

@@ -1,9 +1,10 @@
 // dependencies
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 // components
 import { LoadingSpinner, PageTitle } from "../components";
+// hooks
+import { useHistory } from "react-router-dom";
 
 const StyledMurals = styled.main`
     display: flex;
@@ -53,7 +54,8 @@ const Murals = () => {
         async function getData() {
             try {
                 const muralRes = await axios(
-                    process.env.REACT_APP_BACKEND_URL + "murals/active"
+                    process.env.REACT_APP_BACKEND_URL + "murals/active",
+                    { cancelToken: source.token }
                 );
                 setMurals(muralRes.data.murals);
                 setLoading(false);

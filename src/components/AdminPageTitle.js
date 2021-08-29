@@ -7,6 +7,7 @@ const StyledAdminPageTitle = styled.h1`
     font-size: 2.2rem;
     letter-spacing: 1px;
     padding: 1rem 1rem;
+    align-self: flex-start;
 `;
 
 const AdminPageTitle = ({ children }) => {

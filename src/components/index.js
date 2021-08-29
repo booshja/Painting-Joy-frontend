@@ -2,7 +2,9 @@ import AboutMe from "./AboutMe";
 import AdminBurger from "./AdminBurger";
 import AdminMessageCell from "./AdminMessageCell";
 import AdminMobileMenu from "./AdminMobileMenu";
+import AdminMuralCell from "./AdminMuralCell";
 import AdminPageTitle from "./AdminPageTitle";
+import AdminTripleButton from "./AdminTripleButton";
 import Burger from "./Burger";
 import CartItem from "./CartItem";
 import CheckoutForm from "./CheckoutForm";
@@ -27,7 +29,9 @@ export {
     AdminBurger,
     AdminMessageCell,
     AdminMobileMenu,
+    AdminMuralCell,
     AdminPageTitle,
+    AdminTripleButton,
     Burger,
     CartItem,
     CheckoutForm,

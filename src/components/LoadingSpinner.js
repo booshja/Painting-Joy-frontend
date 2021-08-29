@@ -20,15 +20,10 @@ const StyledP = styled.p`
     margin-top: 1rem;
 `;
 
-const LoadingSpinner = ({ iconSize, marginTop }) => {
+const LoadingSpinner = () => {
     return (
         <>
-            <StyledFontAwesomeIcon
-                icon={faPalette}
-                spin
-                iconSize={iconSize}
-                marginTop={marginTop}
-            />
+            <StyledFontAwesomeIcon icon={faPalette} spin />
             <StyledP>Loading...</StyledP>
         </>
     );

@@ -23,14 +23,14 @@ const StyledLink = styled(Link)`
     color: #000000;
 `;
 
-const AdminHeader = () => {
+const AdminHeader = ({ login }) => {
     return (
         <StyledHeader>
             <StyledLink to="/admin/dashboard">
                 Painting Joy Mural Co.
             </StyledLink>
-            <AdminBurger openColor="#207070" />
-            <AdminMobileMenu />
+            {!login && <AdminBurger openColor="#207070" />}
+            {!login && <AdminMobileMenu />}
         </StyledHeader>
     );
 };

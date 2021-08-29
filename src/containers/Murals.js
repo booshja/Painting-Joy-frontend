@@ -1,11 +1,9 @@
 // dependencies
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 // components
-import { PageTitle } from "../components";
-// context
-import MuralsContext from "../context/MuralsContext";
+import { LoadingSpinner, PageTitle } from "../components";
 
 const StyledMurals = styled.main`
     display: flex;
@@ -44,13 +42,40 @@ const StyledTitle = styled.h3`
 `;
 
 const Murals = () => {
-    const { murals } = useContext(MuralsContext);
+    // set up state
+    const [loading, setLoading] = useState(true);
+    // set up history
     const history = useHistory();
 
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        // on mount get mural data
+        async function getData() {
+            try {
+                const muralRes = await axios(
+                    process.env.REACT_APP_BACKEND_URL + "murals/active"
+                );
+                setMurals(muralRes.data.murals);
+                setLoading(false);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        getData();
+
+        return function cleanup() {
+            source.cancel();
+        };
+    }, []);
+
     const handleClick = (e) => {
+        // on click send the user to the mural they clicked on
         const id = e.target.id;
         history.push(`/murals/${id}`);
     };
+
+    if (loading) return <LoadingSpinner />;
+
     return (
         <StyledMurals>
             <PageTitle>Murals</PageTitle>

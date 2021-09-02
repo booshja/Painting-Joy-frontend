@@ -1,10 +1,11 @@
 // dependencies
 import React, { useRef } from "react";
-import { useHistory } from "react-router";
-import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+// hooks
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
 
 const StyledForm = styled.form`
     display: flex;
@@ -80,6 +81,7 @@ const ContactForm = () => {
     const reRef = useRef();
 
     const handleDataSubmit = async (data) => {
+        console.log("hello");
         // get recaptcha token
         const token = await reRef.current.executeAsync();
         reRef.current.reset();

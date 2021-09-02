@@ -1,6 +1,7 @@
 // dependencies
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 // components
 import { LoadingSpinner, PageTitle } from "../components";
 // hooks
@@ -45,6 +46,7 @@ const StyledTitle = styled.h3`
 const Murals = () => {
     // set up state
     const [loading, setLoading] = useState(true);
+    const [murals, setMurals] = useState([]);
     // set up history
     const history = useHistory();
 
@@ -76,7 +78,12 @@ const Murals = () => {
         history.push(`/murals/${id}`);
     };
 
-    if (loading) return <LoadingSpinner />;
+    if (loading)
+        return (
+            <StyledMurals>
+                <LoadingSpinner />
+            </StyledMurals>
+        );
 
     return (
         <StyledMurals>

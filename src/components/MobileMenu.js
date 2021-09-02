@@ -65,9 +65,9 @@ const Menu = () => {
                 <StyledLink to="/murals" onClick={() => setMenuOpen(false)}>
                     Murals
                 </StyledLink>
-                <StyledLink to="/more-art" onClick={() => setMenuOpen(false)}>
+                {/* <StyledLink to="/more-art" onClick={() => setMenuOpen(false)}>
                     More Art
-                </StyledLink>
+                </StyledLink> */}
                 <StyledLink to="/contact" onClick={() => setMenuOpen(false)}>
                     Contact Me
                 </StyledLink>

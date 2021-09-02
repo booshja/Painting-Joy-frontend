@@ -3,6 +3,7 @@ import AdminBurger from "./AdminBurger";
 import AdminMessageCell from "./AdminMessageCell";
 import AdminMobileMenu from "./AdminMobileMenu";
 import AdminMuralCell from "./AdminMuralCell";
+import AdminMuralForm from "./AdminMuralForm";
 import AdminPageTitle from "./AdminPageTitle";
 import AdminTripleButton from "./AdminTripleButton";
 import Burger from "./Burger";
@@ -30,6 +31,7 @@ export {
     AdminMessageCell,
     AdminMobileMenu,
     AdminMuralCell,
+    AdminMuralForm,
     AdminPageTitle,
     AdminTripleButton,
     Burger,

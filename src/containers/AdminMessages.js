@@ -119,9 +119,9 @@ const AdminMessages = () => {
 
     if (loading)
         return (
-            <StyledAdminMessage>
+            <StyledAdminMessages>
                 <LoadingSpinner />
-            </StyledAdminMessage>
+            </StyledAdminMessages>
         );
 
     return (

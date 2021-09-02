@@ -49,30 +49,55 @@ const AdminMobileMenu = () => {
     return (
         <StyledMenu open={menuOpen}>
             <MenuWrapper>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/dashboard"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Dashboard
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/murals"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Murals
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/messages"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Messages
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
-                    Store
-                </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/store/inventory"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Inventory
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/store/orders"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Orders
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                <StyledLink
+                    exact
+                    to="/admin/store/reporting"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Reporting
                 </StyledLink>
-                <StyledLink exact to="" onClick={() => setMenuOpen(false)}>
+                {/* <StyledLink
+                    exact
+                    to="/admin/ig-edit"
+                    onClick={() => setMenuOpen(false)}
+                >
                     Instagram Feed
-                </StyledLink>
+                </StyledLink> */}
             </MenuWrapper>
         </StyledMenu>
     );

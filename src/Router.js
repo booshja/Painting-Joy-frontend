@@ -86,6 +86,9 @@ const Router = () => (
                 <ProtectedRoute exact path="/admin/murals/new">
                     <AdminMural variant="Add" />
                 </ProtectedRoute>
+                <ProtectedRoute exact path="/admin/murals/edit/:id">
+                    <AdminMural variant="Edit" />
+                </ProtectedRoute>
                 {/* <Route>
                     <Redirect to="/" />
                 </Route> */}

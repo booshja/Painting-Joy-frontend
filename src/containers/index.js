@@ -1,4 +1,5 @@
 import AdminHeader from "./AdminHeader";
+import AdminItems from "./AdminItems";
 import AdminLogin from "./AdminLogin";
 import AdminMessages from "./AdminMessages";
 import AdminMural from "./AdminMural";
@@ -22,6 +23,7 @@ import StoreItem from "./StoreItem";
 
 export {
     AdminHeader,
+    AdminItems,
     AdminLogin,
     AdminMessages,
     AdminMural,

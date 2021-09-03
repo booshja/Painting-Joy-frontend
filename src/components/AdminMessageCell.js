@@ -32,6 +32,7 @@ const AdminMessageCell = ({
     showArchived,
 }) => {
     const { id, name, email, message } = data;
+
     return (
         <StyledCell>
             <StyledBoldP>{name}</StyledBoldP>

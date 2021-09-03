@@ -50,7 +50,7 @@ const StyledError = styled.p`
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 1px;
-    padding: 0.5rm;
+    padding: 0.5rem;
 `;
 
 const StyledSoloBtn = styled(StyledGreenSoloButton)`
@@ -65,13 +65,18 @@ const StyledButtonContainer = styled.div`
     align-items: center;
 `;
 
-const AdminMuralForm = ({ handleDataSubmit, handleCancel, variant }) => {
+const AdminMuralForm = ({
+    handleDataSubmit,
+    handleCancel,
+    variant,
+    preloadedValues,
+}) => {
     // set up react-hook-form
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm({ defaultValues: preloadedValues });
 
     return (
         <StyledForm onSubmit={handleSubmit(handleDataSubmit)}>
@@ -80,6 +85,7 @@ const AdminMuralForm = ({ handleDataSubmit, handleCancel, variant }) => {
                 type="text"
                 placeholder="Title"
                 id="title"
+                name="title"
                 {...register("title", {
                     required: "Title is required",
                 })}
@@ -90,6 +96,7 @@ const AdminMuralForm = ({ handleDataSubmit, handleCancel, variant }) => {
                 type="text"
                 placeholder="Description"
                 id="description"
+                name="description"
                 {...register("description", {
                     required: "Description is required",
                 })}
@@ -102,7 +109,9 @@ const AdminMuralForm = ({ handleDataSubmit, handleCancel, variant }) => {
                     Cancel
                 </StyledOutlineButton>
                 <StyledSoloBtn type="submit">
-                    {variant === "Add" && "Upload "}Images
+                    {variant === "Add" && "Upload "}
+                    {variant === "Edit" && " Edit "}
+                    Images
                 </StyledSoloBtn>
             </StyledButtonContainer>
         </StyledForm>

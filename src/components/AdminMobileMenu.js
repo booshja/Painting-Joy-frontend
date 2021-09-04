@@ -79,14 +79,14 @@ const AdminMobileMenu = () => {
                 </StyledLink>
                 <StyledLink
                     exact
-                    to="/admin/store/orders"
+                    to="/admin/orders"
                     onClick={() => setMenuOpen(false)}
                 >
                     Orders
                 </StyledLink>
                 <StyledLink
                     exact
-                    to="/admin/store/reporting"
+                    to="/admin/reporting"
                     onClick={() => setMenuOpen(false)}
                 >
                     Reporting

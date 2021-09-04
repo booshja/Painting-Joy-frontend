@@ -92,7 +92,7 @@ const AdminItems = () => {
                 process.env.REACT_APP_BACKEND_URL + `items/sold/${id}`
             );
         } catch (err) {
-            console.log("Sell out error.");
+            console.log("Sell out error.", err);
         }
         history.go(0);
     };
@@ -104,7 +104,7 @@ const AdminItems = () => {
                 process.env.REACT_APP_BACKEND_URL + `items/delete/${id}`
             );
         } catch (err) {
-            console.log("Delete Error");
+            console.log("Delete Error", err);
         }
         history.go(0);
     };

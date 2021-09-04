@@ -5,6 +5,7 @@ import AdminLogin from "./AdminLogin";
 import AdminMessages from "./AdminMessages";
 import AdminMural from "./AdminMural";
 import AdminMurals from "./AdminMurals";
+import AdminOrders from "./AdminOrders";
 import Cart from "./Cart";
 import CartError from "./CartError";
 import Checkout from "./Checkout";
@@ -30,6 +31,7 @@ export {
     AdminMessages,
     AdminMural,
     AdminMurals,
+    AdminOrders,
     Cart,
     CartError,
     Checkout,

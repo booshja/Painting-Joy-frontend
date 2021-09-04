@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { AdminMuralForm, AdminPageTitle, LoadingSpinner } from "../components";
+import { AdminItemForm, AdminPageTitle, LoadingSpinner } from "../components";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -13,7 +13,7 @@ import { StyledP } from "./styles/adminTypography";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 
-const StyledAdminMural = styled.div`
+const StyledAdminItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,13 +70,13 @@ const StyledError = styled.p`
     text-align: center;
 `;
 
-const AdminMural = ({ variant }) => {
+const AdminItem = ({ variant }) => {
     // get params
     const { id } = useParams();
     // set up states
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState(0);
-    const [muralId, setMuralId] = useState(id);
+    const [itemId, setItemId] = useState(id);
     const [preloadedValues, setPreloadedValues] = useState(null);
     const [error, setError] = useState(null);
     // set up react-hook-form
@@ -90,27 +90,25 @@ const AdminMural = ({ variant }) => {
     const history = useHistory();
 
     useEffect(() => {
-        async function getMuralData() {
-            // on component mount get Mural data if editing
+        async function getItemData() {
+            // on component mount get Item data if editing
             setLoading(true);
             try {
                 const res = await axios.get(
-                    process.env.REACT_APP_BACKEND_URL +
-                        `murals/mural/${muralId}`
+                    process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`
                 );
                 // set preloadedValues for edit form
                 setPreloadedValues({
-                    title: res.data.mural.title,
-                    description: res.data.mural.description,
+                    ...res.data.item,
                 });
                 setLoading(false);
             } catch (err) {
-                console.log("Mural retrieval error", err);
+                console.log("Item retrieval error", err);
                 history.get(0);
             }
         }
 
-        if (variant === "Edit") getMuralData();
+        if (variant === "Edit") getItemData();
     }, []);
 
     const handleDataSubmit = async (data) => {
@@ -119,26 +117,37 @@ const AdminMural = ({ variant }) => {
         try {
             if (variant === "Add") {
                 const res = await axios.post(
-                    process.env.REACT_APP_BACKEND_URL + "murals/",
+                    process.env.REACT_APP_BACKEND_URL + "items/",
                     {
-                        title: data.title,
+                        name: data.name,
                         description: data.description,
+                        quantity: +data.quantity,
+                        price: +data.price,
+                        shipping: +data.shipping,
+                        isSold: data.shipping > 0 ? false : true,
                     }
                 );
-                const id = res.data.mural.id;
-                setMuralId(id);
+                const id = res.data.item.id;
+                setItemId(id);
             } else if (variant === "Edit") {
                 await axios.patch(
                     process.env.REACT_APP_BACKEND_URL +
-                        `murals/mural/${muralId}`,
-                    data
+                        `items/update/${itemId}`,
+                    {
+                        name: data.name,
+                        description: data.description,
+                        quantity: +data.quantity,
+                        price: +data.price,
+                        shipping: +data.shipping,
+                        isSold: data.shipping > 0 ? false : true,
+                    }
                 );
+                setError(null);
             }
-            setError(null);
             setStep(1);
         } catch (err) {
             setError("Error uploading data, please try again.");
-            console.log("Mural data upload error", err);
+            console.log("Item data upload error", err);
             setLoading(false);
         }
 
@@ -154,72 +163,61 @@ const AdminMural = ({ variant }) => {
 
         try {
             res = await axios.post(
-                process.env.REACT_APP_BACKEND_URL +
-                    `murals/upload/${muralId}/image/${step}`,
+                process.env.REACT_APP_BACKEND_URL + `items/upload/${itemId}`,
                 formData
             );
-            if (step < 3) {
-                reset("", { keepValues: false });
-            } else if (step === 3) {
-                history.push("/admin/murals");
-            }
-            setStep((prevStep) => prevStep + 1);
-            setLoading(false);
+            history.push("/admin/items");
         } catch (err) {
             setError(
                 "Image upload error. Check that file is not over 5mb and try again."
             );
-            console.log("Image upload error!", err);
+            console.log("Image upload error", err);
             setLoading(false);
         }
     };
 
     const handleContinue = () => {
-        // on continue click go to next step or send admin back to murals page
-        if (step < 3) {
-            setStep((prevStep) => prevStep + 1);
-        } else if (step === 3) {
-            history.push("/admin/murals");
-        }
+        // on continue go to next step or send admin back to items page
+        history.push("/admin/items");
     };
 
     const handleCancel = async () => {
-        // on cancel, delete current mural in progress,
-        // push admin to Admin Murals page
+        // on cancel, delete current item in progress,
+        // push admin to Admin Items page
         setLoading(true);
         try {
             await axios.delete(
-                process.env.REACT_APP_BACKEND_URL + `murals/mural/${muralId}`
+                process.env.REACT_APP_BACKEND_URL + `items/delete/${itemId}`
             );
-            history.push("/admin/murals");
+            history.push("/admin/items");
         } catch (err) {
             console.log("Cancel Error", err);
-            history.push("/admin/murals");
+            history.push("/admin/items");
         }
     };
 
     // if data is loading, display loading spinner
     if (loading)
         return (
-            <StyledAdminMural>
+            <StyledAdminItem>
                 <LoadingSpinner />
-            </StyledAdminMural>
+            </StyledAdminItem>
         );
 
     return (
-        <StyledAdminMural>
-            <AdminPageTitle>{variant} Mural</AdminPageTitle>
-            {step > 0 && <StyledText>Upload Photo #{step} of 3</StyledText>}
+        <StyledAdminItem>
+            <AdminPageTitle>{variant} Item</AdminPageTitle>
+            {step > 0 && <StyledText>Upload Photo</StyledText>}
             {error && <StyledError>{error}</StyledError>}
             {step === 0 && variant === "Add" && (
-                <AdminMuralForm
+                <AdminItemForm
                     handleDataSubmit={handleDataSubmit}
                     handleCancel={handleCancel}
                     variant={variant}
                 />
             )}
             {step === 0 && variant === "Edit" && (
-                <AdminMuralForm
+                <AdminItemForm
                     handleDataSubmit={handleDataSubmit}
                     handleCancel={handleCancel}
                     variant={variant}
@@ -248,26 +246,26 @@ const AdminMural = ({ variant }) => {
                                 Keep Image
                             </StyledContinueBtn>
                         )}
-                        <StyledCancelBtn color="#DB9487" onClick={handleCancel}>
-                            Cancel (Deletes Mural)
+                        <StyledCancelBtn color="#db9487" onClick={handleCancel}>
+                            Cancel (Deletes Item)
                         </StyledCancelBtn>
                     </StyledUploadForm>
                 </>
             )}
-            {step > 0 && variant === "Edit" && (
+            {step === 1 && variant === "Edit" && (
                 <>
                     <StyledText>Current Image:</StyledText>
                     <StyledImg
                         src={
                             process.env.REACT_APP_BACKEND_URL +
-                            `murals/mural/${muralId}/image/${step}`
+                            `items/item/${itemId}/image`
                         }
-                        alt="Mural"
+                        alt="Item"
                     />
                 </>
             )}
-        </StyledAdminMural>
+        </StyledAdminItem>
     );
 };
 
-export default AdminMural;
+export default AdminItem;

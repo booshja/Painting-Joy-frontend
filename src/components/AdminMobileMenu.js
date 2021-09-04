@@ -72,10 +72,10 @@ const AdminMobileMenu = () => {
                 </StyledLink>
                 <StyledLink
                     exact
-                    to="/admin/store/inventory"
+                    to="/admin/items"
                     onClick={() => setMenuOpen(false)}
                 >
-                    Inventory
+                    Store Items
                 </StyledLink>
                 <StyledLink
                     exact

@@ -1,6 +1,7 @@
 import AboutMe from "./AboutMe";
 import AdminBurger from "./AdminBurger";
 import AdminItemCell from "./AdminItemCell";
+import AdminItemForm from "./AdminItemForm";
 import AdminMessageCell from "./AdminMessageCell";
 import AdminMobileMenu from "./AdminMobileMenu";
 import AdminMuralCell from "./AdminMuralCell";
@@ -30,6 +31,7 @@ export {
     AboutMe,
     AdminBurger,
     AdminItemCell,
+    AdminItemForm,
     AdminMessageCell,
     AdminMobileMenu,
     AdminMuralCell,

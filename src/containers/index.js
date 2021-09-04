@@ -1,4 +1,5 @@
 import AdminHeader from "./AdminHeader";
+import AdminItem from "./AdminItem";
 import AdminItems from "./AdminItems";
 import AdminLogin from "./AdminLogin";
 import AdminMessages from "./AdminMessages";
@@ -23,6 +24,7 @@ import StoreItem from "./StoreItem";
 
 export {
     AdminHeader,
+    AdminItem,
     AdminItems,
     AdminLogin,
     AdminMessages,

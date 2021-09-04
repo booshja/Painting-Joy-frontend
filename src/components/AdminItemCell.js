@@ -59,7 +59,7 @@ const AdminItemCell = ({
                         <StyledOutlineButton
                             color="#a1c9c9"
                             onClick={() =>
-                                history.push(`/admin/item/edit/${id}`)
+                                history.push(`/admin/items/edit/${id}`)
                             }
                         >
                             Edit
@@ -76,7 +76,7 @@ const AdminItemCell = ({
                         <StyledOutlineButton
                             color="#a1c9c9"
                             onClick={() =>
-                                history.push(`admin/item/edit/${id}`)
+                                history.push(`/admin/items/edit/${id}`)
                             }
                         >
                             Edit
@@ -88,7 +88,7 @@ const AdminItemCell = ({
                         </StyledGreenSoloButton>
                         <StyledOutlineButton
                             color="#db9487"
-                            onClick={() => handleMarkSoldOut(id)}
+                            onClick={() => handleDelete(id)}
                         >
                             Delete
                         </StyledOutlineButton>

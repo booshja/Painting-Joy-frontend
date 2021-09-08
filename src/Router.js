@@ -12,6 +12,7 @@ import {
     AdminMessages,
     AdminMural,
     AdminMurals,
+    AdminOrder,
     AdminOrders,
     Cart,
     CartError,
@@ -103,6 +104,9 @@ const Router = () => (
                 </ProtectedRoute>
                 <ProtectedRoute exact path="/admin/orders">
                     <AdminOrders />
+                </ProtectedRoute>
+                <ProtectedRoute exact path="/admin/orders/:id">
+                    <AdminOrder />
                 </ProtectedRoute>
                 {/* <Route>
                     <Redirect to="/" />

@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
+    AdminDashboard,
     AdminItem,
     AdminItems,
     AdminLogin,
@@ -81,6 +82,9 @@ const Router = () => (
                 <Route exact path="/admin/login">
                     <AdminLogin />
                 </Route>
+                <ProtectedRoute exact path="/admin/dashboard">
+                    <AdminDashboard />
+                </ProtectedRoute>
                 <ProtectedRoute exact path="/admin/messages">
                     <AdminMessages />
                 </ProtectedRoute>

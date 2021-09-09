@@ -83,19 +83,20 @@ const AdminItem = ({ variant }) => {
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors },
     } = useForm();
     // set up history
     const history = useHistory();
 
     useEffect(() => {
+        const source = axios.CancelToken.source();
         async function getItemData() {
             // on component mount get Item data if editing
             setLoading(true);
             try {
                 const res = await axios.get(
-                    process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`
+                    process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
+                    { cancelToken: source.token }
                 );
                 // set preloadedValues for edit form
                 setPreloadedValues({
@@ -109,6 +110,10 @@ const AdminItem = ({ variant }) => {
         }
 
         if (variant === "Edit") getItemData();
+
+        return function cleanup() {
+            source.cancel();
+        };
     }, []);
 
     const handleDataSubmit = async (data) => {

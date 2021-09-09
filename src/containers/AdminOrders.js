@@ -41,7 +41,7 @@ const AdminOrders = () => {
                     { cancelToken: source.token }
                 );
                 // set state
-                setOrders(() => res.data.orders);
+                setOrders(() => res.data.orders.reverse());
                 setLoading(false);
             } catch (err) {
                 console.log("Order fetch error", err);

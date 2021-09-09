@@ -24,7 +24,10 @@ const StyledText = styled.p`
     text-align: center;
     font-family: "News Cycle", sans-serif;
     font-size: 1.4rem;
+    line-height: 1.8rem;
     letter-spacing: 1px;
+    width: 95%;
+    align-self: center;
 `;
 
 const StyledImage = styled.img`
@@ -47,7 +50,7 @@ const AboutMe = ({ greeting, message, image }) => {
                 <StyledGreeting>{greeting}</StyledGreeting>
                 <StyledText>{message}</StyledText>
             </StyledTextDiv>
-            <StyledImage src={image} alt="Beth" />
+            <StyledImage src={image} alt="Hello!" />
         </StyledContainer>
     );
 };

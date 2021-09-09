@@ -1,5 +1,8 @@
 import AboutMe from "./AboutMe";
 import AdminBurger from "./AdminBurger";
+import AdminDashCell from "./AdminDashCell";
+import AdminHomepageForm from "./AdminHomepageForm";
+import AdminHomepageImageForm from "./AdminHomepageImageForm";
 import AdminItemCell from "./AdminItemCell";
 import AdminItemForm from "./AdminItemForm";
 import AdminMessageCell from "./AdminMessageCell";
@@ -31,6 +34,9 @@ import TitleLogoFooter from "./TitleLogoFooter";
 export {
     AboutMe,
     AdminBurger,
+    AdminDashCell,
+    AdminHomepageForm,
+    AdminHomepageImageForm,
     AdminItemCell,
     AdminItemForm,
     AdminMessageCell,

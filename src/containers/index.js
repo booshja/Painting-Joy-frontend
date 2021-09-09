@@ -1,3 +1,4 @@
+import AdminDashboard from "./AdminDashboard";
 import AdminHeader from "./AdminHeader";
 import AdminItem from "./AdminItem";
 import AdminItems from "./AdminItems";
@@ -25,6 +26,7 @@ import Store from "./Store";
 import StoreItem from "./StoreItem";
 
 export {
+    AdminDashboard,
     AdminHeader,
     AdminItem,
     AdminItems,

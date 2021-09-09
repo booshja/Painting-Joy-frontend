@@ -2,11 +2,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+// hooks
 import { useHistory, useParams } from "react-router-dom";
 // components
 import { GoBack, LoadingSpinner } from "../components";
 // context
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledStoreItem = styled.div`
     display: flex;
@@ -56,6 +59,8 @@ const StyledButton = styled.button`
         color: #207070;
         background-color: #ffffff;
     }
+
+    ${breakpoints("font-size", "rem", [{ 768: 1.4 }])}
 `;
 
 const StoreItem = () => {

@@ -15,13 +15,15 @@ const StyledStore = styled.div`
     align-items: center;
     min-height: 45vh;
 
-    ${breakpoints("min-height", "vh", [{ 414: 49 }])}
+    ${breakpoints("min-height", "vh", [{ 414: 49 }, { 768: 52 }])}
 `;
 
 const StyledItemsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 95%;
+
+    ${breakpoints("justify-content", "", [{ 768: "center" }])}
 `;
 
 const StyledP = styled.p`

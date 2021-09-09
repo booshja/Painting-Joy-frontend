@@ -82,7 +82,7 @@ const StyledButton = styled.button`
         background-color: #ffffff;
     }
 
-    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }, { 768: 1.6 }])}
 `;
 
 const Cart = () => {

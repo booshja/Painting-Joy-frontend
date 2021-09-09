@@ -1,14 +1,17 @@
 // dependencies
 import React, { useContext, useRef } from "react";
-import { useHistory } from "react-router";
-import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+// hooks
+import { useHistory } from "react-router";
+import { useForm } from "react-hook-form";
 // context
 import CartContext from "../context/CartContext";
 // assets
 import stateCodes from "../assets/stateCodes.js";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledForm = styled.form`
     display: flex;
@@ -39,6 +42,8 @@ const StyledInput = styled.input`
     &[type="number"] {
         -moz-appearance: textfield;
     }
+
+    ${breakpoints("width", "%", [{ 414: 100 }])}
 `;
 
 const StyledSelect = styled.select`

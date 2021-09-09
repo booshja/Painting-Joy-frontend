@@ -1,7 +1,10 @@
 // dependencies
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
+// hooks
+import { useHistory } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledDiv = styled.div`
     width: 300px;
@@ -12,10 +15,14 @@ const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
     cursor: pointer;
+
+    ${breakpoints("width", "px", [{ 414: 345 }, { 768: 300 }])}
 `;
 
 const StyledImg = styled.img`
     height: 200px;
+
+    ${breakpoints("height", "px", [{ 414: 230 }])}
 `;
 
 const StyledTextBox = styled.div`

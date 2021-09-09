@@ -6,6 +6,8 @@ import axios from "axios";
 import { LoadingSpinner, PageTitle } from "../components";
 // hooks
 import { useHistory } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledMurals = styled.main`
     display: flex;
@@ -41,6 +43,8 @@ const StyledTitle = styled.h3`
     letter-spacing: 1px;
     margin: 0.25rem 0 1rem 0;
     align-self: flex-start;
+
+    ${breakpoints("font-size", "rem", [{ 414: 2 }, { 768: 2.2 }])}
 `;
 
 const Murals = () => {

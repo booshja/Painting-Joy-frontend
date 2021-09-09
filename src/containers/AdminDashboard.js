@@ -40,7 +40,7 @@ const StyledLink = styled(Link)`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    line-height: 1.6rem;
+    line-height: 1.2;
 `;
 
 const StyledBoldP = styled(StyledP)`

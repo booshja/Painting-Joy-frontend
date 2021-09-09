@@ -1,7 +1,10 @@
 // dependencies
 import React from "react";
 import styled from "styled-components";
+// hooks
 import { useHistory } from "react-router";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledDiv = styled.div`
     display: flex;
@@ -9,17 +12,22 @@ const StyledDiv = styled.div`
     align-items: center;
     border-radius: 4px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    height: 200px;
     width: 165px;
     padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
     cursor: pointer;
+
+    ${breakpoints("width", "px", [{ 414: 195 }])}
 `;
 
 const StyledImg = styled.img`
-    height: 133px;
+    object-fit: cover;
     width: 110px;
+    height: auto;
+    margin-bottom: 0.5rem;
+
+    ${breakpoints("width", "px", [{ 414: 150 }])}
 `;
 
 const StyledOverlay = styled.div`
@@ -37,11 +45,18 @@ const StyledOverlay = styled.div`
     position: absolute;
     top: 4rem;
     left: 1.7rem;
+
+    ${breakpoints("height", "px", [{ 414: 32 }])}
+    ${breakpoints("width", "px", [{ 414: 150 }])}
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
+    ${breakpoints("top", "rem", [{ 414: 5 }])}
+    ${breakpoints("left", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledTitle = styled.h3`
     font-family: "News Cycle", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 1px;
     text-align: center;
 `;
@@ -74,7 +89,7 @@ const StoreItem = ({ item }) => {
             {item.isSold && (
                 <StyledOverlay id={"o-" + item.id}>Sold</StyledOverlay>
             )}
-            <StyledTitle id={"t-" + item.id}>{item.title}</StyledTitle>
+            <StyledTitle id={"t-" + item.id}>{item.name}</StyledTitle>
             {item.isSold ? (
                 <StyledPrice id={"p-" + item.id}>${item.price}</StyledPrice>
             ) : (

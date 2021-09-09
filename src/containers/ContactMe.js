@@ -16,7 +16,7 @@ const StyledMessage = styled.p`
     font-family: "News Cycle", sans-serif;
     font-size: 1.4rem;
     letter-spacing: 1px;
-    line-height: 1.8rem;
+    line-height: 1.2;
     margin-bottom: 2rem;
 `;
 

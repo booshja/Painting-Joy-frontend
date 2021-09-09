@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GoBack, PageTitle } from "../components";
 // assets
 import YayImg from "../assets/jen-theodore-ualbj7tyJH0-unsplash.jpg";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCheckoutCancel = styled.div`
     display: flex;
@@ -19,6 +21,8 @@ const StyledP = styled.p`
     letter-spacing: 1px;
     width: 80%;
     line-height: 1.2;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledImg = styled.img`

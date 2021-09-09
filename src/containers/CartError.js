@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GoBack, PageTitle } from "../components";
 // assets
 import OopsImg from "../assets/jelleke-vanooteghem-kabtmcdcAbk-unsplash.jpg";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCartError = styled.div`
     display: flex;
@@ -19,6 +21,8 @@ const StyledP = styled.div`
     line-height: 1.2;
     width: 80%;
     margin-bottom: 1rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledImg = styled.img`

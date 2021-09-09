@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 // components
 import { Link } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledFooter = styled.footer`
     background-color: #012e34;
@@ -21,18 +23,24 @@ const StyledTitle = styled(Link)`
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: 1px;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.8 }])}
 `;
 
 const StyledLink = styled(Link)`
     font-family: "News Cycle", sans-serif;
     font-size: 1.1rem;
     letter-spacing: 1px;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledCopyright = styled.p`
     font-family: "News Cycle", sans-serif;
     font-size: 0.6rem;
     letter-spacing: 1px;
+
+    ${breakpoints("font-size", "rem", [{ 414: 0.8 }])}
 `;
 
 const Footer = () => {

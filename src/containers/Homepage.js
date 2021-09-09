@@ -4,6 +4,8 @@ import styled from "styled-components";
 import axios from "axios";
 // components
 import { AboutMe, LoadingSpinner, NewDisplay } from "../components";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledHomepage = styled.main`
     display: flex;
@@ -11,6 +13,16 @@ const StyledHomepage = styled.main`
     align-items: center;
     margin-top: 1rem;
     min-height: 42vh;
+`;
+
+const StyledNewDisplayContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    ${breakpoints("flex-direction", "", [{ 768: "row" }])}
+    ${breakpoints("width", "%", [{ 768: 85 }])}
 `;
 
 const Homepage = () => {
@@ -46,24 +58,26 @@ const Homepage = () => {
 
     return (
         <StyledHomepage>
-            <NewDisplay
-                variant="mural"
-                title={homepage.mural_title}
-                image={
-                    process.env.REACT_APP_BACKEND_URL +
-                    `murals/mural/${homepage.mural_id}/image/1`
-                }
-                id={homepage.mural_id}
-            />
-            <NewDisplay
-                variant="store"
-                title={homepage.item_title}
-                image={
-                    process.env.REACT_APP_BACKEND_URL +
-                    `items/item/${homepage.item_id}/image`
-                }
-                id={homepage.item_id}
-            />
+            <StyledNewDisplayContainer>
+                <NewDisplay
+                    variant="mural"
+                    title={homepage.mural_title}
+                    image={
+                        process.env.REACT_APP_BACKEND_URL +
+                        `murals/mural/${homepage.mural_id}/image/1`
+                    }
+                    id={homepage.mural_id}
+                />
+                <NewDisplay
+                    variant="store"
+                    title={homepage.item_title}
+                    image={
+                        process.env.REACT_APP_BACKEND_URL +
+                        `items/item/${homepage.item_id}/image`
+                    }
+                    id={homepage.item_id}
+                />
+            </StyledNewDisplayContainer>
             <AboutMe
                 greeting={homepage.greeting}
                 message={homepage.message}

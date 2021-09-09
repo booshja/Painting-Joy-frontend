@@ -35,7 +35,7 @@ const StyledText = styled.p`
     letter-spacing: 1px;
     align-self: flex-start;
     text-align: left;
-    line-height: 2rem;
+    line-height: 1.2;
     margin-bottom: 1rem;
     width: 90%;
 `;

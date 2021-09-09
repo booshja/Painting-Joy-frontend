@@ -1,6 +1,5 @@
 // dependencies
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -11,8 +10,12 @@ import {
     LoadingSpinner,
     PageTitle,
 } from "../components";
+// hooks
+import { useHistory } from "react-router-dom";
 // context
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCheckout = styled.main`
     display: flex;
@@ -167,6 +170,8 @@ const StyledP = styled.p`
     width: 85%;
     line-height: 1.2;
     margin-bottom: 2rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledLink = styled.a`

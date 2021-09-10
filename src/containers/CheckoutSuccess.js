@@ -4,7 +4,9 @@ import styled from "styled-components";
 // components
 import { GoBack, PageTitle } from "../components";
 // assets
-import YayImg from "../assets/jen-theodore-ualbj7tyJH0-unsplash.jpg";
+import YayImg from "../assets/gabe-yay.jpg";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCheckoutCancel = styled.div`
     display: flex;
@@ -19,10 +21,14 @@ const StyledP = styled.p`
     letter-spacing: 1px;
     width: 80%;
     line-height: 1.2;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledImg = styled.img`
     width: 80%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const CheckoutSuccess = () => {

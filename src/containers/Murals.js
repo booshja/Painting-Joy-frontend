@@ -6,12 +6,16 @@ import axios from "axios";
 import { LoadingSpinner, PageTitle } from "../components";
 // hooks
 import { useHistory } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
-const StyledMurals = styled.main`
+const StyledMurals = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+
+    ${breakpoints("min-height", "vh", [{ 768: 50 }])}
 `;
 
 const StyledList = styled.div`
@@ -20,12 +24,21 @@ const StyledList = styled.div`
     align-items: center;
     width: 90%;
     margin: 1rem 0;
+
+    ${breakpoints("flex-direction", "", [{ 768: "row" }])}
+    ${breakpoints("flex-wrap", "", [{ 768: "wrap" }])}
+
+    div:nth-of-type(odd) {
+        ${breakpoints("margin-right", "rem", [{ 768: 3 }])}
+    }
 `;
 
 const StyledMural = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    ${breakpoints("width", "%", [{ 768: 45 }])}
 `;
 
 const StyledImg = styled.img`
@@ -41,6 +54,8 @@ const StyledTitle = styled.h3`
     letter-spacing: 1px;
     margin: 0.25rem 0 1rem 0;
     align-self: flex-start;
+
+    ${breakpoints("font-size", "rem", [{ 414: 2 }, { 768: 2.2 }])}
 `;
 
 const Murals = () => {

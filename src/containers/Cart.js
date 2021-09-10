@@ -7,6 +7,8 @@ import { GoBack, CartItem, LoadingSpinner } from "../components";
 import { Link, useHistory } from "react-router-dom";
 // context
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCart = styled.div`
     display: flex;
@@ -24,6 +26,8 @@ const StyledCartDiv = styled.div`
     border: 2px solid #207070;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 1rem;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const StyledLink = styled(Link)`
@@ -33,6 +37,8 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     color: #207070;
     margin-top: 1rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const TotalDiv = styled.div`
@@ -45,6 +51,8 @@ const TotalDiv = styled.div`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     align-self: flex-end;
     margin-bottom: 1rem;
+
+    ${breakpoints("margin-right", "%", [{ 1024: 15 }])}
 `;
 
 const TotalText = styled.p`
@@ -53,6 +61,8 @@ const TotalText = styled.p`
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin-bottom: 0.25rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledSpan = styled.span`
@@ -75,6 +85,9 @@ const StyledButton = styled.button`
         color: #207070;
         background-color: #ffffff;
     }
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }, { 768: 1.6 }])}
+    ${breakpoints("margin-right", "%", [{ 1024: 15 }])}
 `;
 
 const Cart = () => {
@@ -153,7 +166,7 @@ const Cart = () => {
 
     return (
         <StyledCart>
-            <GoBack to={"/store"} />
+            <GoBack to="/store" />
             <StyledCartDiv>
                 {cart.length > 0 ? (
                     cart.map((item, idx) => (

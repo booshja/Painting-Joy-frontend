@@ -1,6 +1,8 @@
 // dependencies
 import React from "react";
 import styled from "styled-components";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledTitle = styled.h1`
     text-align: center;
@@ -10,6 +12,8 @@ const StyledTitle = styled.h1`
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1rem 0;
+
+    ${breakpoints("font-size", "rem", [{ 414: 2.8 }])}
 `;
 
 const PageTitle = ({ children }) => {

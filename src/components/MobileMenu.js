@@ -8,6 +8,8 @@ import Clouds from "../assets/wall_image_complete.jpg";
 // context
 import MenuContext from "../context/MenuContext";
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledMenu = styled.nav`
     background-image: url(${Clouds});
@@ -42,6 +44,8 @@ const StyledLink = styled(NavLink)`
     &.active {
         font-weight: 700;
     }
+
+    ${breakpoints("font-size", "rem", [{ 414: 2.4 }, { 768: 3 }])}
 `;
 
 const MenuWrapper = styled.div`

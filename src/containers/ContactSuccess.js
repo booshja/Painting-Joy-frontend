@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GoBack, PageTitle } from "../components";
 // assets
 import MailSuccess from "../assets/jess-moe-PbUzvmAmXmk-unsplash.jpg";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledContactSuccess = styled.div`
     display: flex;
@@ -15,9 +17,12 @@ const StyledContactSuccess = styled.div`
 const StyledMessage = styled.p`
     font-family: "News Cycle", sans-serif;
     width: 90%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
     letter-spacing: 1px;
     text-align: center;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledImg = styled.img`

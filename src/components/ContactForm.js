@@ -6,11 +6,15 @@ import ReCAPTCHA from "react-google-recaptcha";
 // hooks
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    ${breakpoints("width", "%", [{ 414: 90 }])}
 `;
 
 const StyledLabel = styled.label`
@@ -27,6 +31,8 @@ const StyledInput = styled.input`
     font-size: 1.4rem;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
+
+    ${breakpoints("width", "%", [{ 414: 95 }])}
 `;
 
 const StyledField = styled.textarea`
@@ -37,6 +43,8 @@ const StyledField = styled.textarea`
     letter-spacing: 1px;
     margin-bottom: 1rem;
     resize: none;
+
+    ${breakpoints("width", "%", [{ 414: 95 }])}
 `;
 
 const StyledButton = styled.button`
@@ -57,6 +65,8 @@ const StyledButton = styled.button`
         background-color: #ffffff;
         color: #207070;
     }
+
+    ${breakpoints("margin-right", "rem", [{ 414: 0.7 }])}
 `;
 
 const StyledError = styled.p`

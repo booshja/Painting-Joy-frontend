@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const StyledLink = styled(Link)`
     font-family: "News Cycle", sans-serif;
     font-size: 1.4rem;
-    line-height: 2rem;
+    line-height: 1.2;
     font-weight: 700;
     color: #207070;
     text-decoration: none;

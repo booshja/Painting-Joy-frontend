@@ -1,6 +1,5 @@
 // dependencies
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -11,14 +10,18 @@ import {
     LoadingSpinner,
     PageTitle,
 } from "../components";
+// hooks
+import { useHistory } from "react-router-dom";
 // context
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
-const StyledCheckout = styled.main`
+const StyledCheckout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 45vh;
+    min-height: 100vh;
     padding: 2rem 0 3rem 0;
 `;
 
@@ -75,6 +78,8 @@ const StyledStripeForm = styled.form`
         0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
     border-radius: 7px;
     padding: 20px;
+
+    ${breakpoints("width", "%", [{ 768: 80 }])}
 `;
 
 const StyledCardElement = styled(CardElement)`
@@ -167,6 +172,8 @@ const StyledP = styled.p`
     width: 85%;
     line-height: 1.2;
     margin-bottom: 2rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledLink = styled.a`

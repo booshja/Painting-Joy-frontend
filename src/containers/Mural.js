@@ -1,35 +1,20 @@
 // dependencies
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 // components
 import { GoBack, LoadingSpinner } from "../components";
 import { Link } from "react-router-dom";
+// hooks
+import { useParams } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
-const StyledMural = styled.main`
+const StyledMural = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 50vh;
-`;
-
-const StyledDisplayImg = styled.img`
-    width: 90%;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const StyledSelectContainer = styled.div`
-    display: flex;
-    align-items: baseline;
-    align-self: flex-start;
-    margin: 0 0 0.5rem 5%;
-`;
-
-const StyledSelectImg = styled.img`
-    height: 50px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
 `;
 
 const StyledTitle = styled.h1`
@@ -38,6 +23,32 @@ const StyledTitle = styled.h1`
     font-size: 1.8rem;
     margin-bottom: 0.75rem;
     text-align: center;
+
+    ${breakpoints("font-size", "rem", [{ 414: 2.2 }])}
+`;
+
+const StyledDisplayImg = styled.img`
+    width: 90%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
+`;
+
+const StyledSelectContainer = styled.div`
+    display: flex;
+    align-items: baseline;
+    align-self: flex-start;
+    margin: 0 0 0.5rem 5%;
+
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
+`;
+
+const StyledSelectImg = styled.img`
+    height: 50px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+
+    ${breakpoints("height", "px", [{ 414: 75 }])}
 `;
 
 const StyledDescription = styled.p`
@@ -45,6 +56,8 @@ const StyledDescription = styled.p`
     font-size: 1.2rem;
     text-align: center;
     margin: 0.75rem 5% 1rem 5%;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.6 }])}
 `;
 
 const StyledBar = styled.div`
@@ -61,6 +74,8 @@ const StyledLink = styled(Link)`
     text-align: center;
     color: #207070;
     margin-bottom: 2rem;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const Mural = () => {

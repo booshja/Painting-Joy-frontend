@@ -2,11 +2,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+// hooks
 import { useHistory, useParams } from "react-router-dom";
 // components
 import { GoBack, LoadingSpinner } from "../components";
 // context
 import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledStoreItem = styled.div`
     display: flex;
@@ -14,10 +17,14 @@ const StyledStoreItem = styled.div`
     align-items: center;
     padding: 0 5%;
     min-height: 45vh;
+
+    ${breakpoints("padding-bottom", "rem", [{ 1024: 2 }])}
 `;
 
 const StyledImg = styled.img`
     width: 100%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const StyledTitle = styled.h1`
@@ -27,6 +34,8 @@ const StyledTitle = styled.h1`
     font-weight: 700;
     align-self: flex-start;
     margin: 1rem 0;
+
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StyledText = styled.p`
@@ -35,9 +44,12 @@ const StyledText = styled.p`
     letter-spacing: 1px;
     align-self: flex-start;
     text-align: left;
-    line-height: 2rem;
+    line-height: 1.2;
     margin-bottom: 1rem;
     width: 90%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StyledButton = styled.button`
@@ -56,6 +68,9 @@ const StyledButton = styled.button`
         color: #207070;
         background-color: #ffffff;
     }
+
+    ${breakpoints("font-size", "rem", [{ 768: 1.4 }])}
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StoreItem = () => {

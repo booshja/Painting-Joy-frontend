@@ -57,40 +57,36 @@ const AdminMobileMenu = () => {
                     Dashboard
                 </StyledLink>
                 <StyledLink
-                    exact
                     to="/admin/murals"
                     onClick={() => setMenuOpen(false)}
                 >
                     Murals
                 </StyledLink>
                 <StyledLink
-                    exact
                     to="/admin/messages"
                     onClick={() => setMenuOpen(false)}
                 >
                     Messages
                 </StyledLink>
                 <StyledLink
-                    exact
                     to="/admin/items"
                     onClick={() => setMenuOpen(false)}
                 >
                     Store Items
                 </StyledLink>
                 <StyledLink
-                    exact
                     to="/admin/orders"
                     onClick={() => setMenuOpen(false)}
                 >
                     Orders
                 </StyledLink>
-                <StyledLink
+                {/* <StyledLink
                     exact
                     to="/admin/reporting"
                     onClick={() => setMenuOpen(false)}
                 >
                     Reporting
-                </StyledLink>
+                </StyledLink> */}
                 {/* <StyledLink
                     exact
                     to="/admin/ig-edit"

@@ -23,8 +23,8 @@ const NavFooter = () => {
         <StyledNav>
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/murals">Murals</StyledLink>
-            <StyledLink to="/more-art">More Art</StyledLink>
-            <StyledLink to="/contact-me">Contact Me</StyledLink>
+            {/* <StyledLink to="/more-art">More Art</StyledLink> */}
+            <StyledLink to="/contact">Contact</StyledLink>
             <StyledLink to="/store">Store</StyledLink>
         </StyledNav>
     );

@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { GoBack, PageTitle } from "../components";
 // assets
 import OopsImg from "../assets/received_2960958014233084.jpeg";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledCheckoutCancel = styled.div`
     display: flex;
@@ -19,10 +21,14 @@ const StyledP = styled.p`
     letter-spacing: 1px;
     width: 80%;
     line-height: 1.2;
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.4 }])}
 `;
 
 const StyledImg = styled.img`
     width: 80%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const CheckoutCancel = () => {

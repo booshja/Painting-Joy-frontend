@@ -1,8 +1,8 @@
 // dependencies
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { loadStripe } from "@stripe/stripe-js";
+import styled from "styled-components";
 // components
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 // containers
 import {
@@ -31,11 +31,20 @@ import {
     Store,
     StoreItem,
 } from "./containers";
+// hooks
+import { loadStripe } from "@stripe/stripe-js";
+// breakpoints
+import { breakpoints } from "./breakpoints";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
+const StyledBackground = styled.div`
+    ${breakpoints("background-color", "", [{ 1024: "#ffffff" }])}
+    ${breakpoints("width", "%", [{ 1024: 75 }])}
+`;
+
 const Router = () => (
-    <>
+    <StyledBackground>
         <BrowserRouter>
             <Switch>
                 <PublicRoute exact path="/">
@@ -117,7 +126,7 @@ const Router = () => (
                 </Route> */}
             </Switch>
         </BrowserRouter>
-    </>
+    </StyledBackground>
 );
 
 export default Router;

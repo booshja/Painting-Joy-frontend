@@ -12,11 +12,17 @@ const StyledLink = styled(ReactNavLink)`
 
     &.active {
         font-weight: 700;
+        font-size: 1.5rem;
+        color: #207070;
     }
 `;
 
-const NavLink = ({ name }) => {
-    return <StyledLink to={`/${name}`}>{name}</StyledLink>;
+const NavLink = ({ to, name }) => {
+    return (
+        <StyledLink exact={to === "/" ? true : false} to={`${to}`}>
+            {name}
+        </StyledLink>
+    );
 };
 
 export default NavLink;

@@ -17,10 +17,14 @@ const StyledStoreItem = styled.div`
     align-items: center;
     padding: 0 5%;
     min-height: 45vh;
+
+    ${breakpoints("padding-bottom", "rem", [{ 1024: 2 }])}
 `;
 
 const StyledImg = styled.img`
     width: 100%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const StyledTitle = styled.h1`
@@ -30,6 +34,8 @@ const StyledTitle = styled.h1`
     font-weight: 700;
     align-self: flex-start;
     margin: 1rem 0;
+
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StyledText = styled.p`
@@ -41,6 +47,9 @@ const StyledText = styled.p`
     line-height: 1.2;
     margin-bottom: 1rem;
     width: 90%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StyledButton = styled.button`
@@ -61,6 +70,7 @@ const StyledButton = styled.button`
     }
 
     ${breakpoints("font-size", "rem", [{ 768: 1.4 }])}
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StoreItem = () => {

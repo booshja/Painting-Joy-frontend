@@ -1,24 +1,35 @@
 // dependencies
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 // components
-import { NavLink } from "./index";
+import NavLink from "./NavLink";
+// context
+import CartContext from "../context/CartContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledNav = styled.nav`
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0;
+    width: 55%;
+
+    ${breakpoints("display", "", [{ 1024: "flex" }])}
 `;
 
 const Navbar = () => {
+    // set up context
+    const { cart } = useContext(CartContext);
+
     return (
         <StyledNav>
-            <NavLink name="Home" />
-            <NavLink name="Murals" />
-            <NavLink name="More Art" />
-            <NavLink name="Contact Me" />
-            <NavLink name="Store" />
+            <NavLink to="/" name="Home" />
+            <NavLink to="/murals" name="Murals" />
+            {/* <NavLink to="/more-art" name="More Art" /> */}
+            <NavLink to="/contact" name="Contact" />
+            <NavLink to="/store" name="Store" />
+            <NavLink to="/cart" name={`Cart (${cart.length})`} />
         </StyledNav>
     );
 };

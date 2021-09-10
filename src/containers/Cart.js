@@ -26,6 +26,8 @@ const StyledCartDiv = styled.div`
     border: 2px solid #207070;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 1rem;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const StyledLink = styled(Link)`
@@ -49,6 +51,8 @@ const TotalDiv = styled.div`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     align-self: flex-end;
     margin-bottom: 1rem;
+
+    ${breakpoints("margin-right", "%", [{ 1024: 15 }])}
 `;
 
 const TotalText = styled.p`
@@ -83,6 +87,7 @@ const StyledButton = styled.button`
     }
 
     ${breakpoints("font-size", "rem", [{ 414: 1.4 }, { 768: 1.6 }])}
+    ${breakpoints("margin-right", "%", [{ 1024: 15 }])}
 `;
 
 const Cart = () => {
@@ -161,7 +166,7 @@ const Cart = () => {
 
     return (
         <StyledCart>
-            <GoBack to={"/store"} />
+            <GoBack to="/store" />
             <StyledCartDiv>
                 {cart.length > 0 ? (
                     cart.map((item, idx) => (

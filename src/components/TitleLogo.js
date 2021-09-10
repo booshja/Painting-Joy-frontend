@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 // components
+import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 // assets
 import Logo from "../assets/Rainbow-logo_not_final.png";
@@ -13,6 +14,8 @@ const StyledTitleLogo = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+
+    ${breakpoints("margin-top", "", [{ 1024: 0 }])}
 `;
 
 const StyledTitle = styled.h1`
@@ -39,6 +42,7 @@ const TitleLogo = () => {
                 <StyledLogo src={Logo} alt="Painting Joy Mural Co. Logo" />
             </Link>
             <StyledTitle>Painting Joy Mural Co.</StyledTitle>
+            <Navbar />
         </StyledTitleLogo>
     );
 };

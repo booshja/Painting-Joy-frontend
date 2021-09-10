@@ -27,6 +27,8 @@ const StyledP = styled.p`
 
 const StyledImg = styled.img`
     width: 80%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const CheckoutCancel = () => {

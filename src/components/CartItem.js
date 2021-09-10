@@ -31,7 +31,11 @@ const StyledTitle = styled.p`
     letter-spacing: 1px;
     margin-bottom: 1rem;
 
-    ${breakpoints("font-size", "rem", [{ 414: 1.4 }, { 768: 2 }])}
+    ${breakpoints("font-size", "rem", [
+        { 414: 1.4 },
+        { 768: 2 },
+        { 1024: 1.6 },
+    ])}
 `;
 
 const StyledText = styled.p`
@@ -40,7 +44,11 @@ const StyledText = styled.p`
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
 
-    ${breakpoints("font-size", "rem", [{ 414: 1.2 }, { 768: 1.6 }])}
+    ${breakpoints("font-size", "rem", [
+        { 414: 1.2 },
+        { 768: 1.6 },
+        { 1024: 1.4 },
+    ])}
 `;
 
 const StyledRemove = styled.button`
@@ -53,7 +61,11 @@ const StyledRemove = styled.button`
     background-color: transparent;
     padding: 0;
 
-    ${breakpoints("font-size", "rem", [{ 414: 1.2 }, { 768: 1.6 }])}
+    ${breakpoints("font-size", "rem", [
+        { 414: 1.2 },
+        { 768: 1.6 },
+        { 1024: 1.4 },
+    ])}
 `;
 
 const CartItem = ({ item }) => {

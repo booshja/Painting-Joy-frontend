@@ -17,11 +17,11 @@ import CartContext from "../context/CartContext";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
-const StyledCheckout = styled.main`
+const StyledCheckout = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 45vh;
+    min-height: 100vh;
     padding: 2rem 0 3rem 0;
 `;
 

@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 // hooks
 import { useParams } from "react-router-dom";
 // breakpoints
-import { breakpoints, breakpointValues } from "../breakpoints";
+import { breakpoints } from "../breakpoints";
 
-const StyledMural = styled.main`
+const StyledMural = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +30,8 @@ const StyledTitle = styled.h1`
 const StyledDisplayImg = styled.img`
     width: 90%;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const StyledSelectContainer = styled.div`
@@ -37,6 +39,8 @@ const StyledSelectContainer = styled.div`
     align-items: baseline;
     align-self: flex-start;
     margin: 0 0 0.5rem 5%;
+
+    ${breakpoints("margin-left", "%", [{ 1024: 15 }])}
 `;
 
 const StyledSelectImg = styled.img`

@@ -7,12 +7,14 @@ import { AboutMe, LoadingSpinner, NewDisplay } from "../components";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
-const StyledHomepage = styled.main`
+const StyledHomepage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
     min-height: 42vh;
+
+    ${breakpoints("margin-top", "", [{ 1024: 0 }])}
 `;
 
 const StyledNewDisplayContainer = styled.div`

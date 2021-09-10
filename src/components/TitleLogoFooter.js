@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 // components
 import { Link } from "react-router-dom";
+// assets
 import Logo from "../assets/Rainbow-logo_not_final.png";
 
 const StyledTitleLogo = styled.div`
@@ -20,8 +21,8 @@ const StyledTitle = styled.h1`
 `;
 
 const StyledLogo = styled.img`
-    width: 300px;
-    height: 200px;
+    width: 150px;
+    height: 100px;
 `;
 
 const TitleLogoFooter = () => {

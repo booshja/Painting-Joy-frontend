@@ -4,6 +4,8 @@ import styled from "styled-components";
 // components
 import { Burger, MobileMenu } from "../components";
 import { Link } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -12,6 +14,8 @@ const StyledHeader = styled.header`
     height: 60px;
     padding: 0 1rem;
     border-bottom: 1px solid #207070;
+
+    ${breakpoints("display", "", [{ 1024: "none" }])}
 `;
 
 const StyledLink = styled(Link)`

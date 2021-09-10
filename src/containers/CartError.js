@@ -27,6 +27,8 @@ const StyledP = styled.div`
 
 const StyledImg = styled.img`
     width: 80%;
+
+    ${breakpoints("width", "%", [{ 1024: 70 }])}
 `;
 
 const CartError = () => {

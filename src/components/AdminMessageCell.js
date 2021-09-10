@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { StyledOutlineButton } from "../containers/styles/adminButtons";
 import { StyledP } from "../containers/styles/adminTypography";
 import { StyledCell } from "../containers/styles/adminContainers";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledInlineBlockP = styled(StyledP)`
     display: inline-block;
@@ -19,9 +21,11 @@ const StyledBoldP = styled(StyledInlineBlockP)`
 const StyledButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    width: ${(props) => (props.showArchived ? "63%" : "55%")};
+    width: 60%;
     align-self: flex-end;
     margin: 1rem 0 0;
+
+    ${breakpoints("width", "%", [{ 414: 50 }])}
 `;
 
 const AdminMessageCell = ({
@@ -44,7 +48,7 @@ const AdminMessageCell = ({
                         color="#a1c9c9"
                         onClick={() => handleUnArchive(id)}
                     >
-                        Unarchive
+                        Activate
                     </StyledOutlineButton>
                 ) : (
                     <StyledOutlineButton

@@ -39,8 +39,10 @@ import { breakpoints } from "./breakpoints";
 const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
 const StyledBackground = styled.div`
+    max-width: 780px;
+
     ${breakpoints("background-color", "", [{ 1024: "#ffffff" }])}
-    ${breakpoints("width", "%", [{ 1024: 75 }])}
+    ${breakpoints("width", "px", [{ 1024: 770 }])}
 `;
 
 const Router = () => (

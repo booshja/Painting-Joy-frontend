@@ -180,7 +180,13 @@ const AdminOrder = () => {
                             {item.name}
                         </StyledOrderP>
                         <StyledOrderP>
-                            <StyledBold>Amount: </StyledBold>$
+                            <StyledBold>Price: </StyledBold>${item.price}
+                        </StyledOrderP>
+                        <StyledOrderP>
+                            <StyledBold>Shipping: </StyledBold>${item.shipping}
+                        </StyledOrderP>
+                        <StyledOrderP>
+                            <StyledBold>Item Total: </StyledBold>$
                             {(+item.price + +item.shipping).toFixed(2)}
                         </StyledOrderP>
                     </StyledDetailCell>

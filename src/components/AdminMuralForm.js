@@ -8,6 +8,8 @@ import {
 } from "../containers/styles/adminButtons";
 // hooks
 import { useForm } from "react-hook-form";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledForm = styled.form`
     display: flex;
@@ -63,6 +65,8 @@ const StyledButtonContainer = styled.div`
     align-self: flex-end;
     width: 65%;
     align-items: center;
+
+    ${breakpoints("width", "%", [{ 414: 55 }])}
 `;
 
 const AdminMuralForm = ({

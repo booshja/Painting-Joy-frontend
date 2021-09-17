@@ -1,11 +1,14 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 // components
 import { AdminOrderCell, AdminPageTitle, LoadingSpinner } from "../components";
+import AdminHeader from "./AdminHeader";
 // hooks
 import { useHistory } from "react-router";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminOrders = styled.div`
     display: flex;
@@ -30,6 +33,8 @@ const AdminOrders = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -87,20 +92,28 @@ const AdminOrders = () => {
             </StyledAdminOrders>
         );
 
-    return (
-        <StyledAdminOrders>
-            <AdminPageTitle>Orders</AdminPageTitle>
-            <StyledOrdersContainer>
-                {orders.map((order) => (
-                    <AdminOrderCell
-                        key={order.id}
-                        data={order}
-                        handleMarkShipped={handleMarkShipped}
-                        handleMarkComplete={handleMarkComplete}
-                    />
-                ))}
-            </StyledOrdersContainer>
-        </StyledAdminOrders>
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            {" "}
+            <AdminHeader />
+            <main>
+                <StyledAdminOrders>
+                    <AdminPageTitle>Orders</AdminPageTitle>
+                    <StyledOrdersContainer>
+                        {orders.map((order) => (
+                            <AdminOrderCell
+                                key={order.id}
+                                data={order}
+                                handleMarkShipped={handleMarkShipped}
+                                handleMarkComplete={handleMarkComplete}
+                            />
+                        ))}
+                    </StyledOrdersContainer>
+                </StyledAdminOrders>
+            </main>
+        </>
     );
 };
 

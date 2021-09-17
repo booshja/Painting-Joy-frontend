@@ -1,5 +1,5 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
@@ -10,10 +10,14 @@ import {
     AdminPageTitle,
     LoadingSpinner,
 } from "../components";
+import AdminHeader from "./AdminHeader";
 import { StyledP } from "./styles/adminTypography";
 import { Link } from "react-router-dom";
 // hooks
 import { useHistory } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminDashboard = styled.div`
     display: flex;
@@ -76,6 +80,10 @@ const AdminDashboard = () => {
     const [step, setStep] = useState(0);
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading } = useAuth0();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -161,58 +169,75 @@ const AdminDashboard = () => {
         history.go(0);
     };
 
-    if (loading)
+    if (loading || isLoading)
         return (
             <StyledAdminDashboard>
                 <LoadingSpinner />
             </StyledAdminDashboard>
         );
 
-    return (
-        <StyledAdminDashboard>
-            <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
-            <AdminDashCell title="Murals" linkTo="/admin/murals" footer={true}>
-                {murals.map((mural) => (
-                    <StyledCellP key={mural.id}>{mural.title}</StyledCellP>
-                ))}
-            </AdminDashCell>
-            <AdminDashCell title="Edit Homepage" footer={false}>
-                {error && <StyledError>{error}</StyledError>}
-                {step === 0 && (
-                    <AdminHomepageForm
-                        preloadedValues={{
-                            ...homepage,
-                        }}
-                        handleDataSubmit={handleDataSubmit}
-                        setStep={setStep}
-                    />
-                )}
-                {step === 1 && (
-                    <AdminHomepageImageForm
-                        setStep={setStep}
-                        handleImageSubmit={handleImageSubmit}
-                        image={
-                            process.env.REACT_APP_BACKEND_URL +
-                            `homepage/image/`
-                        }
-                    />
-                )}
-            </AdminDashCell>
-            <AdminDashCell title="Orders" linkTo="/admin/orders" footer={true}>
-                <StyledOrderContainer>
-                    <StyledBoldP>Order ID:</StyledBoldP>
-                    <StyledBoldP>Status:</StyledBoldP>
-                </StyledOrderContainer>
-                {orders.map((order) => (
-                    <StyledOrderContainer key={order.id}>
-                        <StyledLink to={`/admin/orders/${order.id}`}>
-                            {order.transactionId}
-                        </StyledLink>
-                        <StyledP>{order.status}</StyledP>
-                    </StyledOrderContainer>
-                ))}
-            </AdminDashCell>
-        </StyledAdminDashboard>
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            <AdminHeader />
+            <main>
+                <StyledAdminDashboard>
+                    <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
+                    <AdminDashCell
+                        title="Murals"
+                        linkTo="/admin/murals"
+                        footer={true}
+                    >
+                        {murals.map((mural) => (
+                            <StyledCellP key={mural.id}>
+                                {mural.title}
+                            </StyledCellP>
+                        ))}
+                    </AdminDashCell>
+                    <AdminDashCell title="Edit Homepage" footer={false}>
+                        {error && <StyledError>{error}</StyledError>}
+                        {step === 0 && (
+                            <AdminHomepageForm
+                                preloadedValues={{
+                                    ...homepage,
+                                }}
+                                handleDataSubmit={handleDataSubmit}
+                                setStep={setStep}
+                            />
+                        )}
+                        {step === 1 && (
+                            <AdminHomepageImageForm
+                                setStep={setStep}
+                                handleImageSubmit={handleImageSubmit}
+                                image={
+                                    process.env.REACT_APP_BACKEND_URL +
+                                    `homepage/image/`
+                                }
+                            />
+                        )}
+                    </AdminDashCell>
+                    <AdminDashCell
+                        title="Orders"
+                        linkTo="/admin/orders"
+                        footer={true}
+                    >
+                        <StyledOrderContainer>
+                            <StyledBoldP>Order ID:</StyledBoldP>
+                            <StyledBoldP>Status:</StyledBoldP>
+                        </StyledOrderContainer>
+                        {orders.map((order) => (
+                            <StyledOrderContainer key={order.id}>
+                                <StyledLink to={`/admin/orders/${order.id}`}>
+                                    {order.transactionId}
+                                </StyledLink>
+                                <StyledP>{order.status}</StyledP>
+                            </StyledOrderContainer>
+                        ))}
+                    </AdminDashCell>
+                </StyledAdminDashboard>
+            </main>
+        </>
     );
 };
 

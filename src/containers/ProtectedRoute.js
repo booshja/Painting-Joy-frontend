@@ -1,30 +1,62 @@
 // dependencies
-import React, { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
+import React from "react";
+import styled from "styled-components";
 // components
-import { AdminHeader } from "./";
-// context
-// import AdminContext from "../context/AdminContext";
-import MenuContext from "../context/MenuContext";
+import { Route, Redirect } from "react-router-dom";
+import { LoadingSpinner } from "../components";
+// hooks
+import { useAuth0 } from "@auth0/auth0-react";
+
+const StyledContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+// const ProtectedRoute = ({ component, ...args }) => {
+//     // set up context
+//     const { menuOpen } = useContext(MenuContext);
+
+//     return menuOpen ? (
+//         <AdminHeader />
+//     ) : (
+//         <>
+//             <AdminHeader />
+//             <main>
+//                 <Route
+//                     {...args}
+//                     render={(props) => {
+//                         const Comp = withAuthenticationRequired(component, {
+//                             onRedirecting: () => (
+//                                 <StyledContainer>
+//                                     <LoadingSpinner />
+//                                 </StyledContainer>
+//                             ),
+//                         });
+//                         return <Comp {...props} />;
+//                     }}
+//                 />
+//             </main>
+//         </>
+//     );
+// };
 
 const ProtectedRoute = ({ children, ...rest }) => {
-    // set up context
-    // const { admin } = useContext(AdminContext);
-    const { menuOpen } = useContext(MenuContext);
+    const { isAuthenticated, isLoading } = useAuth0();
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            <AdminHeader />
-            <main>
-                {/* <Route
-                    {...rest}
-                    render={() => (admin ? children : <Redirect to="/" />)}
-                /> */}
-                <Route {...rest} render={() => children} />
-            </main>
-        </>
+    if (isLoading)
+        return (
+            <StyledContainer>
+                <LoadingSpinner />
+            </StyledContainer>
+        );
+
+    return (
+        <Route {...rest}>
+            {isAuthenticated ? children : <Redirect to="/admin/login" />}
+        </Route>
     );
 };
 

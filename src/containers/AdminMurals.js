@@ -1,9 +1,10 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 // components
 import { AdminMuralCell, AdminPageTitle, LoadingSpinner } from "../components";
+import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -11,6 +12,8 @@ import {
 import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminMurals = styled.div`
     display: flex;
@@ -47,6 +50,8 @@ const AdminMurals = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -129,50 +134,59 @@ const AdminMurals = () => {
             </StyledAdminMurals>
         );
 
-    return (
-        <StyledAdminMurals>
-            <AdminPageTitle>Murals</AdminPageTitle>
-            <StyledButtonContainer>
-                <StyledGreenSoloButton
-                    onClick={() => history.push("/admin/murals/new")}
-                >
-                    Add New Mural
-                </StyledGreenSoloButton>
-                <StyledOutlineBtn
-                    color="#207070"
-                    onClick={() => handleShowArchived()}
-                >
-                    {showArchived ? "See Active Murals" : "See Archived Murals"}
-                </StyledOutlineBtn>
-            </StyledButtonContainer>
-            <StyledMuralsContainer>
-                {showArchived
-                    ? archivedMurals.map((mural) => (
-                          <AdminMuralCell
-                              key={mural.id}
-                              data={mural}
-                              handleUnArchive={handleUnArchive}
-                              handleDelete={handleDelete}
-                              showArchived={showArchived}
-                          />
-                      ))
-                    : activeMurals.map((mural) => (
-                          <AdminMuralCell
-                              key={mural.id}
-                              data={mural}
-                              handleArchive={handleArchive}
-                              handleDelete={handleDelete}
-                              showArchived={showArchived}
-                          />
-                      ))}
-                {showArchived && archivedMurals.length === 0 && (
-                    <StyledP>No archived murals!</StyledP>
-                )}
-                {!showArchived && activeMurals.length === 0 && (
-                    <StyledP>No active murals!</StyledP>
-                )}
-            </StyledMuralsContainer>
-        </StyledAdminMurals>
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            <AdminHeader />
+            <main>
+                <StyledAdminMurals>
+                    <AdminPageTitle>Murals</AdminPageTitle>
+                    <StyledButtonContainer>
+                        <StyledGreenSoloButton
+                            onClick={() => history.push("/admin/murals/new")}
+                        >
+                            Add New Mural
+                        </StyledGreenSoloButton>
+                        <StyledOutlineBtn
+                            color="#207070"
+                            onClick={() => handleShowArchived()}
+                        >
+                            {showArchived
+                                ? "See Active Murals"
+                                : "See Archived Murals"}
+                        </StyledOutlineBtn>
+                    </StyledButtonContainer>
+                    <StyledMuralsContainer>
+                        {showArchived
+                            ? archivedMurals.map((mural) => (
+                                  <AdminMuralCell
+                                      key={mural.id}
+                                      data={mural}
+                                      handleUnArchive={handleUnArchive}
+                                      handleDelete={handleDelete}
+                                      showArchived={showArchived}
+                                  />
+                              ))
+                            : activeMurals.map((mural) => (
+                                  <AdminMuralCell
+                                      key={mural.id}
+                                      data={mural}
+                                      handleArchive={handleArchive}
+                                      handleDelete={handleDelete}
+                                      showArchived={showArchived}
+                                  />
+                              ))}
+                        {showArchived && archivedMurals.length === 0 && (
+                            <StyledP>No archived murals!</StyledP>
+                        )}
+                        {!showArchived && activeMurals.length === 0 && (
+                            <StyledP>No active murals!</StyledP>
+                        )}
+                    </StyledMuralsContainer>
+                </StyledAdminMurals>
+            </main>
+        </>
     );
 };
 

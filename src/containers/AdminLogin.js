@@ -7,13 +7,15 @@ import { AdminHeader } from "../containers";
 import { Redirect } from "react-router-dom";
 // context
 import { useAuth0 } from "@auth0/auth0-react";
-// hooks
-import { useHistory } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminLogin = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${breakpoints("padding", "", [{ 1024: "0 25%" }])}
 `;
 const StyledP = styled.p`
     text-align: center;
@@ -38,13 +40,14 @@ const StyledLoginButton = styled.button`
         background-color: #ffffff;
         color: #207070;
     }
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.6 }])}
+    ${breakpoints("padding", "", [{ 414: "2.5px 10px" }])}
 `;
 
 const AdminLogin = () => {
     // set up auth context
     const { loginWithRedirect, isLoading, isAuthenticated } = useAuth0();
-    // set up history
-    const history = useHistory();
 
     if (isLoading)
         return (

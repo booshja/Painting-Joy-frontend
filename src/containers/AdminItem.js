@@ -1,9 +1,10 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
 import { AdminItemForm, AdminPageTitle, LoadingSpinner } from "../components";
+import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -12,6 +13,9 @@ import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminItem = styled.div`
     display: flex;
@@ -87,9 +91,14 @@ const AdminItem = ({ variant }) => {
     } = useForm();
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
+
         async function getItemData() {
             // on component mount get Item data if editing
             setLoading(true);
@@ -120,6 +129,8 @@ const AdminItem = ({ variant }) => {
         // on form submit, send data to API, move to next step
         setLoading(true);
         try {
+            const token = await getAccessTokenSilently();
+
             if (variant === "Add") {
                 const res = await axios.post(
                     process.env.REACT_APP_BACKEND_URL + "items/",
@@ -130,6 +141,11 @@ const AdminItem = ({ variant }) => {
                         price: +data.price,
                         shipping: +data.shipping,
                         isSold: data.shipping > 0 ? false : true,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
                     }
                 );
                 const id = res.data.item.id;
@@ -145,6 +161,11 @@ const AdminItem = ({ variant }) => {
                         price: +data.price,
                         shipping: +data.shipping,
                         isSold: data.shipping > 0 ? false : true,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
                     }
                 );
                 setError(null);
@@ -167,9 +188,16 @@ const AdminItem = ({ variant }) => {
         let res;
 
         try {
+            const token = await getAccessTokenSilently();
+
             res = await axios.post(
                 process.env.REACT_APP_BACKEND_URL + `items/upload/${itemId}`,
-                formData
+                formData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
             history.push("/admin/items");
         } catch (err) {
@@ -191,8 +219,15 @@ const AdminItem = ({ variant }) => {
         // push admin to Admin Items page
         setLoading(true);
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.delete(
-                process.env.REACT_APP_BACKEND_URL + `items/delete/${itemId}`
+                process.env.REACT_APP_BACKEND_URL + `items/delete/${itemId}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
             history.push("/admin/items");
         } catch (err) {
@@ -209,67 +244,78 @@ const AdminItem = ({ variant }) => {
             </StyledAdminItem>
         );
 
-    return (
-        <StyledAdminItem>
-            <AdminPageTitle>{variant} Item</AdminPageTitle>
-            {step > 0 && <StyledText>Upload Photo</StyledText>}
-            {error && <StyledError>{error}</StyledError>}
-            {step === 0 && variant === "Add" && (
-                <AdminItemForm
-                    handleDataSubmit={handleDataSubmit}
-                    handleCancel={handleCancel}
-                    variant={variant}
-                />
-            )}
-            {step === 0 && variant === "Edit" && (
-                <AdminItemForm
-                    handleDataSubmit={handleDataSubmit}
-                    handleCancel={handleCancel}
-                    variant={variant}
-                    preloadedValues={preloadedValues}
-                />
-            )}
-            {step > 0 && (
-                <>
-                    <StyledUploadForm
-                        onSubmit={handleSubmit(handleImageSubmit)}
-                    >
-                        <StyledUploadInput
-                            type="file"
-                            id="upload"
-                            name="upload"
-                            {...register("upload", {
-                                required: "Image is required",
-                            })}
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            {" "}
+            <AdminHeader />{" "}
+            <main>
+                <StyledAdminItem>
+                    <AdminPageTitle>{variant} Item</AdminPageTitle>
+                    {step > 0 && <StyledText>Upload Photo</StyledText>}
+                    {error && <StyledError>{error}</StyledError>}
+                    {step === 0 && variant === "Add" && (
+                        <AdminItemForm
+                            handleDataSubmit={handleDataSubmit}
+                            handleCancel={handleCancel}
+                            variant={variant}
                         />
-                        <StyledSubmitBtn>Submit</StyledSubmitBtn>
-                        {variant === "Edit" && (
-                            <StyledContinueBtn
-                                onClick={handleContinue}
-                                color="#207070"
+                    )}
+                    {step === 0 && variant === "Edit" && (
+                        <AdminItemForm
+                            handleDataSubmit={handleDataSubmit}
+                            handleCancel={handleCancel}
+                            variant={variant}
+                            preloadedValues={preloadedValues}
+                        />
+                    )}
+                    {step > 0 && (
+                        <>
+                            <StyledUploadForm
+                                onSubmit={handleSubmit(handleImageSubmit)}
                             >
-                                Keep Image
-                            </StyledContinueBtn>
-                        )}
-                        <StyledCancelBtn color="#db9487" onClick={handleCancel}>
-                            Cancel (Deletes Item)
-                        </StyledCancelBtn>
-                    </StyledUploadForm>
-                </>
-            )}
-            {step === 1 && variant === "Edit" && (
-                <>
-                    <StyledText>Current Image:</StyledText>
-                    <StyledImg
-                        src={
-                            process.env.REACT_APP_BACKEND_URL +
-                            `items/item/${itemId}/image`
-                        }
-                        alt="Item"
-                    />
-                </>
-            )}
-        </StyledAdminItem>
+                                <StyledUploadInput
+                                    type="file"
+                                    id="upload"
+                                    name="upload"
+                                    {...register("upload", {
+                                        required: "Image is required",
+                                    })}
+                                />
+                                <StyledSubmitBtn>Submit</StyledSubmitBtn>
+                                {variant === "Edit" && (
+                                    <StyledContinueBtn
+                                        onClick={handleContinue}
+                                        color="#207070"
+                                    >
+                                        Keep Image
+                                    </StyledContinueBtn>
+                                )}
+                                <StyledCancelBtn
+                                    color="#db9487"
+                                    onClick={handleCancel}
+                                >
+                                    Cancel (Deletes Item)
+                                </StyledCancelBtn>
+                            </StyledUploadForm>
+                        </>
+                    )}
+                    {step === 1 && variant === "Edit" && (
+                        <>
+                            <StyledText>Current Image:</StyledText>
+                            <StyledImg
+                                src={
+                                    process.env.REACT_APP_BACKEND_URL +
+                                    `items/item/${itemId}/image`
+                                }
+                                alt="Item"
+                            />
+                        </>
+                    )}
+                </StyledAdminItem>
+            </main>
+        </>
     );
 };
 

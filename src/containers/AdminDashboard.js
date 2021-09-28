@@ -1,5 +1,5 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
@@ -10,10 +10,14 @@ import {
     AdminPageTitle,
     LoadingSpinner,
 } from "../components";
+import AdminHeader from "./AdminHeader";
 import { StyledP } from "./styles/adminTypography";
 import { Link } from "react-router-dom";
 // hooks
 import { useHistory } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminDashboard = styled.div`
     display: flex;
@@ -76,22 +80,43 @@ const AdminDashboard = () => {
     const [step, setStep] = useState(0);
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
         // on component mount, get data
         async function getData() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `murals/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 const orderRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `orders/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 const homepageRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `homepage/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 // set states
@@ -124,10 +149,20 @@ const AdminDashboard = () => {
         // on form submit, send data to API, reload page
         setLoading(true);
         try {
-            await axios.put(process.env.REACT_APP_BACKEND_URL + `homepage/`, {
-                greeting: data.greeting,
-                message: data.message,
-            });
+            const token = await getAccessTokenSilently();
+
+            await axios.put(
+                process.env.REACT_APP_BACKEND_URL + `homepage/`,
+                {
+                    greeting: data.greeting,
+                    message: data.message,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
             setStep(1);
             setLoading(false);
         } catch (err) {
@@ -147,9 +182,16 @@ const AdminDashboard = () => {
         let res;
 
         try {
+            const token = await getAccessTokenSilently();
+
             res = await axios.post(
                 process.env.REACT_APP_BACKEND_URL + `homepage/image`,
-                formData
+                formData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             setError(
@@ -158,61 +200,78 @@ const AdminDashboard = () => {
             console.log("Image upload error", err);
             setLoading(false);
         }
-        history.go(0);
+        if (loading) history.go(0);
     };
 
-    if (loading)
+    if (loading || isLoading)
         return (
             <StyledAdminDashboard>
                 <LoadingSpinner />
             </StyledAdminDashboard>
         );
 
-    return (
-        <StyledAdminDashboard>
-            <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
-            <AdminDashCell title="Murals" linkTo="/admin/murals" footer={true}>
-                {murals.map((mural) => (
-                    <StyledCellP key={mural.id}>{mural.title}</StyledCellP>
-                ))}
-            </AdminDashCell>
-            <AdminDashCell title="Edit Homepage" footer={false}>
-                {error && <StyledError>{error}</StyledError>}
-                {step === 0 && (
-                    <AdminHomepageForm
-                        preloadedValues={{
-                            ...homepage,
-                        }}
-                        handleDataSubmit={handleDataSubmit}
-                        setStep={setStep}
-                    />
-                )}
-                {step === 1 && (
-                    <AdminHomepageImageForm
-                        setStep={setStep}
-                        handleImageSubmit={handleImageSubmit}
-                        image={
-                            process.env.REACT_APP_BACKEND_URL +
-                            `homepage/image/`
-                        }
-                    />
-                )}
-            </AdminDashCell>
-            <AdminDashCell title="Orders" linkTo="/admin/orders" footer={true}>
-                <StyledOrderContainer>
-                    <StyledBoldP>Order ID:</StyledBoldP>
-                    <StyledBoldP>Status:</StyledBoldP>
-                </StyledOrderContainer>
-                {orders.map((order) => (
-                    <StyledOrderContainer key={order.id}>
-                        <StyledLink to={`/admin/orders/${order.id}`}>
-                            {order.transactionId}
-                        </StyledLink>
-                        <StyledP>{order.status}</StyledP>
-                    </StyledOrderContainer>
-                ))}
-            </AdminDashCell>
-        </StyledAdminDashboard>
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            <AdminHeader />
+            <main>
+                <StyledAdminDashboard>
+                    <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
+                    <AdminDashCell
+                        title="Murals"
+                        linkTo="/admin/murals"
+                        footer={true}
+                    >
+                        {murals.map((mural) => (
+                            <StyledCellP key={mural.id}>
+                                {mural.title}
+                            </StyledCellP>
+                        ))}
+                    </AdminDashCell>
+                    <AdminDashCell title="Edit Homepage" footer={false}>
+                        {error && <StyledError>{error}</StyledError>}
+                        {step === 0 && (
+                            <AdminHomepageForm
+                                preloadedValues={{
+                                    ...homepage,
+                                }}
+                                handleDataSubmit={handleDataSubmit}
+                                setStep={setStep}
+                            />
+                        )}
+                        {step === 1 && (
+                            <AdminHomepageImageForm
+                                setStep={setStep}
+                                handleImageSubmit={handleImageSubmit}
+                                image={
+                                    process.env.REACT_APP_BACKEND_URL +
+                                    `homepage/image`
+                                }
+                            />
+                        )}
+                    </AdminDashCell>
+                    <AdminDashCell
+                        title="Orders"
+                        linkTo="/admin/orders"
+                        footer={true}
+                    >
+                        <StyledOrderContainer>
+                            <StyledBoldP>Order ID:</StyledBoldP>
+                            <StyledBoldP>Status:</StyledBoldP>
+                        </StyledOrderContainer>
+                        {orders.map((order) => (
+                            <StyledOrderContainer key={order.id}>
+                                <StyledLink to={`/admin/orders/${order.id}`}>
+                                    {order.transactionId}
+                                </StyledLink>
+                                <StyledP>{order.status}</StyledP>
+                            </StyledOrderContainer>
+                        ))}
+                    </AdminDashCell>
+                </StyledAdminDashboard>
+            </main>
+        </>
     );
 };
 

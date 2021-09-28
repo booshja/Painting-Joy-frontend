@@ -1,5 +1,5 @@
 // dependencies
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
@@ -8,10 +8,14 @@ import {
     AdminPageTitle,
     LoadingSpinner,
 } from "../components";
+import AdminHeader from "./AdminHeader";
 import { StyledGreenSoloButton } from "./styles/adminButtons";
 import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+// context
+import MenuContext from "../context/MenuContext";
 
 const StyledAdminMessages = styled.div`
     display: flex;
@@ -43,15 +47,26 @@ const AdminMessages = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
+    // set up context
+    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
         // on component mount, get messages
         async function getMessages() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const res = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + "messages/",
-                    { cancelToken: source.token }
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                        cancelToken: source.token,
+                    }
                 );
                 // filter messages into archived and active
                 const archived = res.data.messages.filter(
@@ -84,8 +99,16 @@ const AdminMessages = () => {
     const handleArchive = async (id) => {
         // send request to api to set message as archived
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
-                process.env.REACT_APP_BACKEND_URL + `messages/archive/${id}`
+                process.env.REACT_APP_BACKEND_URL + `messages/archive/${id}`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Archive Error");
@@ -96,8 +119,16 @@ const AdminMessages = () => {
     const handleUnArchive = async (id) => {
         // send request to api to set message as active
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
-                process.env.REACT_APP_BACKEND_URL + `messages/unarchive/${id}`
+                process.env.REACT_APP_BACKEND_URL + `messages/unarchive/${id}`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("UnArchive Error");
@@ -108,8 +139,15 @@ const AdminMessages = () => {
     const handleDelete = async (id) => {
         // send request to api to delete message
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.delete(
-                process.env.REACT_APP_BACKEND_URL + `messages/delete/${id}`
+                process.env.REACT_APP_BACKEND_URL + `messages/delete/${id}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Delete Error");
@@ -124,46 +162,56 @@ const AdminMessages = () => {
             </StyledAdminMessages>
         );
 
-    return (
-        <StyledAdminMessages>
-            <StyledHeadlineContainer>
-                <AdminPageTitle>Messages</AdminPageTitle>
-                <StyledGreenSoloButton onClick={() => handleShowArchived()}>
-                    {showArchived
-                        ? "See Active Messages"
-                        : "See Archived Messages"}
-                </StyledGreenSoloButton>
-            </StyledHeadlineContainer>
-            <StyledMessagesContainer>
-                {showArchived
-                    ? archivedMessages.map((message) => (
-                          <AdminMessageCell
-                              key={message.id}
-                              data={message}
-                              handleArchive={handleArchive}
-                              handleDelete={handleDelete}
-                              handleUnArchive={handleUnArchive}
-                              showArchived={showArchived}
-                          />
-                      ))
-                    : activeMessages.map((message) => (
-                          <AdminMessageCell
-                              key={message.id}
-                              data={message}
-                              handleArchive={handleArchive}
-                              handleDelete={handleDelete}
-                              handleUnArchive={handleUnArchive}
-                              showArchived={showArchived}
-                          />
-                      ))}
-                {showArchived && archivedMessages.length === 0 && (
-                    <StyledP>No archived messages!</StyledP>
-                )}
-                {!showArchived && activeMessages.length === 0 && (
-                    <StyledP>No active messages!</StyledP>
-                )}
-            </StyledMessagesContainer>
-        </StyledAdminMessages>
+    return menuOpen ? (
+        <AdminHeader />
+    ) : (
+        <>
+            {" "}
+            <AdminHeader />{" "}
+            <main>
+                <StyledAdminMessages>
+                    <StyledHeadlineContainer>
+                        <AdminPageTitle>Messages</AdminPageTitle>
+                        <StyledGreenSoloButton
+                            onClick={() => handleShowArchived()}
+                        >
+                            {showArchived
+                                ? "See Active Messages"
+                                : "See Archived Messages"}
+                        </StyledGreenSoloButton>
+                    </StyledHeadlineContainer>
+                    <StyledMessagesContainer>
+                        {showArchived
+                            ? archivedMessages.map((message) => (
+                                  <AdminMessageCell
+                                      key={message.id}
+                                      data={message}
+                                      handleArchive={handleArchive}
+                                      handleDelete={handleDelete}
+                                      handleUnArchive={handleUnArchive}
+                                      showArchived={showArchived}
+                                  />
+                              ))
+                            : activeMessages.map((message) => (
+                                  <AdminMessageCell
+                                      key={message.id}
+                                      data={message}
+                                      handleArchive={handleArchive}
+                                      handleDelete={handleDelete}
+                                      handleUnArchive={handleUnArchive}
+                                      showArchived={showArchived}
+                                  />
+                              ))}
+                        {showArchived && archivedMessages.length === 0 && (
+                            <StyledP>No archived messages!</StyledP>
+                        )}
+                        {!showArchived && activeMessages.length === 0 && (
+                            <StyledP>No active messages!</StyledP>
+                        )}
+                    </StyledMessagesContainer>
+                </StyledAdminMessages>
+            </main>
+        </>
     );
 };
 

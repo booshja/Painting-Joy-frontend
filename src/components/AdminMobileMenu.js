@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 // context
 import MenuContext from "../context/MenuContext";
+// hooks
+import { useAuth0 } from "@auth0/auth0-react";
 
 const StyledMenu = styled.nav`
     z-index: 100;
@@ -36,6 +38,21 @@ const StyledLink = styled(NavLink)`
     }
 `;
 
+const StyledLogoutLink = styled.a`
+    font-family: "News Cycle", sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    color: #207070;
+    transition: color 0.3s linear;
+
+    &.active {
+        font-weight: 700;
+    }
+`;
+
 const MenuWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -44,7 +61,17 @@ const MenuWrapper = styled.div`
 `;
 
 const AdminMobileMenu = () => {
+    // set up context
     const { menuOpen, setMenuOpen } = useContext(MenuContext);
+    // set up auth0 logout function
+    const { logout } = useAuth0();
+
+    const handleLogout = () => {
+        setMenuOpen(false);
+        logout({
+            returnTo: "http://localhost:3000",
+        });
+    };
 
     return (
         <StyledMenu open={menuOpen}>
@@ -94,6 +121,9 @@ const AdminMobileMenu = () => {
                 >
                     Instagram Feed
                 </StyledLink> */}
+                <StyledLogoutLink onClick={() => handleLogout()}>
+                    Log Out
+                </StyledLogoutLink>
             </MenuWrapper>
         </StyledMenu>
     );

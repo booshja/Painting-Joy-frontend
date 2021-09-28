@@ -12,6 +12,7 @@ import {
 import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
 
@@ -50,6 +51,8 @@ const AdminMurals = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
@@ -58,9 +61,16 @@ const AdminMurals = () => {
         // on component mount, get murals
         async function getMurals() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const res = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + "murals",
-                    { cancelToken: source.token }
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                        cancelToken: source.token,
+                    }
                 );
                 // filter murals into archived and active
                 const archived = res.data.murals.filter(
@@ -93,11 +103,20 @@ const AdminMurals = () => {
     const handleArchive = async (id) => {
         // send request to api to set mural as archived
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
-                process.env.REACT_APP_BACKEND_URL + `murals/mural/${id}/archive`
+                process.env.REACT_APP_BACKEND_URL +
+                    `murals/mural/${id}/archive`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
-            console.log("Archive Error");
+            console.log("Archive Error", err);
         }
         history.go(0);
     };
@@ -105,12 +124,20 @@ const AdminMurals = () => {
     const handleUnArchive = async (id) => {
         // send request to api to set mural as active
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
                 process.env.REACT_APP_BACKEND_URL +
-                    `murals/mural/${id}/unarchive`
+                    `murals/mural/${id}/unarchive`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
-            console.log("Unarchive Error");
+            console.log("Unarchive Error", err);
         }
         history.go(0);
     };
@@ -118,8 +145,16 @@ const AdminMurals = () => {
     const handleDelete = async (id) => {
         // send request to api to delete mural
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.delete(
-                process.env.REACT_APP_BACKEND_URL + `murals/mural/${id}`
+                process.env.REACT_APP_BACKEND_URL + `murals/mural/${id}`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Delete Error");

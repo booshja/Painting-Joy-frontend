@@ -13,6 +13,7 @@ import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
 
@@ -91,6 +92,8 @@ const AdminMural = ({ variant }) => {
     } = useForm();
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
@@ -122,12 +125,19 @@ const AdminMural = ({ variant }) => {
         // on form submit, send data to API, move to next step
         setLoading(true);
         try {
+            const token = await getAccessTokenSilently();
+
             if (variant === "Add") {
                 const res = await axios.post(
                     process.env.REACT_APP_BACKEND_URL + "murals/",
                     {
                         title: data.title,
                         description: data.description,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
                     }
                 );
                 const id = res.data.mural.id;
@@ -136,7 +146,12 @@ const AdminMural = ({ variant }) => {
                 await axios.patch(
                     process.env.REACT_APP_BACKEND_URL +
                         `murals/mural/${muralId}`,
-                    data
+                    data,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
                 );
             }
             setError(null);
@@ -158,10 +173,17 @@ const AdminMural = ({ variant }) => {
         let res;
 
         try {
+            const token = await getAccessTokenSilently();
+
             res = await axios.post(
                 process.env.REACT_APP_BACKEND_URL +
                     `murals/upload/${muralId}/image/${step}`,
-                formData
+                formData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
             if (step < 3) {
                 reset("", { keepValues: false });
@@ -193,9 +215,19 @@ const AdminMural = ({ variant }) => {
         // push admin to Admin Murals page
         setLoading(true);
         try {
-            await axios.delete(
-                process.env.REACT_APP_BACKEND_URL + `murals/mural/${muralId}`
-            );
+            const token = await getAccessTokenSilently();
+
+            if (step > 0) {
+                await axios.delete(
+                    process.env.REACT_APP_BACKEND_URL +
+                        `murals/mural/${muralId}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+            }
             history.push("/admin/murals");
         } catch (err) {
             console.log("Cancel Error", err);

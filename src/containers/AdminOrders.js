@@ -7,6 +7,7 @@ import { AdminOrderCell, AdminPageTitle, LoadingSpinner } from "../components";
 import AdminHeader from "./AdminHeader";
 // hooks
 import { useHistory } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
 
@@ -33,6 +34,8 @@ const AdminOrders = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
@@ -41,9 +44,16 @@ const AdminOrders = () => {
         // on component mount, get orders
         async function getOrders() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const res = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + "orders",
-                    { cancelToken: source.token }
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                        cancelToken: source.token,
+                    }
                 );
                 // set state
                 setOrders(() => res.data.orders.reverse());
@@ -63,8 +73,16 @@ const AdminOrders = () => {
     const handleMarkShipped = async (id) => {
         // send request to api to set order status as shipped
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
-                process.env.REACT_APP_BACKEND_URL + `orders/order/${id}/ship`
+                process.env.REACT_APP_BACKEND_URL + `orders/order/${id}/ship`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Marking shipped error", err);
@@ -77,7 +95,13 @@ const AdminOrders = () => {
         try {
             await axios.patch(
                 process.env.REACT_APP_BACKEND_URL +
-                    `orders/order/${id}/complete`
+                    `orders/order/${id}/complete`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Marking completed error", err);
@@ -96,7 +120,6 @@ const AdminOrders = () => {
         <AdminHeader />
     ) : (
         <>
-            {" "}
             <AdminHeader />
             <main>
                 <StyledAdminOrders>

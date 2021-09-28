@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
-import { AdminPageTitle, LoadingSpinner } from "../components";
+import { AdminPageTitle, GoBack, LoadingSpinner } from "../components";
 import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
@@ -13,6 +13,7 @@ import { StyledP } from "./styles/adminTypography";
 import { StyledCell } from "./styles/adminContainers";
 // hooks
 import { useHistory, useParams } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
 
@@ -83,6 +84,8 @@ const AdminOrder = () => {
     const [order, setOrder] = useState({});
     // set up history
     const history = useHistory();
+    // set up hooks
+    const { isLoading, getAccessTokenSilently } = useAuth0();
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
@@ -91,8 +94,15 @@ const AdminOrder = () => {
         // on component mount, get order data
         async function getOrderData() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const res = await axios.get(
-                    process.env.REACT_APP_BACKEND_URL + `orders/order/${id}`
+                    process.env.REACT_APP_BACKEND_URL + `orders/order/${id}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
                 );
                 // set states
                 setOrder(res.data.order);
@@ -113,8 +123,16 @@ const AdminOrder = () => {
     const handleMarkShipped = async (id) => {
         // send request to api to set order status as shipped
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
-                process.env.REACT_APP_BACKEND_URL + `orders/order/${id}/ship`
+                process.env.REACT_APP_BACKEND_URL + `orders/order/${id}/ship`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Marking shipped error", err);
@@ -125,9 +143,17 @@ const AdminOrder = () => {
     const handleMarkComplete = async (id) => {
         // send request to api to set order status as completed
         try {
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
                 process.env.REACT_APP_BACKEND_URL +
-                    `orders/order/${id}/complete`
+                    `orders/order/${id}/complete`,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             console.log("Marking completed error", err);
@@ -152,6 +178,7 @@ const AdminOrder = () => {
             <main>
                 <StyledAdminOrder>
                     <AdminPageTitle>Order Detail</AdminPageTitle>
+                    <GoBack to="/admin/orders" />
                     <StyledDetailCell>
                         <StyledOrderP>
                             <StyledBold>Order Id:</StyledBold>{" "}
@@ -219,7 +246,9 @@ const AdminOrder = () => {
                             </StyledOutlineBtn>
                             <StyledGreenSoloBtn
                                 onClick={() => handleMarkComplete(id)}
-                                disabled={status === "Shipped" ? false : true}
+                                disabled={
+                                    order.status === "Shipped" ? false : true
+                                }
                             >
                                 Mark Complete
                             </StyledGreenSoloBtn>

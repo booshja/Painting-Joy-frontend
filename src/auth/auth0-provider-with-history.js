@@ -9,6 +9,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
     const domain = process.env.REACT_APP_AUTH0_DOMAIN;
     const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
     const redirectUri = process.env.REACT_APP_AUTH0_REDIRECT_URI;
+    const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
     // set up history
     const history = useHistory();
 
@@ -22,6 +23,8 @@ const Auth0ProviderWithHistory = ({ children }) => {
             clientId={clientId}
             redirectUri={redirectUri}
             onRedirectCallback={onRedirectCallback}
+            audience={audience}
+            scope="read:current_user update:current_user_metadata"
         >
             {children}
         </Auth0Provider>

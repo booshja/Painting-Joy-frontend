@@ -81,7 +81,7 @@ const AdminDashboard = () => {
     // set up history
     const history = useHistory();
     // set up hooks
-    const { isLoading } = useAuth0();
+    const { isLoading, getAccessTokenSilently } = useAuth0();
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
@@ -90,16 +90,33 @@ const AdminDashboard = () => {
         // on component mount, get data
         async function getData() {
             try {
+                const token = await getAccessTokenSilently();
+
                 const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `murals/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 const orderRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `orders/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 const homepageRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `homepage/`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    },
                     { cancelToken: source.token }
                 );
                 // set states
@@ -132,10 +149,20 @@ const AdminDashboard = () => {
         // on form submit, send data to API, reload page
         setLoading(true);
         try {
-            await axios.put(process.env.REACT_APP_BACKEND_URL + `homepage/`, {
-                greeting: data.greeting,
-                message: data.message,
-            });
+            const token = await getAccessTokenSilently();
+
+            await axios.put(
+                process.env.REACT_APP_BACKEND_URL + `homepage/`,
+                {
+                    greeting: data.greeting,
+                    message: data.message,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
             setStep(1);
             setLoading(false);
         } catch (err) {
@@ -155,9 +182,16 @@ const AdminDashboard = () => {
         let res;
 
         try {
+            const token = await getAccessTokenSilently();
+
             res = await axios.post(
                 process.env.REACT_APP_BACKEND_URL + `homepage/image`,
-                formData
+                formData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
             );
         } catch (err) {
             setError(
@@ -166,7 +200,7 @@ const AdminDashboard = () => {
             console.log("Image upload error", err);
             setLoading(false);
         }
-        history.go(0);
+        if (loading) history.go(0);
     };
 
     if (loading || isLoading)
@@ -212,7 +246,7 @@ const AdminDashboard = () => {
                                 handleImageSubmit={handleImageSubmit}
                                 image={
                                     process.env.REACT_APP_BACKEND_URL +
-                                    `homepage/image/`
+                                    `homepage/image`
                                 }
                             />
                         )}

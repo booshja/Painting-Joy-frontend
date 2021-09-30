@@ -88,7 +88,7 @@ const StoreItem = () => {
         const source = axios.CancelToken.source();
         // when component mounts, get the item data
         async function getItem() {
-            const res = await axios(
+            const res = await axios.get(
                 process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
                 { cancelToken: source.token }
             );

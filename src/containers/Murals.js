@@ -70,7 +70,7 @@ const Murals = () => {
         // on mount get mural data
         async function getData() {
             try {
-                const muralRes = await axios(
+                const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + "murals/active",
                     { cancelToken: source.token }
                 );

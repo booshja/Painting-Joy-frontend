@@ -31,6 +31,11 @@ const StyledLink = styled(NavLink)`
         color: #ffffff;
         background-color: #a1c9c9;
         border-left: 4px solid #207070;
+        cursor: auto;
+    }
+
+    &:hover:not(.active) {
+        background-color: rgba(161, 201, 197, 0.3);
     }
 `;
 

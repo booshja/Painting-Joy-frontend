@@ -39,6 +39,10 @@ const StyledLink = styled(Link)`
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 1px;
+
+    &:hover {
+        font-style: italic;
+    }
 `;
 
 const AdminDashCell = ({ children, title, linkTo, footer }) => {

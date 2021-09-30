@@ -26,6 +26,12 @@ const StyledLeftButton = styled.button`
     font-weight: 700;
     letter-spacing: 1px;
     padding: 2.5px 24px;
+    cursor: pointer;
+
+    &:hover {
+        color: #207070;
+        background-color: #ffffff;
+    }
 `;
 
 const StyledMiddleButton = styled.button`
@@ -39,6 +45,12 @@ const StyledMiddleButton = styled.button`
     font-weight: 700;
     letter-spacing: 1px;
     padding: 2.5px 24px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffffff;
+        background-color: #207070;
+    }
 `;
 
 const StyledRightButton = styled.button`
@@ -51,6 +63,12 @@ const StyledRightButton = styled.button`
     letter-spacing: 1px;
     padding: 2.5px 24px;
     font-family: "News Cycle", sans-serif;
+    cursor: pointer;
+
+    &:hover {
+        color: #db9487;
+        background-color: #ffffff;
+    }
 `;
 
 const AdminTripleButton = ({

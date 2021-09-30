@@ -12,6 +12,10 @@ const StyledInlineBlockP = styled(StyledP)`
     display: inline-block;
     word-break: break-word;
     margin-bottom: 0.5rem;
+    overflow: hidden;
+    max-width: 50ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 const StyledBoldP = styled(StyledInlineBlockP)`
@@ -25,7 +29,7 @@ const StyledButtonContainer = styled.div`
     align-self: flex-end;
     margin: 1rem 0 0;
 
-    ${breakpoints("width", "%", [{ 414: 50 }])}
+    ${breakpoints("width", "%", [{ 414: 50 }, { 768: 25 }, { 1024: 25 }])}
 `;
 
 const AdminMessageCell = ({
@@ -40,7 +44,9 @@ const AdminMessageCell = ({
     return (
         <StyledCell>
             <StyledBoldP>{name}</StyledBoldP>
-            <StyledInlineBlockP>{email}</StyledInlineBlockP>
+            <StyledInlineBlockP>
+                <a href={`mailto:${email}`}>{email}</a>
+            </StyledInlineBlockP>
             <StyledInlineBlockP>{message}</StyledInlineBlockP>
             <StyledButtonContainer showArchived={showArchived}>
                 {showArchived ? (

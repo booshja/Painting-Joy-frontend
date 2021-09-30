@@ -11,7 +11,8 @@ const StyledHomepage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 42vh;
+    min-height: calc(100vh - 60px);
+    width: 100%;
 
     ${breakpoints("margin-top", "", [{ 1024: 0 }])}
 `;
@@ -21,6 +22,7 @@ const StyledNewDisplayContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    max-width: 650px;
 
     ${breakpoints("flex-direction", "", [{ 768: "row" }])}
     ${breakpoints("width", "%", [{ 768: 85 }])}

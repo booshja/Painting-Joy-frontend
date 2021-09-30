@@ -4,7 +4,7 @@ import styled from "styled-components";
 // components
 import { Link } from "react-router-dom";
 // assets
-import Logo from "../assets/Rainbow-logo_not_final.png";
+import Logo from "../assets/painting-joy-logo-white.jpg";
 
 const StyledTitleLogo = styled.div`
     display: flex;
@@ -22,7 +22,7 @@ const StyledTitle = styled.h1`
 
 const StyledLogo = styled.img`
     width: 150px;
-    height: 100px;
+    height: 150px;
 `;
 
 const TitleLogoFooter = () => {
@@ -31,7 +31,7 @@ const TitleLogoFooter = () => {
             <Link to="/">
                 <StyledLogo src={Logo} alt="Painting Joy Mural Co. Logo" />
             </Link>
-            <StyledTitle>Painting Joy Mural Co.</StyledTitle>
+            {/* <StyledTitle>Painting Joy Mural Co.</StyledTitle> */}
         </StyledTitleLogo>
     );
 };

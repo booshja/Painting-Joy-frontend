@@ -6,6 +6,8 @@ import { AdminBurger, AdminMobileMenu } from "../components";
 import { Link } from "react-router-dom";
 // hooks
 import { useAuth0 } from "@auth0/auth0-react";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -27,6 +29,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledLogout = styled.a`
+    display: none;
     font-family: "News Cycle", sans-serif;
     font-size: 1.4rem;
     letter-spacing: 1px;
@@ -36,6 +39,8 @@ const StyledLogout = styled.a`
     &:hover {
         font-weight: 700;
     }
+
+    ${breakpoints("display", "", [{ 1024: "inline" }])}
 `;
 
 const AdminHeader = ({ login }) => {

@@ -1,9 +1,10 @@
 // dependencies
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { breakpoints } from "../breakpoints";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledBurger = styled.button`
     display: flex;
@@ -45,9 +46,7 @@ const StyledBurger = styled.button`
         }
     }
 
-    /* @media (min-width: ${breakpoints.desktopSm}px) {
-        display: none;
-    } */
+    ${breakpoints("display", "", [{ 1024: "none" }])}
 `;
 
 const AdminBurger = () => {

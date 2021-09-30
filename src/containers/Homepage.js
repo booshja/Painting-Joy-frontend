@@ -11,7 +11,6 @@ const StyledHomepage = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
     min-height: 42vh;
 
     ${breakpoints("margin-top", "", [{ 1024: 0 }])}

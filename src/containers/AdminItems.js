@@ -14,18 +14,25 @@ import { StyledP } from "./styles/adminTypography";
 import { useHistory } from "react-router";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminItems = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f6f7f1;
-    min-height: 91.75vh;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    max-width: 800px;
 `;
 
 const StyledButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
+
+    ${breakpoints("align-self", "", [{ 1024: "flex-start" }])}
+    ${breakpoints("margin-left", "rem", [{ 1024: 3 }])}
 `;
 
 const StyledOutlineBtn = styled(StyledOutlineButton)`
@@ -121,58 +128,49 @@ const AdminItems = () => {
             </StyledAdminItems>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            <AdminHeader />
-            <main>
-                <StyledAdminItems>
-                    <AdminPageTitle>Items</AdminPageTitle>
-                    <StyledButtonContainer>
-                        <StyledGreenSoloButton
-                            onClick={() => history.push("/admin/items/new")}
-                        >
-                            Add New Item
-                        </StyledGreenSoloButton>
-                        <StyledOutlineBtn
-                            color="#207070"
-                            onClick={() => handleShowSoldOut()}
-                        >
-                            {showSoldOut
-                                ? "See Available Items"
-                                : "See Sold Out Items"}
-                        </StyledOutlineBtn>
-                    </StyledButtonContainer>
-                    <StyledItemsContainer>
-                        {showSoldOut
-                            ? soldOutItems.map((item) => (
-                                  <AdminItemCell
-                                      key={item.id}
-                                      data={item}
-                                      handleDelete={handleDelete}
-                                      showSoldOut={showSoldOut}
-                                  />
-                              ))
-                            : availableItems.map((item) => (
-                                  <AdminItemCell
-                                      key={item.id}
-                                      data={item}
-                                      handleMarkSoldOut={handleMarkSoldOut}
-                                      handleDelete={handleDelete}
-                                      showSoldOut={showSoldOut}
-                                  />
-                              ))}
-                        {showSoldOut && soldOutItems.length === 0 && (
-                            <StyledP>No sold out items!</StyledP>
-                        )}
-                        {!showSoldOut && availableItems.length === 0 && (
-                            <StyledP>No available items!</StyledP>
-                        )}
-                    </StyledItemsContainer>
-                </StyledAdminItems>
-            </main>
-        </>
+    return (
+        <StyledAdminItems>
+            <AdminPageTitle>Items</AdminPageTitle>
+            <StyledButtonContainer>
+                <StyledGreenSoloButton
+                    onClick={() => history.push("/admin/items/new")}
+                >
+                    Add New Item
+                </StyledGreenSoloButton>
+                <StyledOutlineBtn
+                    color="#207070"
+                    onClick={() => handleShowSoldOut()}
+                >
+                    {showSoldOut ? "See Available Items" : "See Sold Out Items"}
+                </StyledOutlineBtn>
+            </StyledButtonContainer>
+            <StyledItemsContainer>
+                {showSoldOut
+                    ? soldOutItems.map((item) => (
+                          <AdminItemCell
+                              key={item.id}
+                              data={item}
+                              handleDelete={handleDelete}
+                              showSoldOut={showSoldOut}
+                          />
+                      ))
+                    : availableItems.map((item) => (
+                          <AdminItemCell
+                              key={item.id}
+                              data={item}
+                              handleMarkSoldOut={handleMarkSoldOut}
+                              handleDelete={handleDelete}
+                              showSoldOut={showSoldOut}
+                          />
+                      ))}
+                {showSoldOut && soldOutItems.length === 0 && (
+                    <StyledP>No sold out items!</StyledP>
+                )}
+                {!showSoldOut && availableItems.length === 0 && (
+                    <StyledP>No available items!</StyledP>
+                )}
+            </StyledItemsContainer>
+        </StyledAdminItems>
     );
 };
 

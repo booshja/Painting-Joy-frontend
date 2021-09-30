@@ -7,6 +7,8 @@ import { NavLink } from "react-router-dom";
 import MenuContext from "../context/MenuContext";
 // hooks
 import { useAuth0 } from "@auth0/auth0-react";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledMenu = styled.nav`
     z-index: 100;
@@ -21,6 +23,8 @@ const StyledMenu = styled.nav`
     left: 0;
     transition: transform 0.3s ease-in-out;
     transform: ${({ open }) => (open ? "translateY(0)" : "translateY(-100%)")};
+
+    ${breakpoints("display", "", [{ 1024: "none" }])}
 `;
 
 const StyledLink = styled(NavLink)`

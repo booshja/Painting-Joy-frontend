@@ -7,14 +7,47 @@ import { AdminHeader } from "../containers";
 import { Redirect } from "react-router-dom";
 // context
 import { useAuth0 } from "@auth0/auth0-react";
-// hooks
-import { useHistory } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminLogin = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+
+    ${breakpoints("padding", "", [
+        { 768: "0 25%" },
+        { 1024: "0 31%" },
+        { 1280: "0 35%" },
+        { 1440: "0 6.6rem" },
+    ])}
+
+    ${breakpoints("width", "px", [{ 1440: 600 }])}
 `;
+
+const StyledContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+`;
+
+const StyledMain = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const StyledAdminHeader = styled(AdminHeader)`
+    width: 100%;
+    align-self: flex-start;
+`;
+
 const StyledP = styled.p`
     text-align: center;
     margin-top: 50vh;
@@ -38,13 +71,14 @@ const StyledLoginButton = styled.button`
         background-color: #ffffff;
         color: #207070;
     }
+
+    ${breakpoints("font-size", "rem", [{ 414: 1.6 }])}
+    ${breakpoints("padding", "", [{ 414: "2.5px 10px" }])}
 `;
 
 const AdminLogin = () => {
     // set up auth context
     const { loginWithRedirect, isLoading, isAuthenticated } = useAuth0();
-    // set up history
-    const history = useHistory();
 
     if (isLoading)
         return (
@@ -56,22 +90,22 @@ const AdminLogin = () => {
     if (isAuthenticated) return <Redirect to="/admin/dashboard" />;
 
     return (
-        <>
-            <AdminHeader login={true} />
-            <main>
+        <StyledContainer>
+            <StyledAdminHeader login={true} />
+            <StyledMain>
                 <StyledAdminLogin>
                     <AdminPageTitle>Login</AdminPageTitle>
                     <StyledLoginButton onClick={() => loginWithRedirect()}>
                         Click Here To Log In
                     </StyledLoginButton>
                 </StyledAdminLogin>
-            </main>
+            </StyledMain>
             <footer>
                 <StyledP>
                     Copyright &copy; 2021 - Painting Joy Mural Co.
                 </StyledP>
             </footer>
-        </>
+        </StyledContainer>
     );
 };
 

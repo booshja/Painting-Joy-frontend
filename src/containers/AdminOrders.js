@@ -10,13 +10,17 @@ import { useHistory } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminOrders = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f6f7f1;
-    min-height: 91.75vh;
+    width: 100%;
+    max-width: 700px;
+    min-height: calc(100vh - 60px);
 `;
 
 const StyledOrdersContainer = styled.div`
@@ -116,27 +120,20 @@ const AdminOrders = () => {
             </StyledAdminOrders>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            <AdminHeader />
-            <main>
-                <StyledAdminOrders>
-                    <AdminPageTitle>Orders</AdminPageTitle>
-                    <StyledOrdersContainer>
-                        {orders.map((order) => (
-                            <AdminOrderCell
-                                key={order.id}
-                                data={order}
-                                handleMarkShipped={handleMarkShipped}
-                                handleMarkComplete={handleMarkComplete}
-                            />
-                        ))}
-                    </StyledOrdersContainer>
-                </StyledAdminOrders>
-            </main>
-        </>
+    return (
+        <StyledAdminOrders>
+            <AdminPageTitle>Orders</AdminPageTitle>
+            <StyledOrdersContainer>
+                {orders.map((order) => (
+                    <AdminOrderCell
+                        key={order.id}
+                        data={order}
+                        handleMarkShipped={handleMarkShipped}
+                        handleMarkComplete={handleMarkComplete}
+                    />
+                ))}
+            </StyledOrdersContainer>
+        </StyledAdminOrders>
     );
 };
 

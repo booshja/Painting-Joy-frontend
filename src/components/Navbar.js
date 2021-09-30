@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
     display: none;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
     width: 55%;
 
     ${breakpoints("display", "", [{ 1024: "flex" }])}

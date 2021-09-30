@@ -3,12 +3,17 @@ import React from "react";
 import styled from "styled-components";
 // hooks
 import { useHistory } from "react-router";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledButtonContainer = styled.div`
     display: flex;
     align-items: center;
     margin-top: 1rem;
     align-self: center;
+
+    ${breakpoints("align-self", "", [{ 1024: "flex-start" }])}
+    ${breakpoints("margin-left", "rem", [{ 1024: 2 }])}
 `;
 
 const StyledLeftButton = styled.button`
@@ -21,6 +26,12 @@ const StyledLeftButton = styled.button`
     font-weight: 700;
     letter-spacing: 1px;
     padding: 2.5px 24px;
+    cursor: pointer;
+
+    &:hover {
+        color: #207070;
+        background-color: #ffffff;
+    }
 `;
 
 const StyledMiddleButton = styled.button`
@@ -34,6 +45,12 @@ const StyledMiddleButton = styled.button`
     font-weight: 700;
     letter-spacing: 1px;
     padding: 2.5px 24px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffffff;
+        background-color: #207070;
+    }
 `;
 
 const StyledRightButton = styled.button`
@@ -46,6 +63,12 @@ const StyledRightButton = styled.button`
     letter-spacing: 1px;
     padding: 2.5px 24px;
     font-family: "News Cycle", sans-serif;
+    cursor: pointer;
+
+    &:hover {
+        color: #db9487;
+        background-color: #ffffff;
+    }
 `;
 
 const AdminTripleButton = ({

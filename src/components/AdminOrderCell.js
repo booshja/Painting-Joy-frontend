@@ -37,17 +37,6 @@ const StyledText = styled(StyledP)`
 const StyledOutlineBtn = styled(StyledOutlineButton)`
     font-size: 1rem;
     margin-right: 1rem;
-
-    &:disabled {
-        color: #dadada;
-        border: 2px solid #dadada;
-    }
-`;
-
-const StyledGreenSoloBtn = styled(StyledGreenSoloButton)`
-    &:disabled {
-        background-color: #dadada;
-    }
 `;
 
 const StyledA = styled.a`
@@ -85,12 +74,12 @@ const AdminOrderCell = ({ data, handleMarkShipped, handleMarkComplete }) => {
                 >
                     Mark Shipped
                 </StyledOutlineBtn>
-                <StyledGreenSoloBtn
+                <StyledGreenSoloButton
                     onClick={() => handleMarkComplete(id)}
                     disabled={status === "Shipped" ? false : true}
                 >
                     Mark Complete
-                </StyledGreenSoloBtn>
+                </StyledGreenSoloButton>
             </StyledButtonContainer>
         </StyledCell>
     );

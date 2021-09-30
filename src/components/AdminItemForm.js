@@ -55,13 +55,13 @@ const StyledError = styled.p`
 
 const StyledSoloBtn = styled(StyledGreenSoloButton)`
     border: 2px solid #207070;
+    margin-left: 1rem;
 `;
 
 const StyledButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
-    width: ${(props) => (props.variant === "Edit" ? "55%" : "62.5%")};
     align-items: center;
 `;
 

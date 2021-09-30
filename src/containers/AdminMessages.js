@@ -16,19 +16,26 @@ import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminMessages = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #f6f7f1;
-    min-height: 91.75vh;
+    min-height: calc(100vh - 60px);
+
+    ${breakpoints("padding", "", [{ 1024: "0 2rem" }])}
 `;
 
 const StyledHeadlineContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ${breakpoints("width", "%", [{ 768: 100 }])}
+    ${breakpoints("min-width", "px", [{ 1024: 650 }])}
 `;
 
 const StyledMessagesContainer = styled.div`
@@ -37,6 +44,8 @@ const StyledMessagesContainer = styled.div`
     align-items: center;
     width: 85%;
     margin-bottom: 2rem;
+
+    ${breakpoints("width", "%", [{ 1024: 100 }])}
 `;
 
 const AdminMessages = () => {
@@ -49,8 +58,6 @@ const AdminMessages = () => {
     const history = useHistory();
     // set up hooks
     const { isLoading, getAccessTokenSilently } = useAuth0();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -162,56 +169,46 @@ const AdminMessages = () => {
             </StyledAdminMessages>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            {" "}
-            <AdminHeader />{" "}
-            <main>
-                <StyledAdminMessages>
-                    <StyledHeadlineContainer>
-                        <AdminPageTitle>Messages</AdminPageTitle>
-                        <StyledGreenSoloButton
-                            onClick={() => handleShowArchived()}
-                        >
-                            {showArchived
-                                ? "See Active Messages"
-                                : "See Archived Messages"}
-                        </StyledGreenSoloButton>
-                    </StyledHeadlineContainer>
-                    <StyledMessagesContainer>
-                        {showArchived
-                            ? archivedMessages.map((message) => (
-                                  <AdminMessageCell
-                                      key={message.id}
-                                      data={message}
-                                      handleArchive={handleArchive}
-                                      handleDelete={handleDelete}
-                                      handleUnArchive={handleUnArchive}
-                                      showArchived={showArchived}
-                                  />
-                              ))
-                            : activeMessages.map((message) => (
-                                  <AdminMessageCell
-                                      key={message.id}
-                                      data={message}
-                                      handleArchive={handleArchive}
-                                      handleDelete={handleDelete}
-                                      handleUnArchive={handleUnArchive}
-                                      showArchived={showArchived}
-                                  />
-                              ))}
-                        {showArchived && archivedMessages.length === 0 && (
-                            <StyledP>No archived messages!</StyledP>
-                        )}
-                        {!showArchived && activeMessages.length === 0 && (
-                            <StyledP>No active messages!</StyledP>
-                        )}
-                    </StyledMessagesContainer>
-                </StyledAdminMessages>
-            </main>
-        </>
+    return (
+        <StyledAdminMessages>
+            <StyledHeadlineContainer>
+                <AdminPageTitle>Messages</AdminPageTitle>
+                <StyledGreenSoloButton onClick={() => handleShowArchived()}>
+                    {showArchived
+                        ? "See Active Messages"
+                        : "See Archived Messages"}
+                </StyledGreenSoloButton>
+            </StyledHeadlineContainer>
+            <StyledMessagesContainer>
+                {showArchived
+                    ? archivedMessages.map((message) => (
+                          <AdminMessageCell
+                              key={message.id}
+                              data={message}
+                              handleArchive={handleArchive}
+                              handleDelete={handleDelete}
+                              handleUnArchive={handleUnArchive}
+                              showArchived={showArchived}
+                          />
+                      ))
+                    : activeMessages.map((message) => (
+                          <AdminMessageCell
+                              key={message.id}
+                              data={message}
+                              handleArchive={handleArchive}
+                              handleDelete={handleDelete}
+                              handleUnArchive={handleUnArchive}
+                              showArchived={showArchived}
+                          />
+                      ))}
+                {showArchived && archivedMessages.length === 0 && (
+                    <StyledP>No archived messages!</StyledP>
+                )}
+                {!showArchived && activeMessages.length === 0 && (
+                    <StyledP>No active messages!</StyledP>
+                )}
+            </StyledMessagesContainer>
+        </StyledAdminMessages>
     );
 };
 

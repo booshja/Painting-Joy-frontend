@@ -16,6 +16,9 @@ const StyledForm = styled.form`
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
+    max-width: 700px;
+
+    ${breakpoints("align-self", "", [{ 1024: "flex-start" }])}
 `;
 
 const StyledLabel = styled.label`
@@ -63,10 +66,10 @@ const StyledButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
-    width: 65%;
+    width: 75%;
     align-items: center;
 
-    ${breakpoints("width", "%", [{ 414: 55 }])}
+    ${breakpoints("width", "%", [{ 414: 60 }, { 768: 32 }, { 1024: 30 }])}
 `;
 
 const AdminMuralForm = ({

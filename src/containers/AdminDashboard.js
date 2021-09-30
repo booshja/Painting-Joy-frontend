@@ -10,7 +10,6 @@ import {
     AdminPageTitle,
     LoadingSpinner,
 } from "../components";
-import AdminHeader from "./AdminHeader";
 import { StyledP } from "./styles/adminTypography";
 import { Link } from "react-router-dom";
 // hooks
@@ -18,14 +17,28 @@ import { useHistory } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminDashboard = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #f6f7f1;
-    min-height: 91.75vh;
     padding-bottom: 2rem;
+    width: 100%;
+`;
+
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+
+    ${breakpoints("padding-left", "", [{ 768: "10%" }, { 1024: "2rem" }])}
+    ${breakpoints("padding-right", "", [{ 768: "10%" }, { 1024: 0 }])}
+
+    ${breakpoints("flex-direction", "", [{ 1024: "row" }])}
+    ${breakpoints("flex-wrap", "", [{ 1024: "wrap" }])}
 `;
 
 const StyledCellP = styled(StyledP)`
@@ -210,68 +223,61 @@ const AdminDashboard = () => {
             </StyledAdminDashboard>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            <AdminHeader />
-            <main>
-                <StyledAdminDashboard>
-                    <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
-                    <AdminDashCell
-                        title="Murals"
-                        linkTo="/admin/murals"
-                        footer={true}
-                    >
-                        {murals.map((mural) => (
-                            <StyledCellP key={mural.id}>
-                                {mural.title}
-                            </StyledCellP>
-                        ))}
-                    </AdminDashCell>
-                    <AdminDashCell title="Edit Homepage" footer={false}>
-                        {error && <StyledError>{error}</StyledError>}
-                        {step === 0 && (
-                            <AdminHomepageForm
-                                preloadedValues={{
-                                    ...homepage,
-                                }}
-                                handleDataSubmit={handleDataSubmit}
-                                setStep={setStep}
-                            />
-                        )}
-                        {step === 1 && (
-                            <AdminHomepageImageForm
-                                setStep={setStep}
-                                handleImageSubmit={handleImageSubmit}
-                                image={
-                                    process.env.REACT_APP_BACKEND_URL +
-                                    `homepage/image`
-                                }
-                            />
-                        )}
-                    </AdminDashCell>
-                    <AdminDashCell
-                        title="Orders"
-                        linkTo="/admin/orders"
-                        footer={true}
-                    >
-                        <StyledOrderContainer>
-                            <StyledBoldP>Order ID:</StyledBoldP>
-                            <StyledBoldP>Status:</StyledBoldP>
+    return (
+        <StyledAdminDashboard>
+            <AdminPageTitle>Welcome back, Beth!</AdminPageTitle>
+            <StyledContainer>
+                <AdminDashCell
+                    title="Murals"
+                    linkTo="/admin/murals"
+                    footer={true}
+                >
+                    {murals.map((mural) => (
+                        <StyledCellP key={mural.id}>{mural.title}</StyledCellP>
+                    ))}
+                </AdminDashCell>
+                <AdminDashCell title="Edit Homepage" footer={false}>
+                    {error && <StyledError>{error}</StyledError>}
+                    {step === 0 && (
+                        <AdminHomepageForm
+                            preloadedValues={{
+                                ...homepage,
+                            }}
+                            handleDataSubmit={handleDataSubmit}
+                            setStep={setStep}
+                        />
+                    )}
+                    {step === 1 && (
+                        <AdminHomepageImageForm
+                            setStep={setStep}
+                            handleImageSubmit={handleImageSubmit}
+                            image={
+                                process.env.REACT_APP_BACKEND_URL +
+                                `homepage/image`
+                            }
+                        />
+                    )}
+                </AdminDashCell>
+                <AdminDashCell
+                    title="Orders"
+                    linkTo="/admin/orders"
+                    footer={true}
+                >
+                    <StyledOrderContainer>
+                        <StyledBoldP>Order ID:</StyledBoldP>
+                        <StyledBoldP>Status:</StyledBoldP>
+                    </StyledOrderContainer>
+                    {orders.map((order) => (
+                        <StyledOrderContainer key={order.id}>
+                            <StyledLink to={`/admin/orders/${order.id}`}>
+                                {order.transactionId}
+                            </StyledLink>
+                            <StyledP>{order.status}</StyledP>
                         </StyledOrderContainer>
-                        {orders.map((order) => (
-                            <StyledOrderContainer key={order.id}>
-                                <StyledLink to={`/admin/orders/${order.id}`}>
-                                    {order.transactionId}
-                                </StyledLink>
-                                <StyledP>{order.status}</StyledP>
-                            </StyledOrderContainer>
-                        ))}
-                    </AdminDashCell>
-                </StyledAdminDashboard>
-            </main>
-        </>
+                    ))}
+                </AdminDashCell>
+            </StyledContainer>
+        </StyledAdminDashboard>
     );
 };
 

@@ -16,13 +16,20 @@ import { useHistory, useParams } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminMural = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 91.75vh;
+    min-height: calc(100vh - 60px);
     background-color: #f6f7f1;
+    width: 100%;
+    padding: 0 1rem;
+
+    ${breakpoints("align-items", "", [{ 1024: "flex-start" }])}
+    ${breakpoints("padding-left", "rem", [{ 1024: 2 }])}
 `;
 
 const StyledSubmitBtn = styled(StyledGreenSoloButton)`
@@ -46,6 +53,7 @@ const StyledUploadForm = styled.form`
     background-color: #ffffff;
     padding: 1rem;
     width: 85%;
+    max-width: 500px;
     margin-bottom: 1rem;
 `;
 
@@ -62,6 +70,7 @@ const StyledText = styled(StyledP)`
 
 const StyledImg = styled.img`
     width: 90%;
+    max-width: 500px;
 `;
 
 const StyledError = styled.p`
@@ -243,80 +252,67 @@ const AdminMural = ({ variant }) => {
             </StyledAdminMural>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            {" "}
-            <AdminHeader />{" "}
-            <main>
-                <StyledAdminMural>
-                    <AdminPageTitle>{variant} Mural</AdminPageTitle>
-                    {step > 0 && (
-                        <StyledText>Upload Photo #{step} of 3</StyledText>
-                    )}
-                    {error && <StyledError>{error}</StyledError>}
-                    {step === 0 && variant === "Add" && (
-                        <AdminMuralForm
-                            handleDataSubmit={handleDataSubmit}
-                            handleCancel={handleCancel}
-                            variant={variant}
+    return (
+        <StyledAdminMural>
+            <AdminPageTitle>{variant} Mural</AdminPageTitle>
+            {step > 0 && <StyledText>Upload Photo #{step} of 3</StyledText>}
+            {error && <StyledError>{error}</StyledError>}
+            {step === 0 && variant === "Add" && (
+                <AdminMuralForm
+                    handleDataSubmit={handleDataSubmit}
+                    handleCancel={handleCancel}
+                    variant={variant}
+                />
+            )}
+            {step === 0 && variant === "Edit" && (
+                <AdminMuralForm
+                    handleDataSubmit={handleDataSubmit}
+                    handleCancel={handleCancel}
+                    variant={variant}
+                    preloadedValues={preloadedValues}
+                />
+            )}
+            {step > 0 && (
+                <>
+                    <StyledUploadForm
+                        onSubmit={handleSubmit(handleImageSubmit)}
+                    >
+                        <StyledUploadInput
+                            type="file"
+                            id="upload"
+                            name="upload"
+                            {...register("upload", {
+                                required: "Image is required",
+                            })}
                         />
-                    )}
-                    {step === 0 && variant === "Edit" && (
-                        <AdminMuralForm
-                            handleDataSubmit={handleDataSubmit}
-                            handleCancel={handleCancel}
-                            variant={variant}
-                            preloadedValues={preloadedValues}
-                        />
-                    )}
-                    {step > 0 && (
-                        <>
-                            <StyledUploadForm
-                                onSubmit={handleSubmit(handleImageSubmit)}
+                        <StyledSubmitBtn>Submit</StyledSubmitBtn>
+                        {variant === "Edit" && (
+                            <StyledContinueBtn
+                                onClick={handleContinue}
+                                color="#207070"
                             >
-                                <StyledUploadInput
-                                    type="file"
-                                    id="upload"
-                                    name="upload"
-                                    {...register("upload", {
-                                        required: "Image is required",
-                                    })}
-                                />
-                                <StyledSubmitBtn>Submit</StyledSubmitBtn>
-                                {variant === "Edit" && (
-                                    <StyledContinueBtn
-                                        onClick={handleContinue}
-                                        color="#207070"
-                                    >
-                                        Keep Image
-                                    </StyledContinueBtn>
-                                )}
-                                <StyledCancelBtn
-                                    color="#DB9487"
-                                    onClick={handleCancel}
-                                >
-                                    Cancel (Deletes Mural)
-                                </StyledCancelBtn>
-                            </StyledUploadForm>
-                        </>
-                    )}
-                    {step > 0 && variant === "Edit" && (
-                        <>
-                            <StyledText>Current Image:</StyledText>
-                            <StyledImg
-                                src={
-                                    process.env.REACT_APP_BACKEND_URL +
-                                    `murals/mural/${muralId}/image/${step}`
-                                }
-                                alt="Mural"
-                            />
-                        </>
-                    )}
-                </StyledAdminMural>
-            </main>
-        </>
+                                Keep Image
+                            </StyledContinueBtn>
+                        )}
+                        <StyledCancelBtn color="#DB9487" onClick={handleCancel}>
+                            Cancel (Deletes Mural)
+                        </StyledCancelBtn>
+                    </StyledUploadForm>
+                </>
+            )}
+            {step > 0 && variant === "Edit" && (
+                <>
+                    <StyledText>Current Image:</StyledText>
+                    <StyledImg
+                        src={
+                            process.env.REACT_APP_BACKEND_URL +
+                            `murals/mural/${muralId}/image/${step}`
+                        }
+                        alt="Mural"
+                    />
+                </>
+            )}
+        </StyledAdminMural>
     );
 };
 

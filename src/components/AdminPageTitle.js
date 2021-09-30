@@ -1,6 +1,8 @@
 // dependencies
 import React from "react";
 import styled from "styled-components";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledAdminPageTitle = styled.h1`
     font-family: "Barlow Condensed", sans-serif;

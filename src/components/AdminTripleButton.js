@@ -3,12 +3,17 @@ import React from "react";
 import styled from "styled-components";
 // hooks
 import { useHistory } from "react-router";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledButtonContainer = styled.div`
     display: flex;
     align-items: center;
     margin-top: 1rem;
     align-self: center;
+
+    ${breakpoints("align-self", "", [{ 1024: "flex-start" }])}
+    ${breakpoints("margin-left", "rem", [{ 1024: 2 }])}
 `;
 
 const StyledLeftButton = styled.button`

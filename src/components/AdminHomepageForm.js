@@ -8,12 +8,16 @@ import {
 } from "../containers/styles/adminButtons";
 // hooks
 import { useForm } from "react-hook-form";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: center;
+
+    ${breakpoints("width", "%", [{ 768: 100 }])}
 `;
 
 const StyledLabel = styled.label`
@@ -31,6 +35,8 @@ const StyledInput = styled.input`
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
+
+    ${breakpoints("width", "%", [{ 768: 98 }])}
 `;
 
 const StyledField = styled.textarea`
@@ -59,6 +65,8 @@ const StyledButtonContainer = styled.div`
     align-items: center;
     width: 85%;
     align-self: flex-end;
+
+    ${breakpoints("width", "%", [{ 768: 45 }, { 1024: 70 }, { 1280: 60 }])}
 `;
 
 const StyledGreenBtn = styled(StyledGreenSoloButton)`

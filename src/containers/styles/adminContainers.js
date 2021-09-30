@@ -1,5 +1,7 @@
 // dependencies
 import styled from "styled-components";
+// breakpoints
+import { breakpoints } from "../../breakpoints";
 
 export const StyledCell = styled.div`
     display: flex;
@@ -9,4 +11,6 @@ export const StyledCell = styled.div`
     width: 100%;
     padding: 1rem;
     background-color: #ffffff;
+
+    ${breakpoints("flex-basis", "%", [{ 1024: 50 }])}
 `;

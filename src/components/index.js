@@ -9,6 +9,7 @@ import AdminMessageCell from "./AdminMessageCell";
 import AdminMobileMenu from "./AdminMobileMenu";
 import AdminMuralCell from "./AdminMuralCell";
 import AdminMuralForm from "./AdminMuralForm";
+import AdminNav from "./AdminNav";
 import AdminOrderCell from "./AdminOrderCell";
 import AdminPageTitle from "./AdminPageTitle";
 import AdminTripleButton from "./AdminTripleButton";
@@ -43,6 +44,7 @@ export {
     AdminMobileMenu,
     AdminMuralCell,
     AdminMuralForm,
+    AdminNav,
     AdminOrderCell,
     AdminPageTitle,
     AdminTripleButton,

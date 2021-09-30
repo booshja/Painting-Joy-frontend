@@ -46,7 +46,7 @@ const StyledContinueBtn = styled(StyledGreenSoloButton)`
 `;
 
 const StyledImg = styled.img`
-    width: 90%;
+    width: 100%;
 `;
 
 const AdminHomepageImageForm = ({ handleImageSubmit, setStep, image }) => {

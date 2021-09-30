@@ -4,12 +4,15 @@ import styled from "styled-components";
 // components
 import { AdminBurger, AdminMobileMenu } from "../components";
 import { Link } from "react-router-dom";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 60px;
+    width: 100%;
     padding: 0 1rem;
     border-bottom: 1px solid #207070;
     background-color: #ffffff;

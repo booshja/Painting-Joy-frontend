@@ -4,8 +4,8 @@ import styled from "styled-components";
 // components
 import { AdminBurger, AdminMobileMenu } from "../components";
 import { Link } from "react-router-dom";
-// breakpoints
-import { breakpoints } from "../breakpoints";
+// hooks
+import { useAuth0 } from "@auth0/auth0-react";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -26,7 +26,28 @@ const StyledLink = styled(Link)`
     color: #000000;
 `;
 
+const StyledLogout = styled.a`
+    font-family: "News Cycle", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: #207070;
+    cursor: pointer;
+
+    &:hover {
+        font-weight: 700;
+    }
+`;
+
 const AdminHeader = ({ login }) => {
+    // set up auth0 hooks
+    const { isAuthenticated, logout } = useAuth0();
+
+    const handleLogout = () => {
+        logout({
+            returnTo: "http://localhost:3000",
+        });
+    };
+
     return (
         <StyledHeader>
             <StyledLink to="/admin/dashboard">
@@ -34,6 +55,9 @@ const AdminHeader = ({ login }) => {
             </StyledLink>
             {!login && <AdminBurger openColor="#207070" />}
             {!login && <AdminMobileMenu />}
+            {isAuthenticated && (
+                <StyledLogout onClick={handleLogout}>Log Out</StyledLogout>
+            )}
         </StyledHeader>
     );
 };

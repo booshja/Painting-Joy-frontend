@@ -21,7 +21,9 @@ const StyledAdminOrder = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 91.75vh;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    max-width: 700px;
     background-color: #f6f7f1;
     padding-bottom: 2rem;
 `;
@@ -169,94 +171,77 @@ const AdminOrder = () => {
             </StyledAdminOrder>
         );
 
-    return menuOpen ? (
-        <AdminHeader />
-    ) : (
-        <>
-            {" "}
-            <AdminHeader />{" "}
-            <main>
-                <StyledAdminOrder>
-                    <AdminPageTitle>Order Detail</AdminPageTitle>
-                    <GoBack to="/admin/orders" />
-                    <StyledDetailCell>
+    return (
+        <StyledAdminOrder>
+            <AdminPageTitle>Order Detail</AdminPageTitle>
+            <GoBack to="/admin/orders" />
+            <StyledDetailCell>
+                <StyledOrderP>
+                    <StyledBold>Order Id:</StyledBold> {order.transactionId}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Status:</StyledBold> {order.status}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Amount:</StyledBold> ${order.amount}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Name:</StyledBold> {order.name}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Email:</StyledBold>{" "}
+                    <StyledA href={`mailto:${order.email}`}>
+                        {order.email}
+                    </StyledA>
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Address:</StyledBold> {order.street},{" "}
+                    {order.unit ? order.unit + ", " : null}
+                    {order.city}, {order.stateCode} - {order.zipcode}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>Phone:</StyledBold> {order.phone}
+                </StyledOrderP>
+                <StyledOrderP>
+                    <StyledBold>
+                        {order.listItems.length > 1 ? "Items:" : "Item:"}
+                    </StyledBold>
+                </StyledOrderP>
+                {order.listItems.map((item, idx) => (
+                    <StyledDetailCell key={idx}>
                         <StyledOrderP>
-                            <StyledBold>Order Id:</StyledBold>{" "}
-                            {order.transactionId}
+                            <StyledBold>Name: </StyledBold>
+                            {item.name}
                         </StyledOrderP>
                         <StyledOrderP>
-                            <StyledBold>Status:</StyledBold> {order.status}
+                            <StyledBold>Price: </StyledBold>${item.price}
                         </StyledOrderP>
                         <StyledOrderP>
-                            <StyledBold>Amount:</StyledBold> ${order.amount}
+                            <StyledBold>Shipping: </StyledBold>${item.shipping}
                         </StyledOrderP>
                         <StyledOrderP>
-                            <StyledBold>Name:</StyledBold> {order.name}
+                            <StyledBold>Item Total: </StyledBold>$
+                            {(+item.price + +item.shipping).toFixed(2)}
                         </StyledOrderP>
-                        <StyledOrderP>
-                            <StyledBold>Email:</StyledBold>{" "}
-                            <StyledA href={`mailto:${order.email}`}>
-                                {order.email}
-                            </StyledA>
-                        </StyledOrderP>
-                        <StyledOrderP>
-                            <StyledBold>Address:</StyledBold> {order.street},{" "}
-                            {order.unit ? order.unit + ", " : null}
-                            {order.city}, {order.stateCode} - {order.zipcode}
-                        </StyledOrderP>
-                        <StyledOrderP>
-                            <StyledBold>Phone:</StyledBold> {order.phone}
-                        </StyledOrderP>
-                        <StyledOrderP>
-                            <StyledBold>
-                                {order.listItems.length > 1
-                                    ? "Items:"
-                                    : "Item:"}
-                            </StyledBold>
-                        </StyledOrderP>
-                        {order.listItems.map((item, idx) => (
-                            <StyledDetailCell key={idx}>
-                                <StyledOrderP>
-                                    <StyledBold>Name: </StyledBold>
-                                    {item.name}
-                                </StyledOrderP>
-                                <StyledOrderP>
-                                    <StyledBold>Price: </StyledBold>$
-                                    {item.price}
-                                </StyledOrderP>
-                                <StyledOrderP>
-                                    <StyledBold>Shipping: </StyledBold>$
-                                    {item.shipping}
-                                </StyledOrderP>
-                                <StyledOrderP>
-                                    <StyledBold>Item Total: </StyledBold>$
-                                    {(+item.price + +item.shipping).toFixed(2)}
-                                </StyledOrderP>
-                            </StyledDetailCell>
-                        ))}
-                        <StyledButtonContainer>
-                            <StyledOutlineBtn
-                                color="#207a7a"
-                                onClick={() => handleMarkShipped(id)}
-                                disabled={
-                                    order.status === "Confirmed" ? false : true
-                                }
-                            >
-                                Mark Shipped
-                            </StyledOutlineBtn>
-                            <StyledGreenSoloBtn
-                                onClick={() => handleMarkComplete(id)}
-                                disabled={
-                                    order.status === "Shipped" ? false : true
-                                }
-                            >
-                                Mark Complete
-                            </StyledGreenSoloBtn>
-                        </StyledButtonContainer>
                     </StyledDetailCell>
-                </StyledAdminOrder>
-            </main>
-        </>
+                ))}
+                <StyledButtonContainer>
+                    <StyledOutlineBtn
+                        color="#207a7a"
+                        onClick={() => handleMarkShipped(id)}
+                        disabled={order.status === "Confirmed" ? false : true}
+                    >
+                        Mark Shipped
+                    </StyledOutlineBtn>
+                    <StyledGreenSoloBtn
+                        onClick={() => handleMarkComplete(id)}
+                        disabled={order.status === "Shipped" ? false : true}
+                    >
+                        Mark Complete
+                    </StyledGreenSoloBtn>
+                </StyledButtonContainer>
+            </StyledDetailCell>
+        </StyledAdminOrder>
     );
 };
 

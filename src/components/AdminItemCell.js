@@ -10,6 +10,14 @@ import { StyledP } from "../containers/styles/adminTypography";
 import { StyledCell } from "../containers/styles/adminContainers";
 // hooks
 import { useHistory } from "react-router";
+// breakpoints
+import { breakpoints } from "../breakpoints";
+
+const ReStyledCell = styled(StyledCell)`
+    width: 100%;
+
+    ${breakpoints("flex-direction", "", [{ 1024: "row" }])}
+`;
 
 const StyledInlineBlockP = styled(StyledP)`
     display: inline-block;
@@ -23,10 +31,34 @@ const StyledBoldP = styled(StyledInlineBlockP)`
 
 const StyledButtonContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: ${(props) => (props.showSoldOut ? "45%" : "100%")};
+    justify-content: flex-end;
     align-self: flex-end;
     margin: 1rem 0 0;
+
+    ${breakpoints("align-self", "", [{ 1024: "flex-start" }])}
+    ${breakpoints("margin-left", "rem", [{ 1024: 2 }])}
+`;
+
+const StyledOutlineBtn = styled(StyledOutlineButton)`
+    margin-left: 1rem;
+`;
+
+const StyledSoldOutBtn = styled(StyledGreenSoloButton)`
+    display: ${(props) => (props.showSoldOut ? "none" : "initial")};
+    margin-left: 1rem;
+`;
+
+const StyledImg = styled.img`
+    display: none;
+    height: 150px;
+
+    ${breakpoints("display", "", [{ 1024: "block flex" }])}
+`;
+
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 `;
 
 const AdminItemCell = ({
@@ -41,61 +73,48 @@ const AdminItemCell = ({
     const { id, name, shipping, price, description, quantity, isSold } = data;
 
     return (
-        <StyledCell>
-            <StyledBoldP>{name}</StyledBoldP>
-            <StyledInlineBlockP>{description}</StyledInlineBlockP>
-            {!isSold && (
-                <StyledInlineBlockP>Quantity: {quantity}</StyledInlineBlockP>
-            )}
-            {isSold && <StyledBoldP>Sold Out!</StyledBoldP>}
-            <StyledInlineBlockP>Price: ${price}</StyledInlineBlockP>
-            <StyledInlineBlockP>Shipping: ${shipping}</StyledInlineBlockP>
-            <StyledInlineBlockP>
-                Total: ${(+shipping + +price).toFixed(2)}
-            </StyledInlineBlockP>
-            <StyledButtonContainer showSoldOut={showSoldOut}>
-                {showSoldOut ? (
-                    <>
-                        <StyledOutlineButton
-                            color="#a1c9c9"
-                            onClick={() =>
-                                history.push(`/admin/items/edit/${id}`)
-                            }
-                        >
-                            Edit
-                        </StyledOutlineButton>
-                        <StyledOutlineButton
-                            color="#db9487"
-                            onClick={() => handleDelete(id)}
-                        >
-                            Delete
-                        </StyledOutlineButton>
-                    </>
-                ) : (
-                    <>
-                        <StyledOutlineButton
-                            color="#a1c9c9"
-                            onClick={() =>
-                                history.push(`/admin/items/edit/${id}`)
-                            }
-                        >
-                            Edit
-                        </StyledOutlineButton>
-                        <StyledGreenSoloButton
-                            onClick={() => handleMarkSoldOut(id)}
-                        >
-                            Mark Sold Out
-                        </StyledGreenSoloButton>
-                        <StyledOutlineButton
-                            color="#db9487"
-                            onClick={() => handleDelete(id)}
-                        >
-                            Delete
-                        </StyledOutlineButton>
-                    </>
+        <ReStyledCell>
+            <StyledContainer>
+                <StyledBoldP>{name}</StyledBoldP>
+                <StyledInlineBlockP>{description}</StyledInlineBlockP>
+                {!isSold && (
+                    <StyledInlineBlockP>
+                        Quantity: {quantity}
+                    </StyledInlineBlockP>
                 )}
-            </StyledButtonContainer>
-        </StyledCell>
+                {isSold && <StyledBoldP>Sold Out!</StyledBoldP>}
+                <StyledInlineBlockP>Price: ${price}</StyledInlineBlockP>
+                <StyledInlineBlockP>Shipping: ${shipping}</StyledInlineBlockP>
+                <StyledInlineBlockP>
+                    Total: ${(+shipping + +price).toFixed(2)}
+                </StyledInlineBlockP>
+                <StyledButtonContainer showSoldOut={showSoldOut}>
+                    <StyledOutlineButton
+                        color="#a1c9c9"
+                        onClick={() => history.push(`/admin/items/edit/${id}`)}
+                    >
+                        Edit
+                    </StyledOutlineButton>
+                    <StyledSoldOutBtn
+                        onClick={() => handleMarkSoldOut(id)}
+                        showSoldOut={showSoldOut}
+                    >
+                        Mark Sold Out
+                    </StyledSoldOutBtn>
+                    <StyledOutlineBtn
+                        color="#db9487"
+                        onClick={() => handleDelete(id)}
+                    >
+                        Delete
+                    </StyledOutlineBtn>
+                </StyledButtonContainer>
+            </StyledContainer>
+            <StyledImg
+                src={
+                    process.env.REACT_APP_BACKEND_URL + `items/item/${id}/image`
+                }
+            />
+        </ReStyledCell>
     );
 };
 

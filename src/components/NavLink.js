@@ -10,9 +10,12 @@ const StyledLink = styled(ReactNavLink)`
     font-size: 1.4rem;
     letter-spacing: 2px;
 
+    &:hover:not(.active) {
+        transform: translateY(-1px);
+    }
+
     &.active {
         font-weight: 700;
-        font-size: 1.5rem;
         color: #207070;
     }
 `;

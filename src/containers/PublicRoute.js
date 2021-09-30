@@ -11,12 +11,15 @@ import MenuContext from "../context/MenuContext";
 import { breakpoints } from "../breakpoints";
 
 const StyledBackground = styled.div`
-    max-width: 780px;
+    width: 100%;
     min-height: 100vh;
 
     ${breakpoints("background-color", "", [{ 1024: "#ffffff" }])}
     ${breakpoints("width", "px", [{ 1024: 770 }])}
+    ${breakpoints("max-width", "px", [{ 1024: 780 }])}
 `;
+
+const StyledMain = styled.main``;
 
 const PublicRoute = ({ children, ...rest }) => {
     // set up context
@@ -27,10 +30,10 @@ const PublicRoute = ({ children, ...rest }) => {
     ) : (
         <StyledBackground>
             <Header />
-            <main>
+            <StyledMain>
                 <TitleLogo />
                 <Route {...rest} render={() => children} />
-            </main>
+            </StyledMain>
             <Footer />
         </StyledBackground>
     );

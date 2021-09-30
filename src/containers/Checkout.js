@@ -23,6 +23,9 @@ const StyledCheckout = styled.div`
     align-items: center;
     min-height: 100vh;
     padding: 2rem 0 3rem 0;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
 `;
 
 const StyledPaymentButton = styled.button`

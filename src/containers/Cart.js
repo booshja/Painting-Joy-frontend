@@ -84,6 +84,7 @@ const StyledButton = styled.button`
     &:hover {
         color: #207070;
         background-color: #ffffff;
+        cursor: pointer;
     }
 
     ${breakpoints("font-size", "rem", [{ 414: 1.4 }, { 768: 1.6 }])}

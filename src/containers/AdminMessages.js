@@ -14,8 +14,6 @@ import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-// context
-import MenuContext from "../context/MenuContext";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
@@ -57,7 +55,7 @@ const AdminMessages = () => {
     // set up history
     const history = useHistory();
     // set up hooks
-    const { isLoading, getAccessTokenSilently } = useAuth0();
+    const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
         const source = axios.CancelToken.source();

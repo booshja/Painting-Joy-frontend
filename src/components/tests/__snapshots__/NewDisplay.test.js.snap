@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, variant mural 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM jZfeoU"
+  >
+    <img
+      alt="This is a title"
+      class="sc-gtsrHT ezhKIo"
+      src="http://lorempixel.com/200/200"
+    />
+    <div
+      class="sc-dlnjwi jTWZkz"
+    >
+      <p
+        class="sc-hKFxyN fjSfXV"
+      >
+        See my latest mural!
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, variant null 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM jZfeoU"
+  >
+    <img
+      alt="This is a title"
+      class="sc-gtsrHT ezhKIo"
+      src="http://lorempixel.com/200/200"
+    />
+    <div
+      class="sc-dlnjwi jTWZkz"
+    >
+      <p
+        class="sc-hKFxyN fjSfXV"
+      >
+        See what's new in the store!
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

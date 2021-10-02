@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showArchived false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM fHoZwp"
+  >
+    <button
+      class="sc-gtsrHT bnvZJe"
+    >
+      Edit
+    </button>
+    <button
+      class="sc-dlnjwi bcoSXc"
+    >
+      Archive
+    </button>
+    <button
+      class="sc-hKFxyN gNSIsk"
+    >
+      Delete
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showArchived true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM fHoZwp"
+  >
+    <button
+      class="sc-gtsrHT bnvZJe"
+    >
+      Edit
+    </button>
+    <button
+      class="sc-dlnjwi bcoSXc"
+    >
+      Unarchive
+    </button>
+    <button
+      class="sc-hKFxyN gNSIsk"
+    >
+      Delete
+    </button>
+  </div>
+</DocumentFragment>
+`;

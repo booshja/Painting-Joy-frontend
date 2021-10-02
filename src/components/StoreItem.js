@@ -83,7 +83,7 @@ const StoreItem = ({ item }) => {
                     process.env.REACT_APP_BACKEND_URL +
                     `items/item/${item.id}/image`
                 }
-                alt={item.title}
+                alt={item.name}
                 id={"i-" + item.id}
             />
             {item.isSold && (

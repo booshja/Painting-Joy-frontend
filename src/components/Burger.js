@@ -55,9 +55,9 @@ const Burger = () => {
     const { menuOpen, setMenuOpen } = useContext(MenuContext);
     return (
         <StyledBurger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
-            <div />
-            <div />
-            <div />
+            <div data-testid="div1" />
+            <div data-testid="div2" />
+            <div data-testid="div3" />
         </StyledBurger>
     );
 };

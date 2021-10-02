@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, variant add 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-dlnjwi iUMKXx"
+  >
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="title"
+    >
+      Title:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="title"
+      name="title"
+      placeholder="Title"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="description"
+    >
+      Description:
+    </label>
+    <textarea
+      class="sc-jSFjdj dCurNc"
+      id="description"
+      name="description"
+      placeholder="Description"
+      type="text"
+    />
+    <div
+      class="sc-fujyAs kLrofT"
+    >
+      <button
+        class="sc-gtsrHT cuBDVu"
+        color="#DB9487"
+      >
+        Cancel
+      </button>
+      <button
+        class="sc-bdnxRM sc-iCoGMd gcBejj cVXEZI"
+        type="submit"
+      >
+        Upload Images
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, variant edit, preloadedValues 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-dlnjwi iUMKXx"
+  >
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="title"
+    >
+      Title:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="title"
+      name="title"
+      placeholder="Title"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="description"
+    >
+      Description:
+    </label>
+    <textarea
+      class="sc-jSFjdj dCurNc"
+      id="description"
+      name="description"
+      placeholder="Description"
+      type="text"
+    />
+    <div
+      class="sc-fujyAs kLrofT"
+    >
+      <button
+        class="sc-gtsrHT cuBDVu"
+        color="#DB9487"
+      >
+        Cancel
+      </button>
+      <button
+        class="sc-bdnxRM sc-iCoGMd gcBejj cVXEZI"
+        type="submit"
+      >
+         Edit Images
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

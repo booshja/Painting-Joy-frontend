@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eWnToP fcnWwj"
+  >
+    <h1
+      class="sc-fWWYYk cwzJaj"
+    >
+      Order Cancelled
+    </h1>
+    <p
+      class="sc-kTCsyW eJBYms"
+    >
+      Uh oh! Looks like something went wrong or the order was cancelled. Please try again!
+    </p>
+    <button
+      class="sc-fXgAZx fGPCkt"
+    >
+      <i
+        class="fas fa-long-arrow-alt-left"
+      />
+      Back
+    </button>
+    <img
+      alt="Dispondent and confused child on the ground"
+      class="sc-dvUynV jVrjIS"
+      src="received_2960958014233084.jpeg"
+    />
+  </div>
+</DocumentFragment>
+`;

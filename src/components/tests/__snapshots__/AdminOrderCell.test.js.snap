@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN kpxIQl"
+  >
+    <p
+      class="sc-dlnjwi sc-jSFjdj dHRUYW dqxrxz"
+    >
+      Order:
+    </p>
+    <a
+      class="sc-eCApnc kjvwne"
+      href="/admin/orders/1"
+    >
+      #transactionid123
+    </a>
+    <p
+      class="sc-dlnjwi sc-gKAaRy dHRUYW laMDZP"
+    >
+      Paid: $1299.99
+    </p>
+    <p
+      class="sc-dlnjwi sc-gKAaRy dHRUYW laMDZP"
+    >
+      Status: Confirmed
+    </p>
+    <a
+      class="sc-fujyAs jvbstz"
+      href="mailto:johndoe@email.com"
+    >
+      Email Customer
+    </a>
+    <div
+      class="sc-pNWdM epjXmk"
+    >
+      <button
+        class="sc-gtsrHT sc-iCoGMd irLJfI WtktB"
+        color="#207a7a"
+      >
+        Mark Shipped
+      </button>
+      <button
+        class="sc-bdnxRM gcBejj"
+        disabled=""
+      >
+        Mark Complete
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

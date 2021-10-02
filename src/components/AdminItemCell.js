@@ -113,6 +113,7 @@ const AdminItemCell = ({
                 src={
                     process.env.REACT_APP_BACKEND_URL + `items/item/${id}/image`
                 }
+                alt="Sale Item"
             />
         </ReStyledCell>
     );

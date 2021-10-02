@@ -49,7 +49,7 @@ const StyledImg = styled.img`
     width: 100%;
 `;
 
-const AdminHomepageImageForm = ({ handleImageSubmit, setStep, image }) => {
+const AdminHomepageImageForm = ({ handleImageSubmit, image }) => {
     // set up react-hook-form
     const {
         register,
@@ -66,11 +66,14 @@ const AdminHomepageImageForm = ({ handleImageSubmit, setStep, image }) => {
                     type="file"
                     id="upload"
                     name="upload"
+                    data-testid="upload"
                     {...register("upload", {
                         required: "Image is required.",
                     })}
                 />
-                <StyledSubmitBtn type="submit">Submit</StyledSubmitBtn>
+                <StyledSubmitBtn type="submit" name="homepage-submit-btn">
+                    Submit
+                </StyledSubmitBtn>
                 <StyledContinueBtn onClick={() => history.go(0)}>
                     Keep Image
                 </StyledContinueBtn>

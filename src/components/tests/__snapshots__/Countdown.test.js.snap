@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="sc-bdnxRM bdVwkj"
+  >
+    Time Remaining: 5:00
+  </p>
+</DocumentFragment>
+`;

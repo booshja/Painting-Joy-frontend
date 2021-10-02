@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, menuOpen false 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM Rbdpd"
+  >
+    <div
+      class="sc-hKFxyN goENgz"
+    >
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/dashboard"
+      >
+        Dashboard
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/messages"
+      >
+        Messages
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/items"
+      >
+        Store Items
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/orders"
+      >
+        Orders
+      </a>
+      <a
+        class="sc-dlnjwi bcrfIk"
+      >
+        Log Out
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, menuOpen true 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM hyvIso"
+    open=""
+  >
+    <div
+      class="sc-hKFxyN goENgz"
+    >
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/dashboard"
+      >
+        Dashboard
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/messages"
+      >
+        Messages
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/items"
+      >
+        Store Items
+      </a>
+      <a
+        class="sc-gtsrHT bUCauU"
+        href="/admin/orders"
+      >
+        Orders
+      </a>
+      <a
+        class="sc-dlnjwi bcrfIk"
+      >
+        Log Out
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

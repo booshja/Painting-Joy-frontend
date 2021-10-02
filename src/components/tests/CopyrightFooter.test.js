@@ -11,3 +11,10 @@ it("matches snapshot", () => {
     const { asFragment } = render(<CopyrightFooter />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+/** RTL Tests */
+it("renders correctly", () => {
+    const { getByText } = render(<CopyrightFooter />);
+
+    getByText("2021 - Painting Joy Mural Co.", { exact: false });
+});

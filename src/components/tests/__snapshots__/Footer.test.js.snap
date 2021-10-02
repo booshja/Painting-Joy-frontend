@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="sc-jSFjdj ijiXtL"
+  >
+    <a
+      class="sc-gKAaRy beJoPo"
+      href="/"
+    >
+      Painting Joy Mural Co.
+    </a>
+    <a
+      class="sc-iCoGMd cZLOhu"
+      href="/contact"
+    >
+      Contact Me
+    </a>
+    <div
+      class="sc-pNWdM cIWBiw"
+    >
+      <div
+        class="sc-bdnxRM crSiVT"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Painting Joy Mural Co. Logo"
+            class="sc-dlnjwi hEOZFd"
+            src="painting-joy-logo-white.jpg"
+          />
+        </a>
+      </div>
+      <div
+        class="sc-hKFxyN fGvBCY"
+      >
+        <a
+          class="sc-eCApnc cFONQn"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="sc-eCApnc cFONQn"
+          href="/murals"
+        >
+          Murals
+        </a>
+        <a
+          class="sc-eCApnc cFONQn"
+          href="/contact"
+        >
+          Contact
+        </a>
+        <a
+          class="sc-eCApnc cFONQn"
+          href="/store"
+        >
+          Store
+        </a>
+      </div>
+    </div>
+    <p
+      class="sc-fujyAs jfwRNI"
+    >
+      Copyright © 2021 - Painting Joy Mural Co.
+    </p>
+  </footer>
+</DocumentFragment>
+`;

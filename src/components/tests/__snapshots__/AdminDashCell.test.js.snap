@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, footer false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dlnjwi epdQAm"
+  >
+    <div
+      class="sc-bdnxRM sc-hKFxyN gklqQU guFjzz"
+    >
+      <p
+        class="sc-gtsrHT sc-eCApnc llYzAS bZeHne"
+      >
+        This is a title
+      </p>
+    </div>
+    <div
+      class="sc-bdnxRM sc-hKFxyN gklqQU cZTobf"
+    >
+      <h1>
+        testy
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, footer true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dlnjwi epdQAm"
+  >
+    <div
+      class="sc-bdnxRM sc-hKFxyN gklqQU guFjzz"
+    >
+      <p
+        class="sc-gtsrHT sc-eCApnc llYzAS bZeHne"
+      >
+        This is a title
+      </p>
+    </div>
+    <div
+      class="sc-bdnxRM sc-hKFxyN gklqQU cZTobf"
+    >
+      <h1>
+        testy
+      </h1>
+    </div>
+    <div
+      class="sc-bdnxRM sc-hKFxyN gklqQU guFjzz"
+    >
+      <a
+        class="sc-jSFjdj ggZdog"
+        href="/linkhere"
+      >
+        See All &gt;
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

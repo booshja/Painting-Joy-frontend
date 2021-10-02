@@ -31,7 +31,6 @@ const TitleLogoFooter = () => {
             <Link to="/">
                 <StyledLogo src={Logo} alt="Painting Joy Mural Co. Logo" />
             </Link>
-            {/* <StyledTitle>Painting Joy Mural Co.</StyledTitle> */}
         </StyledTitleLogo>
     );
 };

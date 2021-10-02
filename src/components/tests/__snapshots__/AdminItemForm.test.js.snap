@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-dlnjwi leaIAm"
+  >
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="name"
+    >
+      Name:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="name"
+      name="name"
+      placeholder="Name"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="description"
+    >
+      Description:
+    </label>
+    <textarea
+      class="sc-jSFjdj dCurNc"
+      id="description"
+      name="description"
+      placeholder="Description"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="quantity"
+    >
+      Quantity:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="quantity"
+      name="quantity"
+      type="number"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="price"
+    >
+      Price:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="price"
+      name="price"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN jXuugi"
+      for="price"
+    >
+      Shipping:
+    </label>
+    <input
+      class="sc-eCApnc gZPsrc"
+      id="shipping"
+      name="shipping"
+      type="text"
+    />
+    <div
+      class="sc-fujyAs ckSstQ"
+    >
+      <button
+        class="sc-gtsrHT blUuCa"
+        color="#db9487"
+      >
+        Cancel
+      </button>
+      <button
+        class="sc-bdnxRM sc-iCoGMd gcBejj kljhLI"
+        type="submit"
+      >
+        Image
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

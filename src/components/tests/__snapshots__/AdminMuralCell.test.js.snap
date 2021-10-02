@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showArchived false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gKAaRy sc-gkCoMD iYkHsM lofCdu"
+  >
+    <div
+      class="sc-flUlpA znFni"
+    >
+      <p
+        class="sc-iCoGMd sc-eXuyPJ sc-iGkqmO fCrOLD dbuypn ldRcAy"
+      >
+        This is a title
+      </p>
+      <p
+        class="sc-iCoGMd fCrOLD"
+      >
+        This is a description
+      </p>
+      <div
+        class="sc-ckTSus iukvyb"
+      >
+        <button
+          class="sc-fbIWvP ftvQXU"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-FRrlG XlFNn"
+        >
+          Archive
+        </button>
+        <button
+          class="sc-fXazdy llwtAi"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Mural Display Image"
+      class="sc-irKDMX cJjqQT"
+      src="http://localhost:5000/murals/mural/1/image/1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showArchived true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gKAaRy sc-gkCoMD iYkHsM lofCdu"
+  >
+    <div
+      class="sc-flUlpA znFni"
+    >
+      <p
+        class="sc-iCoGMd sc-eXuyPJ sc-iGkqmO fCrOLD dbuypn ldRcAy"
+      >
+        This is a title
+      </p>
+      <p
+        class="sc-iCoGMd fCrOLD"
+      >
+        This is a description
+      </p>
+      <div
+        class="sc-ckTSus iukvyb"
+      >
+        <button
+          class="sc-fbIWvP ftvQXU"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-FRrlG XlFNn"
+        >
+          Unarchive
+        </button>
+        <button
+          class="sc-fXazdy llwtAi"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Mural Display Image"
+      class="sc-irKDMX cJjqQT"
+      src="http://localhost:5000/murals/mural/1/image/1"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, menuOpen false, cart.length = 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM jQbSZm"
+  >
+    <div
+      class="sc-dlnjwi jsQAfO"
+    >
+      <a
+        aria-current="page"
+        class="sc-gtsrHT EnKnO active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/contact"
+      >
+        Contact Me
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/store"
+      >
+        Store
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/cart"
+      >
+        Cart (0)
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, menuOpen false, cart.length > 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM jQbSZm"
+  >
+    <div
+      class="sc-dlnjwi jsQAfO"
+    >
+      <a
+        aria-current="page"
+        class="sc-gtsrHT EnKnO active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/contact"
+      >
+        Contact Me
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/store"
+      >
+        Store
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/cart"
+      >
+        Cart (3)
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, menuOpen true, cart.length = 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM chgfKH"
+    open=""
+  >
+    <div
+      class="sc-dlnjwi jsQAfO"
+    >
+      <a
+        aria-current="page"
+        class="sc-gtsrHT EnKnO active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/contact"
+      >
+        Contact Me
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/store"
+      >
+        Store
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/cart"
+      >
+        Cart (0)
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, menuOpen true, cart.length > 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-bdnxRM chgfKH"
+    open=""
+  >
+    <div
+      class="sc-dlnjwi jsQAfO"
+    >
+      <a
+        aria-current="page"
+        class="sc-gtsrHT EnKnO active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/contact"
+      >
+        Contact Me
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/store"
+      >
+        Store
+      </a>
+      <a
+        class="sc-gtsrHT EnKnO"
+        href="/cart"
+      >
+        Cart (3)
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

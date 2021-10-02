@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, with preloadedValues 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-dlnjwi bpodCx"
+  >
+    <label
+      class="sc-hKFxyN dYqowm"
+      for="greeting"
+    >
+      Greeting:
+    </label>
+    <input
+      class="sc-eCApnc dVvIcp"
+      id="greeting"
+      name="greeting"
+      placeholder="Greeting"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN dYqowm"
+      for="message"
+    >
+      Message:
+    </label>
+    <textarea
+      class="sc-jSFjdj kErPii"
+      id="message"
+      name="message"
+      placeholder="Message"
+      type="text"
+    />
+    <div
+      class="sc-iCoGMd iuLGcX"
+    >
+      <button
+        class="sc-bdnxRM sc-fujyAs gcBejj dkVJpR"
+      >
+        Only Update Image
+      </button>
+      <button
+        class="sc-gtsrHT sc-pNWdM fRDZtk eLNuDk"
+        color="#207070"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, without preloadedValues 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-dlnjwi bpodCx"
+  >
+    <label
+      class="sc-hKFxyN dYqowm"
+      for="greeting"
+    >
+      Greeting:
+    </label>
+    <input
+      class="sc-eCApnc dVvIcp"
+      id="greeting"
+      name="greeting"
+      placeholder="Greeting"
+      type="text"
+    />
+    <label
+      class="sc-hKFxyN dYqowm"
+      for="message"
+    >
+      Message:
+    </label>
+    <textarea
+      class="sc-jSFjdj kErPii"
+      id="message"
+      name="message"
+      placeholder="Message"
+      type="text"
+    />
+    <div
+      class="sc-iCoGMd iuLGcX"
+    >
+      <button
+        class="sc-bdnxRM sc-fujyAs gcBejj dkVJpR"
+      >
+        Only Update Image
+      </button>
+      <button
+        class="sc-gtsrHT sc-pNWdM fRDZtk eLNuDk"
+        color="#207070"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM eEVwcp"
+  >
+    <a
+      class="sc-gtsrHT ickbIz"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="sc-gtsrHT ickbIz"
+      href="/murals"
+    >
+      Murals
+    </a>
+    <a
+      class="sc-gtsrHT ickbIz"
+      href="/contact"
+    >
+      Contact
+    </a>
+    <a
+      class="sc-gtsrHT ickbIz"
+      href="/store"
+    >
+      Store
+    </a>
+  </div>
+</DocumentFragment>
+`;

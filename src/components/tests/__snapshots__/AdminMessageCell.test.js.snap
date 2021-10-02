@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showArchived false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN kpxIQl"
+  >
+    <p
+      class="sc-dlnjwi sc-eCApnc sc-jSFjdj dHRUYW dIiNo Mlpgf"
+    >
+      John Doe
+    </p>
+    <p
+      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+    >
+      <a
+        href="mailto:johndoe@email.com"
+      >
+        johndoe@email.com
+      </a>
+    </p>
+    <p
+      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+    >
+      This is a message from John Doe
+    </p>
+    <div
+      class="sc-gKAaRy fbGlBn"
+    >
+      <button
+        class="sc-gtsrHT qvdyu"
+        color="#a1c9c9"
+      >
+        Archive
+      </button>
+      <button
+        class="sc-gtsrHT blUuCa"
+        color="#db9487"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showArchived true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN kpxIQl"
+  >
+    <p
+      class="sc-dlnjwi sc-eCApnc sc-jSFjdj dHRUYW dIiNo Mlpgf"
+    >
+      John Doe
+    </p>
+    <p
+      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+    >
+      <a
+        href="mailto:johndoe@email.com"
+      >
+        johndoe@email.com
+      </a>
+    </p>
+    <p
+      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+    >
+      This is a message from John Doe
+    </p>
+    <div
+      class="sc-gKAaRy fbGlBn"
+    >
+      <button
+        class="sc-gtsrHT qvdyu"
+        color="#a1c9c9"
+      >
+        Activate
+      </button>
+      <button
+        class="sc-gtsrHT blUuCa"
+        color="#db9487"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

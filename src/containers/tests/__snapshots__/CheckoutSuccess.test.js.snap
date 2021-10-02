@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eWnToP fcnWwj"
+  >
+    <h1
+      class="sc-fWWYYk cwzJaj"
+    >
+      Congrats!
+    </h1>
+    <p
+      class="sc-kTCsyW eJBYms"
+    >
+      It's all yours! You'll receive a receipt from Stripe (our payment proccessor) shortly, and we'll send you an email once your order has shipped!
+    </p>
+    <button
+      class="sc-fXgAZx fGPCkt"
+    >
+      <i
+        class="fas fa-long-arrow-alt-left"
+      />
+      Back
+    </button>
+    <img
+      alt="Excited child cheering with arms up"
+      class="sc-dvUynV jVrjIS"
+      src="gabe-yay.jpg"
+    />
+  </div>
+</DocumentFragment>
+`;

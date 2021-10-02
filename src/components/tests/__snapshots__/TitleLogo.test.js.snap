@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-dlnjwi duIOUU"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="Painting Joy Mural Co. Logo"
+        class="sc-hKFxyN imVWiP"
+        src="painting-joy-logo-transparent.png"
+      />
+    </a>
+    <nav
+      class="sc-gtsrHT lprbgz"
+    >
+      <a
+        aria-current="page"
+        class="sc-bdnxRM jTcfkt active"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="sc-bdnxRM jTcfkt"
+        href="/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="sc-bdnxRM jTcfkt"
+        href="/contact"
+      >
+        Contact
+      </a>
+      <a
+        class="sc-bdnxRM jTcfkt"
+        href="/store"
+      >
+        Store
+      </a>
+      <a
+        class="sc-bdnxRM jTcfkt"
+        href="/cart"
+      >
+        Cart (0)
+      </a>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

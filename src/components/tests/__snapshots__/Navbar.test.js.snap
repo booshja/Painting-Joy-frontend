@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, cart = 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-gtsrHT lprbgz"
+  >
+    <a
+      aria-current="page"
+      class="sc-bdnxRM jTcfkt active"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/murals"
+    >
+      Murals
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/contact"
+    >
+      Contact
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/store"
+    >
+      Store
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/cart"
+    >
+      Cart (0)
+    </a>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, cart > 0 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-gtsrHT lprbgz"
+  >
+    <a
+      aria-current="page"
+      class="sc-bdnxRM jTcfkt active"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/murals"
+    >
+      Murals
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/contact"
+    >
+      Contact
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/store"
+    >
+      Store
+    </a>
+    <a
+      class="sc-bdnxRM jTcfkt"
+      href="/cart"
+    >
+      Cart (4)
+    </a>
+  </nav>
+</DocumentFragment>
+`;

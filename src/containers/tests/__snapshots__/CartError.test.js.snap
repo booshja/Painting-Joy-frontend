@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-eWnToP fcnWwj"
+  >
+    <h1
+      class="sc-fWWYYk cwzJaj"
+    >
+      Uh Oh
+    </h1>
+    <div
+      class="sc-kTCsyW cTCUUg"
+    >
+      Looks like someone else snagged something you were looking at first, sorry!
+    </div>
+    <div
+      class="sc-kTCsyW cTCUUg"
+    >
+      We've updated your cart, go ahead and check it out.
+    </div>
+    <button
+      class="sc-fXgAZx fGPCkt"
+    >
+      <i
+        class="fas fa-long-arrow-alt-left"
+      />
+      Back
+    </button>
+    <img
+      alt="Child with hands over their mouth with an oops face"
+      class="sc-dvUynV jVrjIS"
+      src="jelleke-vanooteghem-kabtmcdcAbk-unsplash.jpg"
+    />
+  </div>
+</DocumentFragment>
+`;

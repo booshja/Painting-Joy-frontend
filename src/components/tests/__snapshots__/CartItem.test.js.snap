@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM hbayCQ"
+  >
+    <img
+      alt="Name"
+      class="sc-gtsrHT giuQxz"
+      src="http://localhost:5000/items/item/1/image"
+    />
+    <div
+      class="sc-dlnjwi dQFqat"
+    >
+      <p
+        class="sc-hKFxyN ePzVUO"
+      >
+        Name
+      </p>
+      <p
+        class="sc-eCApnc bUKjBs"
+      >
+        Price: $199.99
+      </p>
+      <p
+        class="sc-eCApnc bUKjBs"
+      >
+        Shipping: $123.99
+      </p>
+      <button
+        class="sc-jSFjdj hSWeTu"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

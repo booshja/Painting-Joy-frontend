@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-hKFxyN bVNaeN"
+  >
+    <input
+      class="sc-eCApnc cSGkeM"
+      data-testid="upload"
+      id="upload"
+      name="upload"
+      type="file"
+    />
+    <button
+      class="sc-dlnjwi sc-gKAaRy dprwmB gsFlbW"
+      name="homepage-submit-btn"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      class="sc-gtsrHT sc-iCoGMd bpLce fNNKUb"
+    >
+      Keep Image
+    </button>
+  </form>
+  <p
+    class="sc-bdnxRM sc-jSFjdj kQoGtj jhslqH"
+  >
+    Current Image:
+  </p>
+  <img
+    alt="Homepage"
+    class="sc-fujyAs kTIgxt"
+  />
+</DocumentFragment>
+`;

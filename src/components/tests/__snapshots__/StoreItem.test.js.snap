@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, isSold false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM jnsyBH"
+    id="d-0"
+  >
+    <img
+      alt="Item name"
+      class="sc-gtsrHT hCRpdD"
+      id="i-0"
+      src="http://localhost:5000/items/item/0/image"
+    />
+    <h3
+      class="sc-hKFxyN csRcPi"
+      id="t-0"
+    >
+      Item name
+    </h3>
+    <p
+      class="sc-eCApnc hRhdvA"
+      id="p-0"
+    >
+      $99.99 + $100.05 shipping
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, isSold true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM jnsyBH"
+    id="d-0"
+  >
+    <img
+      alt="Item name"
+      class="sc-gtsrHT hCRpdD"
+      id="i-0"
+      src="http://localhost:5000/items/item/0/image"
+    />
+    <div
+      class="sc-dlnjwi eYQnHe"
+      id="o-0"
+    >
+      Sold
+    </div>
+    <h3
+      class="sc-hKFxyN csRcPi"
+      id="t-0"
+    >
+      Item name
+    </h3>
+    <p
+      class="sc-eCApnc hRhdvA"
+      id="p-0"
+    >
+      $99.99
+    </p>
+  </div>
+</DocumentFragment>
+`;

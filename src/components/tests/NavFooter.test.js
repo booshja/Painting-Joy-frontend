@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import NavFooter from "../NavFooter";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -29,8 +30,8 @@ it("renders correctly", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact");
-    getByText("Store");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
 });

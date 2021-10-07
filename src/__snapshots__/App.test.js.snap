@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-cfARRi bNWIQz"
+  >
+    <header
+      class="sc-ezjrSx dMmbfV"
+    >
+      <a
+        class="sc-kBqmDu haMbxy"
+        href="/"
+      >
+        Painting Joy Mural Co.
+      </a>
+      <button
+        class="sc-hmbstg jxjBZX"
+      >
+        <div
+          data-testid="div1"
+        />
+        <div
+          data-testid="div2"
+        />
+        <div
+          data-testid="div3"
+        />
+      </button>
+      <nav
+        class="sc-EZqKI jGuiXx"
+      >
+        <div
+          class="sc-eEVmNe kGPxBc"
+        >
+          <a
+            aria-current="page"
+            class="sc-jXcxbT lZyxr active"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="sc-jXcxbT lZyxr"
+            href="/murals"
+          >
+            Murals
+          </a>
+          <a
+            class="sc-jXcxbT lZyxr"
+            href="/contact"
+          >
+            Contact Me
+          </a>
+          <a
+            class="sc-jXcxbT lZyxr"
+            href="/store"
+          >
+            Store
+          </a>
+          <a
+            class="sc-jXcxbT lZyxr"
+            href="/cart"
+          >
+            Cart (0)
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main
+      class="sc-jCPRHX"
+    >
+      <div
+        class="sc-flUlpA cfdvI"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Painting Joy Mural Co. Logo"
+            class="sc-eXuyPJ cpxWdm"
+            src="painting-joy-logo-transparent.png"
+          />
+        </a>
+        <nav
+          class="sc-ljsmAU kgvvbF"
+        >
+          <a
+            aria-current="page"
+            class="sc-fmdNqN kZNxAI active"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="sc-fmdNqN kZNxAI"
+            href="/murals"
+          >
+            Murals
+          </a>
+          <a
+            class="sc-fmdNqN kZNxAI"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class="sc-fmdNqN kZNxAI"
+            href="/store"
+          >
+            Store
+          </a>
+          <a
+            class="sc-fmdNqN kZNxAI"
+            href="/cart"
+          >
+            Cart (0)
+          </a>
+        </nav>
+      </div>
+      <div
+        class="sc-gJjCVn dzYPZU"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-palette fa-w-16 fa-spin sc-bQCEYZ iRkoYj"
+          data-icon="palette"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+            fill="currentColor"
+          />
+        </svg>
+        <p
+          class="sc-fXgAZx gODLGR"
+        >
+          Loading...
+        </p>
+      </div>
+    </main>
+    <footer
+      class="sc-eHEENL gNemA-D"
+    >
+      <a
+        class="sc-hzUIXc kJBRzS"
+        href="/"
+      >
+        Painting Joy Mural Co.
+      </a>
+      <a
+        class="sc-kYPZxB eZFmTL"
+        href="/contact"
+      >
+        Contact Me
+      </a>
+      <div
+        class="sc-dWBRfb HIVnn"
+      >
+        <div
+          class="sc-dkQUaI fDNbSv"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="Painting Joy Mural Co. Logo"
+              class="sc-ikXwFM cVbpod"
+              src="painting-joy-logo-white.jpg"
+            />
+          </a>
+        </div>
+        <div
+          class="sc-uxdHp hDwSgr"
+        >
+          <a
+            class="sc-biJonm iFlMkQ"
+            href="/"
+          >
+            Home
+          </a>
+          <a
+            class="sc-biJonm iFlMkQ"
+            href="/murals"
+          >
+            Murals
+          </a>
+          <a
+            class="sc-biJonm iFlMkQ"
+            href="/contact"
+          >
+            Contact
+          </a>
+          <a
+            class="sc-biJonm iFlMkQ"
+            href="/store"
+          >
+            Store
+          </a>
+        </div>
+      </div>
+      <p
+        class="sc-xGAEC jewPfG"
+      >
+        Copyright © 2021 - Painting Joy Mural Co.
+      </p>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

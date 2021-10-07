@@ -1,5 +1,6 @@
 import { getAllByRole, render } from "@testing-library/react";
 import AdminTripleButton from "../AdminTripleButton";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, showArchived true", () => {

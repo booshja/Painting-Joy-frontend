@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import ContactForm from "../ContactForm";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -16,8 +17,8 @@ it("matches snapshot", () => {
 it("renders correctly", () => {
     const { getByLabelText, getByRole } = render(<ContactForm />);
 
-    getByLabelText("Name:");
-    getByLabelText("Email:");
-    getByLabelText("Message:");
-    getByRole("button", { name: "Submit" });
+    expect(getByLabelText("Name:")).toBeInTheDocument();
+    expect(getByLabelText("Email:")).toBeInTheDocument();
+    expect(getByLabelText("Message:")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Submit" })).toBeInTheDocument();
 });

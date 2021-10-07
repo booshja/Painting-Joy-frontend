@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "../Footer";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -29,15 +30,17 @@ it("renders correctly", () => {
         </BrowserRouter>
     );
 
-    getByText("Painting Joy Mural Co.");
-    getByText("Contact Me");
-    getByText("2021 - Painting Joy Mural Co", { exact: false });
+    expect(getByText("Painting Joy Mural Co.")).toBeInTheDocument();
+    expect(getByText("Contact Me")).toBeInTheDocument();
+    expect(
+        getByText("2021 - Painting Joy Mural Co", { exact: false })
+    ).toBeInTheDocument();
     // children
     // TitleLogoFooter Component
-    getByAltText("Painting Joy Mural Co. Logo");
+    expect(getByAltText("Painting Joy Mural Co. Logo")).toBeInTheDocument();
     // NavFooter Component
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact");
-    getByText("Store");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
 });

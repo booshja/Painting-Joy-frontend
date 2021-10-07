@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminMuralCell from "../AdminMuralCell";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, showArchived true", () => {
@@ -85,8 +86,8 @@ it("renders correctly, showArchived true", () => {
         />
     );
 
-    getByText("This is a title");
-    getByText("This is a description");
+    expect(getByText("This is a title")).toBeInTheDocument();
+    expect(getByText("This is a description")).toBeInTheDocument();
     const buttons = getAllByRole("button");
     getByAltText("Mural Display Image");
 
@@ -110,8 +111,8 @@ it("renders correctly, showArchived false", () => {
         />
     );
 
-    getByText("This is a title");
-    getByText("This is a description");
+    expect(getByText("This is a title")).toBeInTheDocument();
+    expect(getByText("This is a description")).toBeInTheDocument();
     const buttons = getAllByRole("button");
     getByAltText("Mural Display Image");
 

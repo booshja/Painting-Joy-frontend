@@ -2,11 +2,63 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-bdnxRM gefIbI"
+  .c0 {
+  display: none;
+  background-color: #ffffff;
+  min-height: calc(100vh - 60px);
+  height: fill;
+  width: 300px;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  border-right: 2px solid #207070;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #207070;
+}
+
+.c1.active {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #a1c9c9;
+  border-left: 4px solid #207070;
+  cursor: auto;
+}
+
+.c1:hover:not(.active) {
+  background-color: rgba(161,201,197,0.3);
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+<nav
+    class="c0"
   >
     <a
-      class="sc-gtsrHT eIcFJr"
+      class="c1"
       href="/admin/dashboard"
     >
       <i
@@ -15,7 +67,7 @@ exports[`matches snapshot 1`] = `
        Dashboard
     </a>
     <a
-      class="sc-gtsrHT eIcFJr"
+      class="c1"
       href="/admin/murals"
     >
       <i
@@ -24,7 +76,7 @@ exports[`matches snapshot 1`] = `
        Murals
     </a>
     <a
-      class="sc-gtsrHT eIcFJr"
+      class="c1"
       href="/admin/messages"
     >
       <i
@@ -33,7 +85,7 @@ exports[`matches snapshot 1`] = `
        Messages
     </a>
     <a
-      class="sc-gtsrHT eIcFJr"
+      class="c1"
       href="/admin/items"
     >
       <i
@@ -42,7 +94,7 @@ exports[`matches snapshot 1`] = `
        Store Items
     </a>
     <a
-      class="sc-gtsrHT eIcFJr"
+      class="c1"
       href="/admin/orders"
     >
       <i

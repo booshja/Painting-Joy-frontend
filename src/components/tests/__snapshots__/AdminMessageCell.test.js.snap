@@ -2,16 +2,151 @@
 
 exports[`matches snapshot, showArchived false 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-hKFxyN kpxIQl"
+  .c5 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #a1c9c9;
+  color: #a1c9c9;
+}
+
+.c5:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #a1c9c9;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c6 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #db9487;
+  color: #db9487;
+}
+
+.c6:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #db9487;
+  cursor: pointer;
+}
+
+.c6:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c1 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c2 {
+  display: inline-block;
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  max-width: 50ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  font-weight: 700;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 60%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin: 1rem 0 0;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c4 {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c4 {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c4 {
+    width: 25%;
+  }
+}
+
+<div
+    class="c0"
   >
     <p
-      class="sc-dlnjwi sc-eCApnc sc-jSFjdj dHRUYW dIiNo Mlpgf"
+      class="c1 c2 c3"
     >
       John Doe
     </p>
     <p
-      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+      class="c1 c2"
     >
       <a
         href="mailto:johndoe@email.com"
@@ -20,21 +155,21 @@ exports[`matches snapshot, showArchived false 1`] = `
       </a>
     </p>
     <p
-      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+      class="c1 c2"
     >
       This is a message from John Doe
     </p>
     <div
-      class="sc-gKAaRy fbGlBn"
+      class="c4"
     >
       <button
-        class="sc-gtsrHT qvdyu"
+        class="c5"
         color="#a1c9c9"
       >
         Archive
       </button>
       <button
-        class="sc-gtsrHT blUuCa"
+        class="c6"
         color="#db9487"
       >
         Delete
@@ -46,16 +181,151 @@ exports[`matches snapshot, showArchived false 1`] = `
 
 exports[`matches snapshot, showArchived true 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-hKFxyN kpxIQl"
+  .c5 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #a1c9c9;
+  color: #a1c9c9;
+}
+
+.c5:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #a1c9c9;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c6 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #db9487;
+  color: #db9487;
+}
+
+.c6:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #db9487;
+  cursor: pointer;
+}
+
+.c6:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c1 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c2 {
+  display: inline-block;
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  max-width: 50ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3 {
+  font-weight: 700;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 60%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin: 1rem 0 0;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c4 {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c4 {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c4 {
+    width: 25%;
+  }
+}
+
+<div
+    class="c0"
   >
     <p
-      class="sc-dlnjwi sc-eCApnc sc-jSFjdj dHRUYW dIiNo Mlpgf"
+      class="c1 c2 c3"
     >
       John Doe
     </p>
     <p
-      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+      class="c1 c2"
     >
       <a
         href="mailto:johndoe@email.com"
@@ -64,21 +334,21 @@ exports[`matches snapshot, showArchived true 1`] = `
       </a>
     </p>
     <p
-      class="sc-dlnjwi sc-eCApnc dHRUYW dIiNo"
+      class="c1 c2"
     >
       This is a message from John Doe
     </p>
     <div
-      class="sc-gKAaRy fbGlBn"
+      class="c4"
     >
       <button
-        class="sc-gtsrHT qvdyu"
+        class="c5"
         color="#a1c9c9"
       >
         Activate
       </button>
       <button
-        class="sc-gtsrHT blUuCa"
+        class="c6"
         color="#db9487"
       >
         Delete

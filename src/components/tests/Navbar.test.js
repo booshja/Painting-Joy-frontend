@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "../Navbar";
 import CartContext from "../../context/CartContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, cart > 0", () => {
@@ -57,11 +58,11 @@ it("renders correctly, cart > 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact");
-    getByText("Store");
-    getByText("Cart (4)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (4)")).toBeInTheDocument();
 });
 
 it("renders correctly, cart = 0", () => {
@@ -73,9 +74,9 @@ it("renders correctly, cart = 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact");
-    getByText("Store");
-    getByText("Cart (0)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (0)")).toBeInTheDocument();
 });

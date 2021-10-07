@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminHomepageImageForm from "../AdminHomepageImageForm";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -26,9 +27,9 @@ it("renders correctly", () => {
         />
     );
 
-    getByTestId("upload");
-    getByRole("button", { name: "Submit" });
-    getByRole("button", { name: "Keep Image" });
-    getByText("Current Image:");
-    getByAltText("Homepage");
+    expect(getByTestId("upload")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Submit" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Keep Image" })).toBeInTheDocument();
+    expect(getByText("Current Image:")).toBeInTheDocument();
+    expect(getByAltText("Homepage")).toBeInTheDocument();
 });

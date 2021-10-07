@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import Countdown from "../Countdown";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -16,5 +17,5 @@ it("matches snapshot", () => {
 it("renders correctly", () => {
     const { getByText } = render(<Countdown handleCancel={null} />);
 
-    getByText("Time Remaining: ", { exact: false });
+    expect(getByText("Time Remaining: ", { exact: false })).toBeInTheDocument();
 });

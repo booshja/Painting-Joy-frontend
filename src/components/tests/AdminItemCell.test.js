@@ -174,16 +174,16 @@ it("renders correctly, showSoldOut true, isSold false", () => {
         />
     );
 
-    getByText("Test Name");
-    getByText("Description");
-    getByText("Quantity: 3");
-    getByText("Price: $299.99");
-    getByText("Shipping: $123.99");
-    getByText("Total: $423.98");
-    getByRole("button", { name: "Edit" });
-    getByText("Mark Sold Out");
-    getByRole("button", { name: "Delete" });
-    getByAltText("Sale Item");
+    expect(getByText("Test Name")).toBeInTheDocument();
+    expect(getByText("Description")).toBeInTheDocument();
+    expect(getByText("Quantity: 3")).toBeInTheDocument();
+    expect(getByText("Price: $299.99")).toBeInTheDocument();
+    expect(getByText("Shipping: $123.99")).toBeInTheDocument();
+    expect(getByText("Total: $423.98")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Edit" })).toBeInTheDocument();
+    expect(getByText("Mark Sold Out")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
+    expect(getByAltText("Sale Item")).toBeInTheDocument();
 });
 
 it("renders correctly, showSoldOut false, isSold true", () => {
@@ -204,15 +204,15 @@ it("renders correctly, showSoldOut false, isSold true", () => {
         />
     );
 
-    getByText("Test Name 4");
-    getByText("Description 4");
-    getByText("Sold Out!");
-    getByText("Price: $456.66");
-    getByText("Shipping: $678.44");
-    getByText("Total: $1135.10");
-    getByRole("button", { name: "Edit" });
-    getByRole("button", { name: "Delete" });
-    getByAltText("Sale Item");
+    expect(getByText("Test Name 4")).toBeInTheDocument();
+    expect(getByText("Description 4")).toBeInTheDocument();
+    expect(getByText("Sold Out!")).toBeInTheDocument();
+    expect(getByText("Price: $456.66")).toBeInTheDocument();
+    expect(getByText("Shipping: $678.44")).toBeInTheDocument();
+    expect(getByText("Total: $1135.10")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Edit" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
+    expect(getByAltText("Sale Item")).toBeInTheDocument();
 });
 
 it("renders correctly, showSoldOut true, isSold true", () => {
@@ -232,15 +232,15 @@ it("renders correctly, showSoldOut true, isSold true", () => {
         />
     );
 
-    getByText("Test Name 2");
-    getByText("Description 2");
-    getByText("Sold Out!");
-    getByText("Price: $299.99");
-    getByText("Shipping: $123.99");
-    getByText("Total: $423.98");
-    getByRole("button", { name: "Edit" });
-    getByRole("button", { name: "Delete" });
-    getByAltText("Sale Item");
+    expect(getByText("Test Name 2")).toBeInTheDocument();
+    expect(getByText("Description 2")).toBeInTheDocument();
+    expect(getByText("Sold Out!")).toBeInTheDocument();
+    expect(getByText("Price: $299.99")).toBeInTheDocument();
+    expect(getByText("Shipping: $123.99")).toBeInTheDocument();
+    expect(getByText("Total: $423.98")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Edit" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
+    expect(getByAltText("Sale Item")).toBeInTheDocument();
 });
 
 it("renders correctly, showSoldOut false, isSold false", () => {
@@ -261,14 +261,14 @@ it("renders correctly, showSoldOut false, isSold false", () => {
         />
     );
 
-    getByText("Test Name 3");
-    getByText("Description 3");
-    getByText("Quantity: 5");
-    getByText("Price: $333.55");
-    getByText("Shipping: $98.98");
-    getByText("Total: $432.53");
-    getByRole("button", { name: "Edit" });
-    getByText("Mark Sold Out");
-    getByRole("button", { name: "Delete" });
-    getByAltText("Sale Item");
+    expect(getByText("Test Name 3")).toBeInTheDocument();
+    expect(getByText("Description 3")).toBeInTheDocument();
+    expect(getByText("Quantity: 5")).toBeInTheDocument();
+    expect(getByText("Price: $333.55")).toBeInTheDocument();
+    expect(getByText("Shipping: $98.98")).toBeInTheDocument();
+    expect(getByText("Total: $432.53")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Edit" })).toBeInTheDocument();
+    expect(getByText("Mark Sold Out")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
+    expect(getByAltText("Sale Item")).toBeInTheDocument();
 });

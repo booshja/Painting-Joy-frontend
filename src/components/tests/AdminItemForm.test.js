@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminItemForm from "../AdminItemForm";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, variant add", () => {
@@ -72,17 +73,17 @@ it("renders correctly, variant add", () => {
         />
     );
 
-    getByLabelText("Name:");
-    getByLabelText("Description:");
-    getByLabelText("Quantity:");
-    getByLabelText("Price:");
-    getByLabelText("Shipping");
-    getByRole("button", { name: "Cancel" });
-    getByRole("button", { name: "Upload" });
+    expect(getByLabelText("Name:")).toBeInTheDocument();
+    expect(getByLabelText("Description:")).toBeInTheDocument();
+    expect(getByLabelText("Quantity:")).toBeInTheDocument();
+    expect(getByLabelText("Price:")).toBeInTheDocument();
+    expect(getByLabelText("Shipping:")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Cancel" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Upload Image" })).toBeInTheDocument();
 });
 
 it("renders correctly, variant edit, preloadedValues", () => {
-    const { getByDisplayValue } = render(
+    const { getByDisplayValue, getByRole } = render(
         <AdminItemForm
             handleDataSubmit={null}
             handleCancel={null}
@@ -97,11 +98,11 @@ it("renders correctly, variant edit, preloadedValues", () => {
         />
     );
 
-    getByDisplayValue("Item Name");
-    getByDisplayValue("Item Description");
-    getByDisplayValue("4");
-    getByDisplayValue("444.99");
-    getByDisplayValue("123.99");
-    getByRole("button", { name: "Cancel" });
-    getByRole("button", { name: "Edit" });
+    expect(getByDisplayValue("Item Name")).toBeInTheDocument();
+    expect(getByDisplayValue("Item Description")).toBeInTheDocument();
+    expect(getByDisplayValue("4")).toBeInTheDocument();
+    expect(getByDisplayValue("444.99")).toBeInTheDocument();
+    expect(getByDisplayValue("123.99")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Cancel" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Edit Image" })).toBeInTheDocument();
 });

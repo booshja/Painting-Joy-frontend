@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import CartItem from "../CartItem";
 import CartContext from "../../context/CartContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -50,9 +51,9 @@ it("renders correctly", () => {
         </CartContext.Provider>
     );
 
-    getByAltText("Name");
-    getByText("Name");
-    getByText("Price: $199.99");
-    getByText("Shipping: $123.99");
-    getByRole("button", { name: "Remove" });
+    expect(getByAltText("Name")).toBeInTheDocument();
+    expect(getByText("Name")).toBeInTheDocument();
+    expect(getByText("Price: $199.99")).toBeInTheDocument();
+    expect(getByText("Shipping: $123.99")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Remove" })).toBeInTheDocument();
 });

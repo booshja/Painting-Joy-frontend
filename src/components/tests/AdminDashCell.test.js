@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AdminDashCell from "../AdminDashCell";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, footer false", () => {

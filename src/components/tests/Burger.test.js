@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import Burger from "../Burger";
 import MenuContext from "../../context/MenuContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, menuOpen true", () => {
@@ -46,9 +47,9 @@ it("renders correctly, menuOpen true", () => {
         </MenuContext.Provider>
     );
 
-    getByTestId("div1");
-    getByTestId("div2");
-    getByTestId("div3");
+    expect(getByTestId("div1")).toBeInTheDocument();
+    expect(getByTestId("div2")).toBeInTheDocument();
+    expect(getByTestId("div3")).toBeInTheDocument();
 });
 
 it("renders correctly, menuOpen false", () => {
@@ -58,7 +59,7 @@ it("renders correctly, menuOpen false", () => {
         </MenuContext.Provider>
     );
 
-    getByTestId("div1");
-    getByTestId("div2");
-    getByTestId("div3");
+    expect(getByTestId("div1")).toBeInTheDocument();
+    expect(getByTestId("div2")).toBeInTheDocument();
+    expect(getByTestId("div3")).toBeInTheDocument();
 });

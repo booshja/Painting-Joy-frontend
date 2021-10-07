@@ -3,6 +3,7 @@ import MobileMenu from "../MobileMenu";
 import MenuContext from "../../context/MenuContext";
 import CartContext from "../../context/CartContext";
 import { BrowserRouter } from "react-router-dom";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, menuOpen true, cart.length > 0", () => {
@@ -118,11 +119,11 @@ it("renders correctly, menuOpen true, cart.length > 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact Me");
-    getByText("Store");
-    getByText("Cart (3)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact Me")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (3)")).toBeInTheDocument();
 });
 
 it("renders correctly, menuOpen false, cart.length > 0", () => {
@@ -136,11 +137,11 @@ it("renders correctly, menuOpen false, cart.length > 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact Me");
-    getByText("Store");
-    getByText("Cart (3)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact Me")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (3)")).toBeInTheDocument();
 });
 
 it("renders correctly, menuOpen true, cart.length = 0", () => {
@@ -154,11 +155,11 @@ it("renders correctly, menuOpen true, cart.length = 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact Me");
-    getByText("Store");
-    getByText("Cart (0)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact Me")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (0)")).toBeInTheDocument();
 });
 
 it("renders correctly, menuOpen false, cart.length = 0", () => {
@@ -172,9 +173,9 @@ it("renders correctly, menuOpen false, cart.length = 0", () => {
         </BrowserRouter>
     );
 
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact Me");
-    getByText("Store");
-    getByText("Cart (0)");
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact Me")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (0)")).toBeInTheDocument();
 });

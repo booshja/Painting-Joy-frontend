@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import NavLink from "../NavLink";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -29,5 +30,5 @@ it("renders correctly", () => {
         </BrowserRouter>
     );
 
-    getByText("Test Link");
+    expect(getByText("Test Link")).toBeInTheDocument();
 });

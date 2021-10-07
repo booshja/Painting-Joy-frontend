@@ -1,86 +1,429 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`matches snapshot, variant add 1`] = `
 <DocumentFragment>
-  <form
-    class="sc-dlnjwi leaIAm"
+  .c6 {
+  background-color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.c6:hover:not(:disabled) {
+  color: #207070;
+  background-color: #ffffff;
+  border: 2px solid #207070;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.c6:disabled {
+  background-color: #dadada;
+}
+
+.c5 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #db9487;
+  color: #db9487;
+}
+
+.c5:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #db9487;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  width: 98%;
+}
+
+.c3 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  resize: none;
+  width: 98%;
+}
+
+.c7 {
+  border: 2px solid #207070;
+  margin-left: 1rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<form
+    class="c0"
   >
     <label
-      class="sc-hKFxyN jXuugi"
+      class="c1"
       for="name"
     >
       Name:
     </label>
     <input
-      class="sc-eCApnc gZPsrc"
+      class="c2"
       id="name"
       name="name"
       placeholder="Name"
       type="text"
     />
     <label
-      class="sc-hKFxyN jXuugi"
+      class="c1"
       for="description"
     >
       Description:
     </label>
     <textarea
-      class="sc-jSFjdj dCurNc"
+      class="c3"
       id="description"
       name="description"
       placeholder="Description"
       type="text"
     />
     <label
-      class="sc-hKFxyN jXuugi"
+      class="c1"
       for="quantity"
     >
       Quantity:
     </label>
     <input
-      class="sc-eCApnc gZPsrc"
+      class="c2"
       id="quantity"
       name="quantity"
       type="number"
     />
     <label
-      class="sc-hKFxyN jXuugi"
+      class="c1"
       for="price"
     >
       Price:
     </label>
     <input
-      class="sc-eCApnc gZPsrc"
+      class="c2"
       id="price"
       name="price"
       type="text"
     />
     <label
-      class="sc-hKFxyN jXuugi"
+      class="c1"
       for="price"
     >
       Shipping:
     </label>
     <input
-      class="sc-eCApnc gZPsrc"
+      class="c2"
       id="shipping"
       name="shipping"
       type="text"
     />
     <div
-      class="sc-fujyAs ckSstQ"
+      class="c4"
     >
       <button
-        class="sc-gtsrHT blUuCa"
+        class="c5"
         color="#db9487"
       >
         Cancel
       </button>
       <button
-        class="sc-bdnxRM sc-iCoGMd gcBejj kljhLI"
+        class="c6 c7"
         type="submit"
       >
-        Image
+        Upload Image
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, variant edit, preloadedValues 1`] = `
+<DocumentFragment>
+  .c6 {
+  background-color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.c6:hover:not(:disabled) {
+  color: #207070;
+  background-color: #ffffff;
+  border: 2px solid #207070;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.c6:disabled {
+  background-color: #dadada;
+}
+
+.c5 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #db9487;
+  color: #db9487;
+}
+
+.c5:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #db9487;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  width: 98%;
+}
+
+.c3 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  resize: none;
+  width: 98%;
+}
+
+.c7 {
+  border: 2px solid #207070;
+  margin-left: 1rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<form
+    class="c0"
+  >
+    <label
+      class="c1"
+      for="name"
+    >
+      Name:
+    </label>
+    <input
+      class="c2"
+      id="name"
+      name="name"
+      placeholder="Name"
+      type="text"
+    />
+    <label
+      class="c1"
+      for="description"
+    >
+      Description:
+    </label>
+    <textarea
+      class="c3"
+      id="description"
+      name="description"
+      placeholder="Description"
+      type="text"
+    />
+    <label
+      class="c1"
+      for="quantity"
+    >
+      Quantity:
+    </label>
+    <input
+      class="c2"
+      id="quantity"
+      name="quantity"
+      type="number"
+    />
+    <label
+      class="c1"
+      for="price"
+    >
+      Price:
+    </label>
+    <input
+      class="c2"
+      id="price"
+      name="price"
+      type="text"
+    />
+    <label
+      class="c1"
+      for="price"
+    >
+      Shipping:
+    </label>
+    <input
+      class="c2"
+      id="shipping"
+      name="shipping"
+      type="text"
+    />
+    <div
+      class="c4"
+    >
+      <button
+        class="c5"
+        color="#db9487"
+      >
+        Cancel
+      </button>
+      <button
+        class="c6 c7"
+        type="submit"
+      >
+         Edit Image
       </button>
     </div>
   </form>

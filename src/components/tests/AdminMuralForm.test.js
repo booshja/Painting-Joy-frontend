@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminMuralForm from "../AdminMuralForm";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, variant add", () => {
@@ -66,8 +67,8 @@ it("renders correctly, variant add", () => {
         />
     );
 
-    getByLabelText("Title:");
-    getByLabelText("Description:");
+    expect(getByLabelText("Title:")).toBeInTheDocument();
+    expect(getByLabelText("Description:")).toBeInTheDocument();
     const buttons = getAllByRole("button");
 
     expect(buttons[0]).toHaveTextContent("Cancel");
@@ -87,8 +88,8 @@ it("renders correctly, variant edit, preloadedValues", () => {
         />
     );
 
-    getByDisplayValue("This is a title");
-    getByDisplayValue("This is a description");
+    expect(getByDisplayValue("This is a title")).toBeInTheDocument();
+    expect(getByDisplayValue("This is a description")).toBeInTheDocument();
     const buttons = getAllByRole("button");
 
     expect(buttons[0]).toHaveTextContent("Cancel");

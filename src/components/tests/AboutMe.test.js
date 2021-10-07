@@ -1,5 +1,6 @@
 import { getByAltText, render } from "@testing-library/react";
 import AboutMe from "../AboutMe";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {

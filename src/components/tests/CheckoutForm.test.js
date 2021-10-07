@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import CheckoutForm from "../CheckoutForm";
 import CartContext from "../../context/CartContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -29,14 +30,16 @@ it("renders correctly", () => {
         </CartContext.Provider>
     );
 
-    getByLabelText("Name:");
-    getByLabelText("Email Address:");
-    getByLabelText("Street:");
-    getByLabelText("Unit:");
-    getByLabelText("City:");
-    getByLabelText("State:");
-    getByLabelText("Zipcode: (ex: 98101)");
-    getByLabelText("Phone Number: (ex: 5555555555)");
+    expect(getByLabelText("Name:")).toBeInTheDocument();
+    expect(getByLabelText("Email Address:")).toBeInTheDocument();
+    expect(getByLabelText("Street:")).toBeInTheDocument();
+    expect(getByLabelText("Unit:")).toBeInTheDocument();
+    expect(getByLabelText("City:")).toBeInTheDocument();
+    expect(getByLabelText("State:")).toBeInTheDocument();
+    expect(getByLabelText("Zipcode: (ex: 98101)")).toBeInTheDocument();
+    expect(
+        getByLabelText("Phone Number: (ex: 5555555555)")
+    ).toBeInTheDocument();
     const buttons = getAllByRole("button");
 
     expect(buttons[0]).toHaveTextContent("Cancel");

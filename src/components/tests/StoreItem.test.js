@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import StoreItem from "../StoreItem";
+import "jest-styled-components";
 
 const item = {
     id: 0,
@@ -41,15 +42,15 @@ it("matches snapshot, isSold true", () => {
 it("renders correctly, isSold false", () => {
     const { getByAltText, getByText } = render(<StoreItem item={item} />);
 
-    getByAltText("Item name");
-    getByText("Item name");
-    getByText("$99.99 + $100.05 shipping");
+    expect(getByAltText("Item name")).toBeInTheDocument();
+    expect(getByText("Item name")).toBeInTheDocument();
+    expect(getByText("$99.99 + $100.05 shipping")).toBeInTheDocument();
 });
 
 it("renders correctly, isSold true", () => {
     const { getByAltText, getByText } = render(<StoreItem item={soldItem} />);
 
-    getByAltText("Item name");
-    getByText("Sold");
-    getByText("Item name");
+    expect(getByAltText("Item name")).toBeInTheDocument();
+    expect(getByText("Sold")).toBeInTheDocument();
+    expect(getByText("Item name")).toBeInTheDocument();
 });

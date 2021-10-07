@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import TitleLogo from "../TitleLogo";
 import CartContext from "../../context/CartContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -36,10 +37,10 @@ it("renders without crashing", () => {
         </BrowserRouter>
     );
 
-    getByAltText("Painting Joy Mural Co. Logo");
-    getByText("Home");
-    getByText("Murals");
-    getByText("Contact");
-    getByText("Store");
-    getByText("Cart (0)");
+    expect(getByAltText("Painting Joy Mural Co. Logo")).toBeInTheDocument();
+    expect(getByText("Home")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Contact")).toBeInTheDocument();
+    expect(getByText("Store")).toBeInTheDocument();
+    expect(getByText("Cart (0)")).toBeInTheDocument();
 });

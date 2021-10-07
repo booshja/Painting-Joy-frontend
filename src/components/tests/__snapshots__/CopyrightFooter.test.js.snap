@@ -2,8 +2,14 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <p
-    class="sc-bdnxRM bwhXmP"
+  .c0 {
+  font-family: "Barlow Condensed",sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+<p
+    class="c0"
   >
     Copyright © 2021 - Painting Joy Mural Co.
   </p>

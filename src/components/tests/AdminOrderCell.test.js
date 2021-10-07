@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AdminOrderCell from "../AdminOrderCell";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -59,11 +60,11 @@ it("renders correctly", () => {
         </BrowserRouter>
     );
 
-    getByText("Order:");
-    getByText("#transactionid123");
-    getByText("Paid: $1299.99");
-    getByText("Status: Confirmed");
-    getByText("Email Customer");
+    expect(getByText("Order:")).toBeInTheDocument();
+    expect(getByText("#transactionid123")).toBeInTheDocument();
+    expect(getByText("Paid: $1299.99")).toBeInTheDocument();
+    expect(getByText("Status: Confirmed")).toBeInTheDocument();
+    expect(getByText("Email Customer")).toBeInTheDocument();
     const buttons = getAllByRole("button");
 
     expect(buttons[0]).toHaveTextContent("Mark Shipped");

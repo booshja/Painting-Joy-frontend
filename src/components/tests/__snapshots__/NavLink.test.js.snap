@@ -2,8 +2,29 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <a
-    class="sc-bdnxRM jTcfkt"
+  .c0 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+}
+
+.c0:hover:not(.active) {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.c0.active {
+  font-weight: 700;
+  color: #207070;
+}
+
+<a
+    class="c0"
     href="/testlink"
   >
     Test Link

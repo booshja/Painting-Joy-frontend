@@ -1,10 +1,9 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
 import { AdminMuralForm, AdminPageTitle, LoadingSpinner } from "../components";
-import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -14,8 +13,6 @@ import { StyledP } from "./styles/adminTypography";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
-// context
-import MenuContext from "../context/MenuContext";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
@@ -102,9 +99,7 @@ const AdminMural = ({ variant }) => {
     // set up history
     const history = useHistory();
     // set up hooks
-    const { isLoading, getAccessTokenSilently } = useAuth0();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
+    const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
         async function getMuralData() {

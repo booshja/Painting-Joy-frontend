@@ -2,29 +2,54 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnxRM eEVwcp"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 125px;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+<div
+    class="c0"
   >
     <a
-      class="sc-gtsrHT ickbIz"
+      class="c1"
       href="/"
     >
       Home
     </a>
     <a
-      class="sc-gtsrHT ickbIz"
+      class="c1"
       href="/murals"
     >
       Murals
     </a>
     <a
-      class="sc-gtsrHT ickbIz"
+      class="c1"
       href="/contact"
     >
       Contact
     </a>
     <a
-      class="sc-gtsrHT ickbIz"
+      class="c1"
       href="/store"
     >
       Store

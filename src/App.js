@@ -1,9 +1,6 @@
 // dependencies
 import React, { useEffect, useState } from "react";
-// api
-// ? import Api from "./api";
 // context
-// import AdminContext from "./context/AdminContext";
 import MenuContext from "./context/MenuContext";
 import ItemsContext from "./context/ItemsContext";
 import CartContext from "./context/CartContext";

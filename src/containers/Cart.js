@@ -180,7 +180,7 @@ const Cart = () => {
                     </>
                 )}
             </StyledCartDiv>
-            {cart.length > 0 ? (
+            {cart.length > 0 && (
                 <>
                     <TotalDiv>
                         <TotalText>
@@ -198,7 +198,7 @@ const Cart = () => {
                     </TotalDiv>
                     <StyledButton onClick={handleClick}>Checkout</StyledButton>
                 </>
-            ) : null}
+            )}
         </StyledCart>
     );
 };

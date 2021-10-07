@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import AdminMobileMenu from "../AdminMobileMenu";
 import MenuContext from "../../context/MenuContext";
 import { BrowserRouter } from "react-router-dom";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, menuOpen true", () => {
@@ -61,12 +62,12 @@ it("renders correctly, menuOpen true", () => {
         </BrowserRouter>
     );
 
-    getByText("Dashboard");
-    getByText("Murals");
-    getByText("Messages");
-    getByText("Store Items");
-    getByText("Orders");
-    getByText("Log Out");
+    expect(getByText("Dashboard")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Messages")).toBeInTheDocument();
+    expect(getByText("Store Items")).toBeInTheDocument();
+    expect(getByText("Orders")).toBeInTheDocument();
+    expect(getByText("Log Out")).toBeInTheDocument();
 });
 
 it("renders correctly, menuOpen false", () => {
@@ -80,10 +81,10 @@ it("renders correctly, menuOpen false", () => {
         </BrowserRouter>
     );
 
-    getByText("Dashboard");
-    getByText("Murals");
-    getByText("Messages");
-    getByText("Store Items");
-    getByText("Orders");
-    getByText("Log Out");
+    expect(getByText("Dashboard")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Messages")).toBeInTheDocument();
+    expect(getByText("Store Items")).toBeInTheDocument();
+    expect(getByText("Orders")).toBeInTheDocument();
+    expect(getByText("Log Out")).toBeInTheDocument();
 });

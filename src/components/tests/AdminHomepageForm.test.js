@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminHomepageForm from "../AdminHomepageForm";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {

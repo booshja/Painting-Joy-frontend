@@ -1,17 +1,12 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 // components
 import { AdminOrderCell, AdminPageTitle, LoadingSpinner } from "../components";
-import AdminHeader from "./AdminHeader";
 // hooks
 import { useHistory } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
-// context
-import MenuContext from "../context/MenuContext";
-// breakpoints
-import { breakpoints } from "../breakpoints";
 
 const StyledAdminOrders = styled.div`
     display: flex;
@@ -39,9 +34,7 @@ const AdminOrders = () => {
     // set up history
     const history = useHistory();
     // set up hooks
-    const { isLoading, getAccessTokenSilently } = useAuth0();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
+    const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
         const source = axios.CancelToken.source();

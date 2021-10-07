@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import AdminMessageCell from "../AdminMessageCell";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, showArchived true", () => {
@@ -91,11 +92,11 @@ it("renders without crashing, showArchived true", () => {
         />
     );
 
-    getByText("John Doe");
-    getByText("johndoe@email.com");
-    getByText("This is a message from John Doe");
-    getByRole("button", { name: "Activate" });
-    getByRole("button", { name: "Delete" });
+    expect(getByText("John Doe")).toBeInTheDocument();
+    expect(getByText("johndoe@email.com")).toBeInTheDocument();
+    expect(getByText("This is a message from John Doe")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Activate" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
 });
 
 it("renders without crashing, showArchived false", () => {
@@ -114,9 +115,9 @@ it("renders without crashing, showArchived false", () => {
         />
     );
 
-    getByText("Jane Doe");
-    getByText("janedoe@email.com");
-    getByText("This is a message from Jane Doe");
-    getByRole("button", { name: "Archive" });
-    getByRole("button", { name: "Delete" });
+    expect(getByText("Jane Doe")).toBeInTheDocument();
+    expect(getByText("janedoe@email.com")).toBeInTheDocument();
+    expect(getByText("This is a message from Jane Doe")).toBeInTheDocument();
+    expect(getByRole("button", { name: "Archive" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Delete" })).toBeInTheDocument();
 });

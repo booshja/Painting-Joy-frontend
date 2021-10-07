@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import NewDisplay from "../NewDisplay";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, variant null", () => {
@@ -60,8 +61,8 @@ it("renders correctly, variant null", () => {
         />
     );
 
-    getByAltText("This is a title");
-    getByText("See what's new in the store!");
+    expect(getByAltText("This is a title")).toBeInTheDocument();
+    expect(getByText("See what's new in the store!")).toBeInTheDocument();
 });
 
 it("renders correctly, variant mural", () => {
@@ -74,6 +75,6 @@ it("renders correctly, variant mural", () => {
         />
     );
 
-    getByAltText("This is a title");
-    getByText("See my latest mural!");
+    expect(getByAltText("This is a title")).toBeInTheDocument();
+    expect(getByText("See my latest mural!")).toBeInTheDocument();
 });

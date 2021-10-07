@@ -1,10 +1,9 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
 import { AdminItemCell, AdminPageTitle, LoadingSpinner } from "../components";
-import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -12,8 +11,6 @@ import {
 import { StyledP } from "./styles/adminTypography";
 // hooks
 import { useHistory } from "react-router";
-// context
-import MenuContext from "../context/MenuContext";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
@@ -57,8 +54,6 @@ const AdminItems = () => {
     const [loading, setLoading] = useState(true);
     // set up history
     const history = useHistory();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();

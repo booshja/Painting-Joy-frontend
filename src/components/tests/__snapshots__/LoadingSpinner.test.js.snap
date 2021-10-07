@@ -2,9 +2,15 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <svg
+  .c0 {
+  color: #207070;
+  font-size: 5rem;
+  margin-top: 2rem;
+}
+
+<svg
     aria-hidden="true"
-    class="svg-inline--fa fa-palette fa-w-16 fa-spin sc-bdnxRM iPQWGi"
+    class="svg-inline--fa fa-palette fa-w-16 fa-spin c0"
     data-icon="palette"
     data-prefix="fas"
     focusable="false"
@@ -17,8 +23,20 @@ exports[`matches snapshot 1`] = `
       fill="currentColor"
     />
   </svg>
-  <p
-    class="sc-gtsrHT blaTtd"
+  .c0 {
+  font-size: 1.4rem;
+  color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+<p
+    class="c0"
   >
     Loading...
   </p>

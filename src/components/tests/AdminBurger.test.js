@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import AdminBurger from "../AdminBurger";
 import MenuContext from "../../context/MenuContext";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing, with context", () => {

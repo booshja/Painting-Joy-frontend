@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import AdminNav from "../AdminNav";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -29,9 +30,9 @@ it("renders correctly", () => {
         </BrowserRouter>
     );
 
-    getByText("Dashboard");
-    getByText("Murals");
-    getByText("Messages");
-    getByText("Store Items");
-    getByText("Orders");
+    expect(getByText("Dashboard")).toBeInTheDocument();
+    expect(getByText("Murals")).toBeInTheDocument();
+    expect(getByText("Messages")).toBeInTheDocument();
+    expect(getByText("Store Items")).toBeInTheDocument();
+    expect(getByText("Orders")).toBeInTheDocument();
 });

@@ -1,22 +1,21 @@
 import { render } from "@testing-library/react";
 import PageTitle from "../PageTitle";
-
-const child = <h1>Test!</h1>;
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
-    render(<PageTitle>{child}</PageTitle>);
+    render(<PageTitle>Test!</PageTitle>);
 });
 
 /** Snapshot Test */
 it("matches snapshot", () => {
-    const { asFragment } = render(<PageTitle>{child}</PageTitle>);
+    const { asFragment } = render(<PageTitle>Test!</PageTitle>);
     expect(asFragment()).toMatchSnapshot();
 });
 
 /** RTL Tests */
 it("renders correctly", () => {
-    const { getByText } = render(<PageTitle>{child}</PageTitle>);
+    const { getByText } = render(<PageTitle>Test!</PageTitle>);
 
-    getByText("Test!");
+    expect(getByText("Test!")).toBeInTheDocument();
 });

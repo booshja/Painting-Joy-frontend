@@ -2,44 +2,142 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <form
-    class="sc-bdnxRM ldaBFk"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.c2 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c3 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+.c4 {
+  background-color: #207070;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5px 8px;
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  cursor: pointer;
+  border: 2px solid #207070;
+}
+
+.c4:hover {
+  background-color: #ffffff;
+  color: #207070;
+}
+
+@media screen and (min-width:414px) {
+  .c0 {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c3 {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c4 {
+    margin-right: 0.7rem;
+  }
+}
+
+<form
+    class="c0"
   >
     <div />
     <label
-      class="sc-gtsrHT iZAmyw"
+      class="c1"
       for="name"
     >
       Name:
     </label>
     <input
-      class="sc-dlnjwi jaAlIe"
+      class="c2"
       id="name"
       name="name"
       placeholder="Name"
       type="text"
     />
     <label
-      class="sc-gtsrHT iZAmyw"
+      class="c1"
       for="email"
     >
       Email:
     </label>
     <input
-      class="sc-dlnjwi jaAlIe"
+      class="c2"
       id="email"
       name="email"
       placeholder="Email:"
       type="text"
     />
     <label
-      class="sc-gtsrHT iZAmyw"
+      class="c1"
       for="message"
     >
       Message:
     </label>
     <textarea
-      class="sc-hKFxyN knjKLj"
+      class="c3"
       id="message"
       maxlength="200"
       name="message"
@@ -47,7 +145,7 @@ exports[`matches snapshot 1`] = `
       rows="4"
     />
     <button
-      class="sc-eCApnc jEfDBP"
+      class="c4"
       type="submit"
     >
       Submit

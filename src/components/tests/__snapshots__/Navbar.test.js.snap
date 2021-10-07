@@ -2,36 +2,80 @@
 
 exports[`matches snapshot, cart = 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-gtsrHT lprbgz"
+  .c1 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+}
+
+.c1:hover:not(.active) {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.c1.active {
+  font-weight: 700;
+  color: #207070;
+}
+
+.c0 {
+  display: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 55%;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+<nav
+    class="c0"
   >
     <a
       aria-current="page"
-      class="sc-bdnxRM jTcfkt active"
+      class="c1 active"
       href="/"
     >
       Home
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/murals"
     >
       Murals
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/contact"
     >
       Contact
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/store"
     >
       Store
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/cart"
     >
       Cart (0)
@@ -42,36 +86,80 @@ exports[`matches snapshot, cart = 0 1`] = `
 
 exports[`matches snapshot, cart > 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-gtsrHT lprbgz"
+  .c1 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+}
+
+.c1:hover:not(.active) {
+  -webkit-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.c1.active {
+  font-weight: 700;
+  color: #207070;
+}
+
+.c0 {
+  display: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 55%;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+<nav
+    class="c0"
   >
     <a
       aria-current="page"
-      class="sc-bdnxRM jTcfkt active"
+      class="c1 active"
       href="/"
     >
       Home
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/murals"
     >
       Murals
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/contact"
     >
       Contact
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/store"
     >
       Store
     </a>
     <a
-      class="sc-bdnxRM jTcfkt"
+      class="c1"
       href="/cart"
     >
       Cart (4)

@@ -2,39 +2,121 @@
 
 exports[`matches snapshot, menuOpen false, cart.length = 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-bdnxRM jQbSZm"
+  .c0 {
+  background-image: url(wall_image_complete.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #ffffff;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c1 {
+  background-color: rgba(0,0,0,0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    font-size: 3rem;
+  }
+}
+
+<nav
+    class="c0"
   >
     <div
-      class="sc-dlnjwi jsQAfO"
+      class="c1"
     >
       <a
         aria-current="page"
-        class="sc-gtsrHT EnKnO active"
+        class="c2 active"
         href="/"
       >
         Home
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/murals"
       >
         Murals
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/contact"
       >
         Contact Me
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/store"
       >
         Store
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/cart"
       >
         Cart (0)
@@ -46,39 +128,121 @@ exports[`matches snapshot, menuOpen false, cart.length = 0 1`] = `
 
 exports[`matches snapshot, menuOpen false, cart.length > 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-bdnxRM jQbSZm"
+  .c0 {
+  background-image: url(wall_image_complete.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #ffffff;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c1 {
+  background-color: rgba(0,0,0,0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    font-size: 3rem;
+  }
+}
+
+<nav
+    class="c0"
   >
     <div
-      class="sc-dlnjwi jsQAfO"
+      class="c1"
     >
       <a
         aria-current="page"
-        class="sc-gtsrHT EnKnO active"
+        class="c2 active"
         href="/"
       >
         Home
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/murals"
       >
         Murals
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/contact"
       >
         Contact Me
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/store"
       >
         Store
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/cart"
       >
         Cart (3)
@@ -90,40 +254,122 @@ exports[`matches snapshot, menuOpen false, cart.length > 0 1`] = `
 
 exports[`matches snapshot, menuOpen true, cart.length = 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-bdnxRM chgfKH"
+  .c0 {
+  background-image: url(wall_image_complete.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #ffffff;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c1 {
+  background-color: rgba(0,0,0,0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    font-size: 3rem;
+  }
+}
+
+<nav
+    class="c0"
     open=""
   >
     <div
-      class="sc-dlnjwi jsQAfO"
+      class="c1"
     >
       <a
         aria-current="page"
-        class="sc-gtsrHT EnKnO active"
+        class="c2 active"
         href="/"
       >
         Home
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/murals"
       >
         Murals
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/contact"
       >
         Contact Me
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/store"
       >
         Store
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/cart"
       >
         Cart (0)
@@ -135,40 +381,122 @@ exports[`matches snapshot, menuOpen true, cart.length = 0 1`] = `
 
 exports[`matches snapshot, menuOpen true, cart.length > 0 1`] = `
 <DocumentFragment>
-  <nav
-    class="sc-bdnxRM chgfKH"
+  .c0 {
+  background-image: url(wall_image_complete.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #ffffff;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c1 {
+  background-color: rgba(0,0,0,0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    font-size: 3rem;
+  }
+}
+
+<nav
+    class="c0"
     open=""
   >
     <div
-      class="sc-dlnjwi jsQAfO"
+      class="c1"
     >
       <a
         aria-current="page"
-        class="sc-gtsrHT EnKnO active"
+        class="c2 active"
         href="/"
       >
         Home
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/murals"
       >
         Murals
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/contact"
       >
         Contact Me
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/store"
       >
         Store
       </a>
       <a
-        class="sc-gtsrHT EnKnO"
+        class="c2"
         href="/cart"
       >
         Cart (3)

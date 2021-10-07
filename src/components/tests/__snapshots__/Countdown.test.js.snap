@@ -2,8 +2,24 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <p
-    class="sc-bdnxRM bdVwkj"
+  .c0 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #207070;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+  padding-bottom: 1rem;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+<p
+    class="c0"
   >
     Time Remaining: 5:00
   </p>

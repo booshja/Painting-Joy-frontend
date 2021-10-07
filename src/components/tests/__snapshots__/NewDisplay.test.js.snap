@@ -2,19 +2,76 @@
 
 exports[`matches snapshot, variant mural 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnxRM jZfeoU"
+  .c0 {
+  width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.6);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+  position: relative;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.c1 {
+  height: 200px;
+}
+
+.c2 {
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  padding: 0.5rem;
+  bottom: 0;
+  right: 0;
+}
+
+.c3 {
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width:414px) {
+  .c0 {
+    width: 345px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    height: 230px;
+  }
+}
+
+<div
+    class="c0"
   >
     <img
       alt="This is a title"
-      class="sc-gtsrHT ezhKIo"
+      class="c1"
       src="http://lorempixel.com/200/200"
     />
     <div
-      class="sc-dlnjwi jTWZkz"
+      class="c2"
     >
       <p
-        class="sc-hKFxyN fjSfXV"
+        class="c3"
       >
         See my latest mural!
       </p>
@@ -25,19 +82,76 @@ exports[`matches snapshot, variant mural 1`] = `
 
 exports[`matches snapshot, variant null 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdnxRM jZfeoU"
+  .c0 {
+  width: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.6);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+  position: relative;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.c1 {
+  height: 200px;
+}
+
+.c2 {
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  padding: 0.5rem;
+  bottom: 0;
+  right: 0;
+}
+
+.c3 {
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width:414px) {
+  .c0 {
+    width: 345px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    height: 230px;
+  }
+}
+
+<div
+    class="c0"
   >
     <img
       alt="This is a title"
-      class="sc-gtsrHT ezhKIo"
+      class="c1"
       src="http://lorempixel.com/200/200"
     />
     <div
-      class="sc-dlnjwi jTWZkz"
+      class="c2"
     >
       <p
-        class="sc-hKFxyN fjSfXV"
+        class="c3"
       >
         See what's new in the store!
       </p>

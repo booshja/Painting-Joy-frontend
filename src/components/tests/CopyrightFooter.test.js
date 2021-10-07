@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import CopyrightFooter from "../CopyrightFooter";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -16,5 +17,7 @@ it("matches snapshot", () => {
 it("renders correctly", () => {
     const { getByText } = render(<CopyrightFooter />);
 
-    getByText("2021 - Painting Joy Mural Co.", { exact: false });
+    expect(
+        getByText("2021 - Painting Joy Mural Co.", { exact: false })
+    ).toBeInTheDocument();
 });

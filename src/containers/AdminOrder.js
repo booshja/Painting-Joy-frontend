@@ -1,10 +1,9 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
 import { AdminPageTitle, GoBack, LoadingSpinner } from "../components";
-import AdminHeader from "./AdminHeader";
 import {
     StyledGreenSoloButton,
     StyledOutlineButton,
@@ -14,8 +13,6 @@ import { StyledCell } from "./styles/adminContainers";
 // hooks
 import { useHistory, useParams } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
-// context
-import MenuContext from "../context/MenuContext";
 
 const StyledAdminOrder = styled.div`
     display: flex;
@@ -87,9 +84,7 @@ const AdminOrder = () => {
     // set up history
     const history = useHistory();
     // set up hooks
-    const { isLoading, getAccessTokenSilently } = useAuth0();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
+    const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
         const source = axios.CancelToken.source();
@@ -111,6 +106,7 @@ const AdminOrder = () => {
                 setLoading(false);
             } catch (err) {
                 console.log("Order retrieval error", err);
+                setLoading(false);
                 history.get(0);
             }
         }

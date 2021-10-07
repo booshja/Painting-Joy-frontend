@@ -1,5 +1,5 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
@@ -8,7 +8,6 @@ import {
     AdminPageTitle,
     LoadingSpinner,
 } from "../components";
-import AdminHeader from "./AdminHeader";
 import { StyledGreenSoloButton } from "./styles/adminButtons";
 import { StyledP } from "./styles/adminTypography";
 // hooks

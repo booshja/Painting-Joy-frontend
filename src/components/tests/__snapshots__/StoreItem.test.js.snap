@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, isSold false 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+  width: 165px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.c1 {
+  object-fit: cover;
+  width: 110px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.c3 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 0.25rem;
+}
+
+@media screen and (min-width:414px) {
+  .c0 {
+    width: 195px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    width: 150px;
+  }
+}
+
+<div
+    class="c0"
+    id="d-0"
+  >
+    <img
+      alt="Item name"
+      class="c1"
+      id="i-0"
+      src="http://localhost:5000/items/item/0/image"
+    />
+    <h3
+      class="c2"
+      id="t-0"
+    >
+      Item name
+    </h3>
+    <p
+      class="c3"
+      id="p-0"
+    >
+      $99.99 + $100.05 shipping
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, isSold true 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
+  width: 165px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.c1 {
+  object-fit: cover;
+  width: 110px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  height: 26px;
+  width: 110px;
+  background-color: rgba(0,0,0,0.5);
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 4rem;
+  left: 1.7rem;
+}
+
+.c3 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.c4 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 0.25rem;
+}
+
+@media screen and (min-width:414px) {
+  .c0 {
+    width: 195px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    height: 32px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    top: 5rem;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    left: 1.4rem;
+  }
+}
+
+<div
+    class="c0"
+    id="d-0"
+  >
+    <img
+      alt="Item name"
+      class="c1"
+      id="i-0"
+      src="http://localhost:5000/items/item/0/image"
+    />
+    <div
+      class="c2"
+      id="o-0"
+    >
+      Sold
+    </div>
+    <h3
+      class="c3"
+      id="t-0"
+    >
+      Item name
+    </h3>
+    <p
+      class="c4"
+      id="p-0"
+    >
+      $99.99
+    </p>
+  </div>
+</DocumentFragment>
+`;

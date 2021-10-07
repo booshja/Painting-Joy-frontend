@@ -2,8 +2,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 // components
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import {
     CheckoutForm,
     Countdown,

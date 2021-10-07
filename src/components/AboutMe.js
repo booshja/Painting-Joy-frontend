@@ -61,7 +61,7 @@ const AboutMe = ({ greeting, message, image }) => {
                 <StyledGreeting>{greeting}</StyledGreeting>
                 <StyledText>{message}</StyledText>
             </StyledTextDiv>
-            <StyledImage src={image} alt="Hello!" />
+            <StyledImage src={image} alt="The artist themselves" />
         </StyledContainer>
     );
 };

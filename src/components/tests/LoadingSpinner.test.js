@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import LoadingSpinner from "../LoadingSpinner";
+import "jest-styled-components";
 
 /** Smoke Test */
 it("renders without crashing", () => {
@@ -10,4 +11,11 @@ it("renders without crashing", () => {
 it("matches snapshot", () => {
     const { asFragment } = render(<LoadingSpinner />);
     expect(asFragment()).toMatchSnapshot();
+});
+
+/** RTL Tests */
+it("renders correctly", () => {
+    const { getByText } = render(<LoadingSpinner />);
+
+    expect(getByText("Loading...")).toBeInTheDocument();
 });

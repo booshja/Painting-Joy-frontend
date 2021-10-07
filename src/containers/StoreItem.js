@@ -75,7 +75,7 @@ const StyledButton = styled.button`
 
 const StoreItem = () => {
     // set up states
-    const [Loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [item, setItem] = useState({});
     // set up history
     const history = useHistory();
@@ -88,14 +88,20 @@ const StoreItem = () => {
         const source = axios.CancelToken.source();
         // when component mounts, get the item data
         async function getItem() {
-            const res = await axios.get(
-                process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
-                { cancelToken: source.token }
-            );
-            setItem(() => res.data.item);
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
+                    { cancelToken: source.token }
+                );
+                setItem(() => res.data.item);
+
+                setLoading(false);
+            } catch (err) {
+                console.log("Item loading error", err);
+                setLoading(false);
+            }
         }
         getItem();
-        setLoading(false);
 
         return function cleanup() {
             source.cancel();
@@ -108,7 +114,7 @@ const StoreItem = () => {
         history.push("/cart");
     };
 
-    if (Loading)
+    if (loading)
         return (
             <StyledStoreItem>
                 <LoadingSpinner />

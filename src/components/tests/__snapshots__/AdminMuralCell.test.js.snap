@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showArchived false 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c7 {
+  border: 2px solid #207070;
+  border-radius: 4px 0 0 4px;
+  background-color: #207070;
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c7:hover {
+  color: #207070;
+  background-color: #ffffff;
+}
+
+.c8 {
+  border: none;
+  border-top: 2px solid #207070;
+  border-bottom: 2px solid #207070;
+  color: #207070;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c8:hover {
+  color: #ffffff;
+  background-color: #207070;
+}
+
+.c9 {
+  border: 2px solid #db9487;
+  background-color: #db9487;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  font-family: "News Cycle",sans-serif;
+  cursor: pointer;
+}
+
+.c9:hover {
+  color: #db9487;
+  background-color: #ffffff;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.c4 {
+  margin-bottom: 0.5rem;
+}
+
+.c5 {
+  font-weight: 700;
+}
+
+.c10 {
+  display: none;
+  height: 100px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c6 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c6 {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c10 {
+    display: block flex;
+  }
+}
+
+<div
+    class="c0 c1"
+  >
+    <div
+      class="c2"
+    >
+      <p
+        class="c3 c4 c5"
+      >
+        This is a title
+      </p>
+      <p
+        class="c3"
+      >
+        This is a description
+      </p>
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+        >
+          Edit
+        </button>
+        <button
+          class="c8"
+        >
+          Archive
+        </button>
+        <button
+          class="c9"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Mural Display Image"
+      class="c10"
+      src="http://localhost:5000/murals/mural/1/image/1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showArchived true 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c7 {
+  border: 2px solid #207070;
+  border-radius: 4px 0 0 4px;
+  background-color: #207070;
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c7:hover {
+  color: #207070;
+  background-color: #ffffff;
+}
+
+.c8 {
+  border: none;
+  border-top: 2px solid #207070;
+  border-bottom: 2px solid #207070;
+  color: #207070;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c8:hover {
+  color: #ffffff;
+  background-color: #207070;
+}
+
+.c9 {
+  border: 2px solid #db9487;
+  background-color: #db9487;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  font-family: "News Cycle",sans-serif;
+  cursor: pointer;
+}
+
+.c9:hover {
+  color: #db9487;
+  background-color: #ffffff;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.c4 {
+  margin-bottom: 0.5rem;
+}
+
+.c5 {
+  font-weight: 700;
+}
+
+.c10 {
+  display: none;
+  height: 100px;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c6 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c6 {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c10 {
+    display: block flex;
+  }
+}
+
+<div
+    class="c0 c1"
+  >
+    <div
+      class="c2"
+    >
+      <p
+        class="c3 c4 c5"
+      >
+        This is a title
+      </p>
+      <p
+        class="c3"
+      >
+        This is a description
+      </p>
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+        >
+          Edit
+        </button>
+        <button
+          class="c8"
+        >
+          Unarchive
+        </button>
+        <button
+          class="c9"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Mural Display Image"
+      class="c10"
+      src="http://localhost:5000/murals/mural/1/image/1"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,242 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2 div {
+  width: 2rem;
+  height: 0.3rem;
+  background-color: #207070;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: relative;
+  -webkit-transform-origin: 1px;
+  -ms-transform-origin: 1px;
+  transform-origin: 1px;
+}
+
+.c2 div:first-child {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.c2 div:nth-child(2) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.c2 div:nth-child(3) {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.c3 {
+  background-image: url(wall_image_complete.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.c5 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #ffffff;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c5.active {
+  font-weight: 700;
+}
+
+.c4 {
+  background-color: rgba(0,0,0,0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 1rem;
+  border-bottom: 1px solid #207070;
+}
+
+.c1 {
+  font-family: "Barlow Condensed",sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #207070;
+}
+
+@media screen and (min-width:414px) {
+  .c5 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c5 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<header
+    class="c0"
+  >
+    <a
+      class="c1"
+      href="/"
+    >
+      Painting Joy Mural Co.
+    </a>
+    <button
+      class="c2"
+    >
+      <div
+        data-testid="div1"
+      />
+      <div
+        data-testid="div2"
+      />
+      <div
+        data-testid="div3"
+      />
+    </button>
+    <nav
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <a
+          aria-current="page"
+          class="c5 active"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="c5"
+          href="/murals"
+        >
+          Murals
+        </a>
+        <a
+          class="c5"
+          href="/contact"
+        >
+          Contact Me
+        </a>
+        <a
+          class="c5"
+          href="/store"
+        >
+          Store
+        </a>
+        <a
+          class="c5"
+          href="/cart"
+        >
+          Cart (3)
+        </a>
+      </div>
+    </nav>
+  </header>
+</DocumentFragment>
+`;

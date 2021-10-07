@@ -234,7 +234,7 @@ const CheckoutForm = ({ nextStep, amount }) => {
             />
             {errors.city && <StyledError>{errors.city.message}</StyledError>}
             <StyledLabel htmlFor="stateCode">State:</StyledLabel>
-            <StyledSelect {...register("stateCode")}>
+            <StyledSelect id="stateCode" {...register("stateCode")}>
                 {stateCodes.map(({ code, state }) => (
                     <option value={code} key={code}>
                         {state}

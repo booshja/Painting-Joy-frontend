@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showSoldOut false, isSold false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN sc-eCApnc kpxIQl inHhUO"
+  >
+    <div
+      class="sc-kEqXSa bXyTKs"
+    >
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Test Name 3
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      />
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Quantity: 5
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Price: $333.55
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Shipping: $98.98
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Total: $432.53
+      </p>
+      <div
+        class="sc-iCoGMd gCnnPv"
+      >
+        <button
+          class="sc-gtsrHT qvdyu"
+          color="#a1c9c9"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-bdnxRM sc-pNWdM gcBejj kbzcVe"
+        >
+          Mark Sold Out
+        </button>
+        <button
+          class="sc-gtsrHT sc-fujyAs blUuCa gJOeZs"
+          color="#db9487"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Sale Item"
+      class="sc-jrsJWt eFRJSZ"
+      src="http://localhost:5000/items/item/3/image"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showSoldOut false, isSold true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN sc-eCApnc kpxIQl inHhUO"
+  >
+    <div
+      class="sc-kEqXSa bXyTKs"
+    >
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Test Name 4
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      />
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Sold Out!
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Price: $456.66
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Shipping: $678.44
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Total: $1135.10
+      </p>
+      <div
+        class="sc-iCoGMd gCnnPv"
+      >
+        <button
+          class="sc-gtsrHT qvdyu"
+          color="#a1c9c9"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-bdnxRM sc-pNWdM gcBejj kbzcVe"
+        >
+          Mark Sold Out
+        </button>
+        <button
+          class="sc-gtsrHT sc-fujyAs blUuCa gJOeZs"
+          color="#db9487"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Sale Item"
+      class="sc-jrsJWt eFRJSZ"
+      src="http://localhost:5000/items/item/4/image"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showSoldOut true, isSold false 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN sc-eCApnc kpxIQl inHhUO"
+  >
+    <div
+      class="sc-kEqXSa bXyTKs"
+    >
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Test Name
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      />
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Quantity: 3
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Price: $299.99
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Shipping: $123.99
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Total: $423.98
+      </p>
+      <div
+        class="sc-iCoGMd gCnnPv"
+      >
+        <button
+          class="sc-gtsrHT qvdyu"
+          color="#a1c9c9"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-bdnxRM sc-pNWdM gcBejj eHluva"
+        >
+          Mark Sold Out
+        </button>
+        <button
+          class="sc-gtsrHT sc-fujyAs blUuCa gJOeZs"
+          color="#db9487"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Sale Item"
+      class="sc-jrsJWt eFRJSZ"
+      src="http://localhost:5000/items/item/1/image"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showSoldOut true, isSold true 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN sc-eCApnc kpxIQl inHhUO"
+  >
+    <div
+      class="sc-kEqXSa bXyTKs"
+    >
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Test Name 2
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      />
+      <p
+        class="sc-dlnjwi sc-jSFjdj sc-gKAaRy dHRUYW hDOwCU kzLjJL"
+      >
+        Sold Out!
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Price: $299.99
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Shipping: $123.99
+      </p>
+      <p
+        class="sc-dlnjwi sc-jSFjdj dHRUYW hDOwCU"
+      >
+        Total: $423.98
+      </p>
+      <div
+        class="sc-iCoGMd gCnnPv"
+      >
+        <button
+          class="sc-gtsrHT qvdyu"
+          color="#a1c9c9"
+        >
+          Edit
+        </button>
+        <button
+          class="sc-bdnxRM sc-pNWdM gcBejj eHluva"
+        >
+          Mark Sold Out
+        </button>
+        <button
+          class="sc-gtsrHT sc-fujyAs blUuCa gJOeZs"
+          color="#db9487"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <img
+      alt="Sale Item"
+      class="sc-jrsJWt eFRJSZ"
+      src="http://localhost:5000/items/item/2/image"
+    />
+  </div>
+</DocumentFragment>
+`;

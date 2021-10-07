@@ -91,7 +91,6 @@ const ContactForm = () => {
     const reRef = useRef();
 
     const handleDataSubmit = async (data) => {
-        console.log("hello");
         // get recaptcha token
         const token = await reRef.current.executeAsync();
         reRef.current.reset();

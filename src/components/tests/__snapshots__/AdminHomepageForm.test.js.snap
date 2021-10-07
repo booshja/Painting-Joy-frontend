@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, with preloadedValues 1`] = `
+<DocumentFragment>
+  .c5 {
+  background-color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.c5:hover:not(:disabled) {
+  color: #207070;
+  background-color: #ffffff;
+  border: 2px solid #207070;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  background-color: #dadada;
+}
+
+.c7 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #207070;
+  color: #207070;
+}
+
+.c7:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #207070;
+  cursor: pointer;
+}
+
+.c7:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c3 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  resize: none;
+  width: 98%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 85%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c6 {
+  border: 2px solid #207070;
+}
+
+.c8 {
+  border: 2px solid #207070;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    width: 98%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c4 {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c4 {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .c4 {
+    width: 60%;
+  }
+}
+
+<form
+    class="c0"
+  >
+    <label
+      class="c1"
+      for="greeting"
+    >
+      Greeting:
+    </label>
+    <input
+      class="c2"
+      id="greeting"
+      name="greeting"
+      placeholder="Greeting"
+      type="text"
+    />
+    <label
+      class="c1"
+      for="message"
+    >
+      Message:
+    </label>
+    <textarea
+      class="c3"
+      id="message"
+      name="message"
+      placeholder="Message"
+      type="text"
+    />
+    <div
+      class="c4"
+    >
+      <button
+        class="c5 c6"
+      >
+        Only Update Image
+      </button>
+      <button
+        class="c7 c8"
+        color="#207070"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, without preloadedValues 1`] = `
+<DocumentFragment>
+  .c5 {
+  background-color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.c5:hover:not(:disabled) {
+  color: #207070;
+  background-color: #ffffff;
+  border: 2px solid #207070;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.c5:disabled {
+  background-color: #dadada;
+}
+
+.c7 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #207070;
+  color: #207070;
+}
+
+.c7:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #207070;
+  cursor: pointer;
+}
+
+.c7:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c1 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c2 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.c3 {
+  border: 2px solid #207070;
+  border-radius: 4px;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  resize: none;
+  width: 98%;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 85%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c6 {
+  border: 2px solid #207070;
+}
+
+.c8 {
+  border: 2px solid #207070;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    width: 98%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c4 {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c4 {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .c4 {
+    width: 60%;
+  }
+}
+
+<form
+    class="c0"
+  >
+    <label
+      class="c1"
+      for="greeting"
+    >
+      Greeting:
+    </label>
+    <input
+      class="c2"
+      id="greeting"
+      name="greeting"
+      placeholder="Greeting"
+      type="text"
+    />
+    <label
+      class="c1"
+      for="message"
+    >
+      Message:
+    </label>
+    <textarea
+      class="c3"
+      id="message"
+      name="message"
+      placeholder="Message"
+      type="text"
+    />
+    <div
+      class="c4"
+    >
+      <button
+        class="c5 c6"
+      >
+        Only Update Image
+      </button>
+      <button
+        class="c7 c8"
+        color="#207070"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

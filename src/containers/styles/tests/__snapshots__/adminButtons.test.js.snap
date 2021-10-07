@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, StyledGreenSoloButton 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-bdnxRM gcBejj"
+  >
+    Apple
+  </button>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, StyledOutlineButton, no color prop 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-gtsrHT larCzd"
+  >
+    Banana
+  </button>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, StyledOutlineButton, with color prop 1`] = `
+<DocumentFragment>
+  <button
+    class="sc-gtsrHT ckigvW"
+    color="#ffff00 "
+  >
+    Banana
+  </button>
+</DocumentFragment>
+`;

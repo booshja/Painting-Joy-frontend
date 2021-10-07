@@ -1,5 +1,5 @@
 // dependencies
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 // components
@@ -15,8 +15,6 @@ import { Link } from "react-router-dom";
 // hooks
 import { useHistory } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
-// context
-import MenuContext from "../context/MenuContext";
 // breakpoints
 import { breakpoints } from "../breakpoints";
 
@@ -95,15 +93,15 @@ const AdminDashboard = () => {
     const history = useHistory();
     // set up hooks
     const { isLoading, getAccessTokenSilently } = useAuth0();
-    // set up context
-    const { menuOpen } = useContext(MenuContext);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
         // on component mount, get data
         async function getData() {
             try {
-                const token = await getAccessTokenSilently();
+                const token = await getAccessTokenSilently({
+                    audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+                });
 
                 const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `murals/`,
@@ -111,8 +109,8 @@ const AdminDashboard = () => {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },
-                    },
-                    { cancelToken: source.token }
+                        cancelToken: source.token,
+                    }
                 );
                 const orderRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `orders/`,
@@ -120,8 +118,9 @@ const AdminDashboard = () => {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },
-                    },
-                    { cancelToken: source.token }
+
+                        cancelToken: source.token,
+                    }
                 );
                 const homepageRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `homepage/`,
@@ -129,8 +128,8 @@ const AdminDashboard = () => {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },
-                    },
-                    { cancelToken: source.token }
+                        cancelToken: source.token,
+                    }
                 );
                 // set states
                 setMurals(() =>

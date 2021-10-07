@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  .c3 {
+  outline: none;
+  background: transparent;
+  color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin: 0.5rem 0 0.5rem 7.5%;
+}
+
+.c3 i {
+  margin-right: 0.5rem;
+}
+
+.c1 {
+  text-align: center;
+  font-family: "Barlow Condensed",sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  width: 90%;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.c4 {
+  width: 80%;
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 1.4rem;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      Contact Me
+    </h1>
+    <p
+      class="c2"
+    >
+      Thank you for your message! I've got it saved and I'll reply just as soon as I get all this paint off my hands!
+    </p>
+    <button
+      class="c3"
+    >
+      <i
+        class="fas fa-long-arrow-alt-left"
+      />
+      Back
+    </button>
+    <img
+      alt="Envelope with dried flowers on a table"
+      class="c4"
+      src="jess-moe-PbUzvmAmXmk-unsplash.jpg"
+    />
+  </div>
+</DocumentFragment>
+`;

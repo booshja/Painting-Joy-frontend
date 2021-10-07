@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-family: "Barlow Condensed",sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+<p
+    class="c0"
+  >
+    Copyright © 2021 - Painting Joy Mural Co.
+  </p>
+</DocumentFragment>
+`;

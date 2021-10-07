@@ -47,10 +47,6 @@ const StyledCopyright = styled.p`
     ${breakpoints("font-size", "rem", [{ 414: 0.8 }])}
 `;
 
-const StyledTitleLogo = styled(TitleLogoFooter)``;
-
-const StyledNavFooter = styled(NavFooter)``;
-
 const StyledContainer = styled.div`
     margin: 1rem 0 2rem 0;
 
@@ -65,8 +61,8 @@ const Footer = () => {
             <StyledTitle to="/">Painting Joy Mural Co.</StyledTitle>
             <StyledLink to="/contact">Contact Me</StyledLink>
             <StyledContainer>
-                <StyledTitleLogo />
-                <StyledNavFooter />
+                <TitleLogoFooter />
+                <NavFooter />
             </StyledContainer>
             <StyledCopyright>
                 Copyright &copy; 2021 - Painting Joy Mural Co.

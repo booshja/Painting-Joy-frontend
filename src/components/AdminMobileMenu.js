@@ -71,6 +71,7 @@ const AdminMobileMenu = () => {
     const { logout } = useAuth0();
 
     const handleLogout = () => {
+        // set menuOpen to false, call auth0 logout API, redirect to homepage
         setMenuOpen(false);
         logout({
             returnTo: "http://localhost:3000",

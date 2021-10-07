@@ -77,9 +77,10 @@ const StyledLoginButton = styled.button`
 `;
 
 const AdminLogin = () => {
-    // set up auth context
+    // set up auth context/hooks
     const { loginWithRedirect, isLoading, isAuthenticated } = useAuth0();
 
+    // if auth0 loading, display loading spinner
     if (isLoading)
         return (
             <StyledAdminLogin>
@@ -87,6 +88,7 @@ const AdminLogin = () => {
             </StyledAdminLogin>
         );
 
+    // if user already authenticated, redirect them to the admin dashboard
     if (isAuthenticated) return <Redirect to="/admin/dashboard" />;
 
     return (

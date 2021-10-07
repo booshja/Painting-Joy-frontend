@@ -70,9 +70,11 @@ const StyledPrice = styled.p`
 `;
 
 const StoreItem = ({ item }) => {
+    // set up history
     const history = useHistory();
 
     const handleClick = (e) => {
+        // when clicked push user to single item page
         history.push(`/store/item/${e.target.id.slice(2)}`);
     };
 

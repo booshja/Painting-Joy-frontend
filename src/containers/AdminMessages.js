@@ -46,7 +46,7 @@ const StyledMessagesContainer = styled.div`
 `;
 
 const AdminMessages = () => {
-    // set up state
+    // set up states
     const [activeMessages, setActiveMessages] = useState([]);
     const [archivedMessages, setArchivedMessages] = useState([]);
     const [showArchived, setShowArchived] = useState(false);
@@ -57,10 +57,12 @@ const AdminMessages = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
         // on component mount, get messages
         async function getMessages() {
             try {
+                // get auth0 access token
                 const token = await getAccessTokenSilently();
 
                 const res = await axios.get(
@@ -91,6 +93,7 @@ const AdminMessages = () => {
         getMessages();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
@@ -101,8 +104,9 @@ const AdminMessages = () => {
     };
 
     const handleArchive = async (id) => {
-        // send request to api to set message as archived
+        // send request to api to set message as archived, refresh page
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.patch(
@@ -121,8 +125,9 @@ const AdminMessages = () => {
     };
 
     const handleUnArchive = async (id) => {
-        // send request to api to set message as active
+        // send request to api to set message as active, refresh page
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.patch(
@@ -143,6 +148,7 @@ const AdminMessages = () => {
     const handleDelete = async (id) => {
         // send request to api to delete message
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.delete(
@@ -159,6 +165,7 @@ const AdminMessages = () => {
         history.go(0);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledAdminMessages>

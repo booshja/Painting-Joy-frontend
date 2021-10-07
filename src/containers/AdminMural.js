@@ -102,13 +102,17 @@ const AdminMural = ({ variant }) => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
+        const source = axios.CancelToken.source();
+
         async function getMuralData() {
             // on component mount get Mural data if editing
             setLoading(true);
             try {
                 const res = await axios.get(
                     process.env.REACT_APP_BACKEND_URL +
-                        `murals/mural/${muralId}`
+                        `murals/mural/${muralId}`,
+                    { cancelToken: source.token }
                 );
                 // set preloadedValues for edit form
                 setPreloadedValues({
@@ -123,12 +127,18 @@ const AdminMural = ({ variant }) => {
         }
 
         if (variant === "Edit") getMuralData();
+
+        return function cleanup() {
+            // cleanup function for aborted axios call
+            source.cancel();
+        };
     }, []);
 
     const handleDataSubmit = async (data) => {
         // on form submit, send data to API, move to next step
         setLoading(true);
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             if (variant === "Add") {
@@ -172,11 +182,14 @@ const AdminMural = ({ variant }) => {
     const handleImageSubmit = async (data) => {
         // on image submit, send photo to API, move to next step
         setLoading(true);
+        // create new FormData object
         const formData = new FormData();
+        // append file upload to object
         formData.append("upload", data.upload[0]);
         let res;
 
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             res = await axios.post(
@@ -219,6 +232,7 @@ const AdminMural = ({ variant }) => {
         // push admin to Admin Murals page
         setLoading(true);
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             if (step > 0) {

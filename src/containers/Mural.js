@@ -79,14 +79,19 @@ const StyledLink = styled(Link)`
 `;
 
 const Mural = () => {
+    // get params
     const { muralId } = useParams();
+    // set up states
     const [display, setDisplay] = useState(1);
     const [mural, setMural] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
+
         async function getMural() {
+            // get mural data on component mount
             const res = await axios.get(
                 process.env.REACT_APP_BACKEND_URL + `murals/mural/${muralId}`,
                 { cancelToken: source.token }
@@ -97,14 +102,17 @@ const Mural = () => {
         getMural();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
 
     const handleClick = (e) => {
+        // on click change display picture to one clicked
         setDisplay(e.target.id);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledMural>

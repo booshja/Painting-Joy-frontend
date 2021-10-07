@@ -95,14 +95,17 @@ const AdminDashboard = () => {
     const { isLoading, getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios request
         const source = axios.CancelToken.source();
         // on component mount, get data
         async function getData() {
             try {
+                // get auth0 access token
                 const token = await getAccessTokenSilently({
                     audience: process.env.REACT_APP_AUTH0_AUDIENCE,
                 });
 
+                // get murals data
                 const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `murals/`,
                     {
@@ -112,6 +115,7 @@ const AdminDashboard = () => {
                         cancelToken: source.token,
                     }
                 );
+                // get orders data
                 const orderRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `orders/`,
                     {
@@ -122,6 +126,7 @@ const AdminDashboard = () => {
                         cancelToken: source.token,
                     }
                 );
+                // get homepage data
                 const homepageRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `homepage/`,
                     {
@@ -153,6 +158,7 @@ const AdminDashboard = () => {
         getData();
 
         return function cleanup() {
+            // cleanup function for aborted axios request
             source.cancel();
         };
     }, []);
@@ -161,6 +167,7 @@ const AdminDashboard = () => {
         // on form submit, send data to API, reload page
         setLoading(true);
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.put(
@@ -194,6 +201,7 @@ const AdminDashboard = () => {
         let res;
 
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             res = await axios.post(
@@ -215,6 +223,7 @@ const AdminDashboard = () => {
         if (loading) history.go(0);
     };
 
+    // if useEffect data or auth0 is loading, return loading spinner
     if (loading || isLoading)
         return (
             <StyledAdminDashboard>

@@ -34,6 +34,7 @@ import {
 // hooks
 import { loadStripe } from "@stripe/stripe-js";
 
+// load stripe using api key
 const promise = loadStripe(process.env.REACT_APP_STRIPE_API_KEY);
 
 const Router = () => (
@@ -115,7 +116,7 @@ const Router = () => (
                     <AdminOrder />
                 </ProtectedRoute>
                 <Route>
-                    <Redirect to="/oooopsie" />
+                    <Redirect to="/" />
                 </Route>
             </Switch>
         </Auth0ProviderWithHistory>

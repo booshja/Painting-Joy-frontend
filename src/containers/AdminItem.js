@@ -95,6 +95,7 @@ const AdminItem = ({ variant }) => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
 
         async function getItemData() {
@@ -127,6 +128,7 @@ const AdminItem = ({ variant }) => {
         // on form submit, send data to API, move to next step
         setLoading(true);
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             if (variant === "Add") {
@@ -186,6 +188,7 @@ const AdminItem = ({ variant }) => {
         let res;
 
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             res = await axios.post(
@@ -217,6 +220,7 @@ const AdminItem = ({ variant }) => {
         // push admin to Admin Items page
         setLoading(true);
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             if (step > 0) {

@@ -66,9 +66,11 @@ const Murals = () => {
     const history = useHistory();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
-        // on mount get mural data
+
         async function getData() {
+            // on mount get mural data
             try {
                 const muralRes = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + "murals/active",
@@ -83,6 +85,7 @@ const Murals = () => {
         getData();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
@@ -93,6 +96,7 @@ const Murals = () => {
         history.push(`/murals/${id}`);
     };
 
+    // if data loading display loading spinner
     if (loading)
         return (
             <StyledMurals>

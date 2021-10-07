@@ -48,6 +48,7 @@ const AdminHeader = ({ login }) => {
     const { isAuthenticated, logout } = useAuth0();
 
     const handleLogout = () => {
+        // on click, call auth0 logout api, redirect to homepage
         logout({
             returnTo: "http://localhost:3000",
         });

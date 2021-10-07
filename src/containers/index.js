@@ -1,3 +1,5 @@
+// barrel file for importing components and exporting from one file
+
 import AdminDashboard from "./AdminDashboard";
 import AdminHeader from "./AdminHeader";
 import AdminItem from "./AdminItem";

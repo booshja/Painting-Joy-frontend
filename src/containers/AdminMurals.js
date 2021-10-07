@@ -63,7 +63,7 @@ const StyledMuralsContainer = styled.div`
 `;
 
 const AdminMurals = () => {
-    // set up state
+    // set up states
     const [activeMurals, setActiveMurals] = useState([]);
     const [archivedMurals, setArchivedMurals] = useState([]);
     const [showArchived, setShowArchived] = useState(false);
@@ -74,10 +74,12 @@ const AdminMurals = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
         // on component mount, get murals
         async function getMurals() {
             try {
+                // get auth0 access token
                 const token = await getAccessTokenSilently();
 
                 const res = await axios.get(
@@ -108,6 +110,7 @@ const AdminMurals = () => {
         getMurals();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
@@ -118,8 +121,9 @@ const AdminMurals = () => {
     };
 
     const handleArchive = async (id) => {
-        // send request to api to set mural as archived
+        // send request to api to set mural as archived, refresh page
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.patch(
@@ -139,8 +143,9 @@ const AdminMurals = () => {
     };
 
     const handleUnArchive = async (id) => {
-        // send request to api to set mural as active
+        // send request to api to set mural as active, refresh page
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.patch(
@@ -162,6 +167,7 @@ const AdminMurals = () => {
     const handleDelete = async (id) => {
         // send request to api to delete mural
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.delete(
@@ -179,6 +185,7 @@ const AdminMurals = () => {
         history.go(0);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledAdminMurals>

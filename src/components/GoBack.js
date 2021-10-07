@@ -1,7 +1,8 @@
 // dependencies
 import React from "react";
-import { useHistory } from "react-router";
 import styled from "styled-components";
+// hooks
+import { useHistory } from "react-router";
 
 const StyledBtn = styled.button`
     outline: none;
@@ -21,7 +22,9 @@ const StyledBtn = styled.button`
 `;
 
 const GoBack = ({ to }) => {
+    // set up history
     const history = useHistory();
+
     return (
         <StyledBtn
             onClick={() => {

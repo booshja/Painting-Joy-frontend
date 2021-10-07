@@ -204,15 +204,16 @@ const Checkout = () => {
     const history = useHistory();
     // set up context
     const { cart, setLocalStorageCart, orderId } = useContext(CartContext);
-    // set up Stripe
+    // set up Stripe hooks
     const stripe = useStripe();
     const elements = useElements();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
 
         const generatePaymentIntent = async () => {
-            // get payment intent from server
+            // get payment intent from server for stripe
             try {
                 const res = await axios.post(
                     process.env.REACT_APP_BACKEND_URL +
@@ -243,11 +244,13 @@ const Checkout = () => {
         }
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
 
         const confirmOrder = async () => {
@@ -271,6 +274,7 @@ const Checkout = () => {
         }
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel("Operation cancelled by cleanup function.");
         };
     }, [succeeded]);
@@ -335,6 +339,7 @@ const Checkout = () => {
     };
 
     const handleCancel = async (e) => {
+        // on cancel, delete order from server, push to cancelled order page
         if (e) e.preventDefault();
         try {
             await axios.delete(
@@ -348,6 +353,7 @@ const Checkout = () => {
         }
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledCheckout>

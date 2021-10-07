@@ -26,6 +26,7 @@ function App() {
     }, [localStorageCart]);
 
     const removeFromCart = (id) => {
+        // find item in cart, remove it, update localStorage
         const idx = cart.findIndex((item) => item.id === id);
         const cartContents = [...cart];
         cartContents.splice(idx, 1);

@@ -2,6 +2,7 @@
 import React, { useContext, useRef } from "react";
 import styled from "styled-components";
 import axios from "axios";
+// components
 import ReCAPTCHA from "react-google-recaptcha";
 // hooks
 import { useHistory } from "react-router";
@@ -151,7 +152,7 @@ const CheckoutForm = ({ nextStep, amount }) => {
             nextStep(data.email);
         } catch (err) {
             console.log("Checkout Error:", err);
-            // history.push("/store/order/cancel");
+            history.push("/store/order/cancel");
         }
     };
 

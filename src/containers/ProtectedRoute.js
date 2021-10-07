@@ -40,6 +40,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
     // set up context
     const { menuOpen } = useContext(MenuContext);
 
+    // if data loading, display loading spinner
     if (isLoading)
         return (
             <StyledLoadingMain>

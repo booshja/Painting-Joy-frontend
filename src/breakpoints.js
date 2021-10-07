@@ -1,3 +1,4 @@
+// dependencies
 import { css } from "styled-components";
 
 export const breakpoints = (
@@ -6,6 +7,7 @@ export const breakpoints = (
     values = [],
     mediaQueryType = "min-width"
 ) => {
+    // function for creating media queries for use in styled-components
     const breakpointProps = values.reduce((mediaQueries, value) => {
         const [screenBreakpoint, cssPropBreakpoint] = [
             Object.keys(value)[0],

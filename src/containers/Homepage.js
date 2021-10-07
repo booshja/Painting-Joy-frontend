@@ -34,9 +34,11 @@ const Homepage = () => {
     const [homepage, setHomepage] = useState({});
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
 
         async function getData() {
+            // get homepage data on component mount
             const res = await axios.get(
                 process.env.REACT_APP_BACKEND_URL + "homepage/",
                 { cancelToken: source.token }
@@ -47,10 +49,12 @@ const Homepage = () => {
         getData();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
 
+    // if data loading, display loading spinner
     if (isLoading) {
         return (
             <StyledHomepage>

@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import axios from "axios";
+// components
 import ReCAPTCHA from "react-google-recaptcha";
 // hooks
 import { useForm } from "react-hook-form";
@@ -96,6 +97,7 @@ const ContactForm = () => {
         reRef.current.reset();
 
         try {
+            // send data to back end
             await axios.post(process.env.REACT_APP_BACKEND_URL + "messages", {
                 ...data,
                 token,

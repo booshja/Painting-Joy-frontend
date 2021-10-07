@@ -85,9 +85,11 @@ const StoreItem = () => {
     const { setLocalStorageCart } = useContext(CartContext);
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
-        // when component mounts, get the item data
+
         async function getItem() {
+            // when component mounts, get the item data
             try {
                 const res = await axios.get(
                     process.env.REACT_APP_BACKEND_URL + `items/item/${itemId}`,
@@ -104,6 +106,7 @@ const StoreItem = () => {
         getItem();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
@@ -114,6 +117,7 @@ const StoreItem = () => {
         history.push("/cart");
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledStoreItem>

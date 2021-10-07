@@ -56,6 +56,7 @@ const AdminItems = () => {
     const history = useHistory();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
         // on component mount, get items
         async function getItems() {
@@ -83,6 +84,7 @@ const AdminItems = () => {
         getItems();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
@@ -93,7 +95,7 @@ const AdminItems = () => {
     };
 
     const handleMarkSoldOut = async (id) => {
-        // send request to api to set item as sold out
+        // send request to api to set item as sold out, refresh page
         try {
             await axios.patch(
                 process.env.REACT_APP_BACKEND_URL + `items/sold/${id}`
@@ -105,7 +107,7 @@ const AdminItems = () => {
     };
 
     const handleDelete = async (id) => {
-        // send request to api to delete item
+        // send request to api to delete item, refresh page
         try {
             await axios.delete(
                 process.env.REACT_APP_BACKEND_URL + `items/delete/${id}`
@@ -116,6 +118,7 @@ const AdminItems = () => {
         history.go(0);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledAdminItems>

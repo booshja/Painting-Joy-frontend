@@ -40,8 +40,9 @@ const Store = () => {
     useEffect(() => {
         // get cancel token for axios
         const source = axios.CancelToken.source();
-        // on mount, get items data from store
+
         const getItems = async () => {
+            // on mount, get items data from store
             const itemRes = await axios.get(
                 process.env.REACT_APP_BACKEND_URL + "items/",
                 { cancelToken: source.token }

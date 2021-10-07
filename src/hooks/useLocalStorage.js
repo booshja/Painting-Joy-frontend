@@ -10,7 +10,10 @@ const useLocalStorage = () => {
     const [state, setState] = useState(() => {
         // get initial state from localStorage if present
         let value;
+
+        // get current date
         const now = new Date();
+
         try {
             const res = JSON.parse(window.localStorage.getItem("cart"));
             if (res === null) throw "No cart";

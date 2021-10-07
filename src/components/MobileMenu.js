@@ -57,6 +57,7 @@ const MenuWrapper = styled.div`
 `;
 
 const Menu = () => {
+    // set up contexts
     const { menuOpen, setMenuOpen } = useContext(MenuContext);
     const { cart } = useContext(CartContext);
 

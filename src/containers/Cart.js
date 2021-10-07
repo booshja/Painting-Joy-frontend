@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-// components
+// components/hooks
 import { GoBack, CartItem, LoadingSpinner } from "../components";
 import { Link, useHistory } from "react-router-dom";
 // context
@@ -92,7 +92,7 @@ const StyledButton = styled.button`
 `;
 
 const Cart = () => {
-    // set up state
+    // set up states
     const [shipping, setShipping] = useState(0);
     const [priceTotal, setPriceTotal] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -158,6 +158,7 @@ const Cart = () => {
         history.push(`/checkout`);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledCart>

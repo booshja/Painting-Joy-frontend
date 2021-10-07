@@ -56,7 +56,7 @@ const StyledButtonContainer = styled.div`
 `;
 
 const AdminOrderCell = ({ data, handleMarkShipped, handleMarkComplete }) => {
-    // destructure data
+    // destructure prop data
     const { id, email, transactionId, status, amount } = data;
 
     return (

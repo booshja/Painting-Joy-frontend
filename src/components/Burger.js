@@ -1,9 +1,10 @@
 // dependencies
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { breakpoints } from "../breakpoints";
 // context
 import MenuContext from "../context/MenuContext";
+// breakpoints
+import { breakpoints } from "../breakpoints";
 
 const StyledBurger = styled.button`
     display: flex;
@@ -44,15 +45,12 @@ const StyledBurger = styled.button`
             transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
         }
     }
-
-    /* @media (min-width: ${breakpoints.desktopSm}px) {
-        display: none;
-    } */
 `;
 
 const Burger = () => {
     // set up context
     const { menuOpen, setMenuOpen } = useContext(MenuContext);
+
     return (
         <StyledBurger open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             <div data-testid="div1" />

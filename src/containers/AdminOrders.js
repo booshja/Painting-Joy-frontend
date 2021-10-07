@@ -37,6 +37,7 @@ const AdminOrders = () => {
     const { getAccessTokenSilently } = useAuth0();
 
     useEffect(() => {
+        // get cancel token for aborted axios call
         const source = axios.CancelToken.source();
         // on component mount, get orders
         async function getOrders() {
@@ -63,13 +64,15 @@ const AdminOrders = () => {
         getOrders();
 
         return function cleanup() {
+            // cleanup function for aborted axios call
             source.cancel();
         };
     }, []);
 
     const handleMarkShipped = async (id) => {
-        // send request to api to set order status as shipped
+        // send request to api to set order status as shipped, refresh page
         try {
+            // get auth0 access token
             const token = await getAccessTokenSilently();
 
             await axios.patch(
@@ -88,8 +91,11 @@ const AdminOrders = () => {
     };
 
     const handleMarkComplete = async (id) => {
-        // send request to api to set order status as completed
+        // send request to api to set order status as completed, refresh page
         try {
+            // get auth0 access token
+            const token = await getAccessTokenSilently();
+
             await axios.patch(
                 process.env.REACT_APP_BACKEND_URL +
                     `orders/order/${id}/complete`,
@@ -106,6 +112,7 @@ const AdminOrders = () => {
         history.go(0);
     };
 
+    // if data loading, display loading spinner
     if (loading)
         return (
             <StyledAdminOrders>

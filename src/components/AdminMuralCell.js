@@ -41,7 +41,9 @@ const AdminMuralCell = ({
     handleDelete,
     showArchived,
 }) => {
+    // destructure prop data
     const { id, title, description } = data;
+
     return (
         <ReStyledCell>
             <StyledContainer>

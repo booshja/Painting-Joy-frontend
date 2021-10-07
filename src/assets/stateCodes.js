@@ -1,4 +1,5 @@
 const stateCodes = [
+    // state codes/names for checkout flow
     { code: "AL", state: "Alabama" },
     { code: "AK", state: "Alaska" },
     { code: "AZ", state: "Arizona" },

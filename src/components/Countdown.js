@@ -20,6 +20,7 @@ const Countdown = ({ handleCancel }) => {
     const [timer, setTimer] = useState("5:00");
 
     const getTimeRemaining = (e) => {
+        // calculate time remaining for countdown clock
         const total = Date.parse(e) - Date.parse(new Date());
         const seconds = Math.floor((total / 1000) % 60);
         const minutes = Math.floor((total / 1000 / 60) % 60);
@@ -28,6 +29,7 @@ const Countdown = ({ handleCancel }) => {
     };
 
     const startTimer = (e) => {
+        // set up timer, start counting
         let { total, minutes, seconds } = getTimeRemaining(e);
         if (total >= 0) {
             // update timer
@@ -40,6 +42,7 @@ const Countdown = ({ handleCancel }) => {
     };
 
     const clearTimer = (e) => {
+        // reset timer
         setTimer("5:00");
 
         if (Ref.current) clearInterval(Ref.current);
@@ -50,6 +53,7 @@ const Countdown = ({ handleCancel }) => {
     };
 
     const getDeadTime = () => {
+        // calculate finish time for 5 minutes
         let deadline = new Date();
 
         deadline.setMinutes(deadline.getMinutes() + 5);

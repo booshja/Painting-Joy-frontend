@@ -69,7 +69,7 @@ const AdminItemCell = ({
 }) => {
     // set up history
     const history = useHistory();
-    // destructure data
+    // destructure prop data
     const { id, name, shipping, price, description, quantity, isSold } = data;
 
     return (

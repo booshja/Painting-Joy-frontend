@@ -39,6 +39,7 @@ const AdminMessageCell = ({
     handleDelete,
     showArchived,
 }) => {
+    // destructure prop data
     const { id, name, email, message } = data;
 
     return (

@@ -12,14 +12,6 @@ const StyledTitleLogo = styled.div`
     align-items: center;
 `;
 
-const StyledTitle = styled.h1`
-    font-family: "Barlow Condensed", sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    color: #ffffff;
-`;
-
 const StyledLogo = styled.img`
     width: 150px;
     height: 150px;

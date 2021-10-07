@@ -1,3 +1,5 @@
+// barrel file for importing all components and exporting from single location
+
 import AboutMe from "./AboutMe";
 import AdminBurger from "./AdminBurger";
 import AdminDashCell from "./AdminDashCell";

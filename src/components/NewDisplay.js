@@ -41,11 +41,14 @@ const StyledText = styled.p`
 `;
 
 const NewDisplay = ({ variant, title, image, id }) => {
+    // set up history
     const history = useHistory();
 
+    // set up link value based on variant
     const link = variant === "mural" ? `/murals/${id}` : `/store/item/${id}`;
 
     const handleClick = () => {
+        // push user to link based on variant when clicked
         history.push(link);
     };
 

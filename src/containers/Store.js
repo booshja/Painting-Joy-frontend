@@ -31,45 +31,59 @@ const StyledP = styled.p`
     font-size: 1.4rem;
 `;
 
+/** TEMPORARY 'COMING SOON' BANNER */
+const StyledBanner = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-family: "News Cycle", sans-serif;
+        font-size: 2rem;
+    }
+`;
+/** END TEMPORARY 'COMING SOON' BANNER */
+
 const Store = () => {
     // set up state
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
+
     // set up context
     const { items, setItems } = useContext(ItemsContext);
 
-    useEffect(() => {
-        // get cancel token for axios
-        const source = axios.CancelToken.source();
+    // useEffect(() => {
+    //     // get cancel token for axios
+    //     const source = axios.CancelToken.source();
 
-        const getItems = async () => {
-            // on mount, get items data from store
-            const itemRes = await axios.get(
-                process.env.REACT_APP_BACKEND_URL + "items/",
-                { cancelToken: source.token }
-            );
-            setItems(itemRes.data.items);
-            setLoading(false);
-        };
-        getItems();
+    //     const getItems = async () => {
+    //         // on mount, get items data from store
+    //         const itemRes = await axios.get(
+    //             process.env.REACT_APP_BACKEND_URL + "items/",
+    //             { cancelToken: source.token }
+    //         );
+    //         setItems(itemRes.data.items);
+    //         setLoading(false);
+    //     };
+    //     getItems();
 
-        return function cleanup() {
-            // on unmount cancel any open axios requests
-            source.cancel();
-        };
-    }, []);
+    //     return function cleanup() {
+    //         // on unmount cancel any open axios requests
+    //         source.cancel();
+    //     };
+    // }, []);
 
-    if (loading)
-        return (
-            // if loading, return loading spinner
-            <StyledStore>
-                <LoadingSpinner />
-            </StyledStore>
-        );
+    // if (loading)
+    //     return (
+    //         // if loading, return loading spinner
+    //         <StyledStore>
+    //             <LoadingSpinner />
+    //         </StyledStore>
+    //     );
 
     return (
         <StyledStore>
             <PageTitle>Store</PageTitle>
-            {items ? (
+            {/* {items ? (
                 <StyledItemsContainer>
                     {items.map((item) => (
                         <StoreItem item={item} key={item.id} />
@@ -77,7 +91,10 @@ const Store = () => {
                 </StyledItemsContainer>
             ) : (
                 <StyledP>Nothing Currently For Sale!</StyledP>
-            )}
+            )} */}
+            <StyledBanner>
+                <p>Store coming soon!</p>
+            </StyledBanner>
         </StyledStore>
     );
 };

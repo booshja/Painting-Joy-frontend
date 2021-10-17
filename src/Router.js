@@ -65,23 +65,23 @@ const Router = () => (
                 <PublicRoute exact path="/store/item/:itemId">
                     <StoreItem />
                 </PublicRoute>
-                <PublicRoute exact path="/cart">
+                {/* <PublicRoute exact path="/cart">
                     <Cart />
-                </PublicRoute>
-                <Route exact path="/checkout">
+                </PublicRoute> */}
+                {/* <Route exact path="/checkout">
                     <Elements stripe={promise}>
                         <Checkout />
                     </Elements>
-                </Route>
-                <PublicRoute exact path="/store/order/cancel">
+                </Route> */}
+                {/* <PublicRoute exact path="/store/order/cancel">
                     <CheckoutCancel />
-                </PublicRoute>
-                <PublicRoute exact path="/store/order/success">
+                </PublicRoute> */}
+                {/* <PublicRoute exact path="/store/order/success">
                     <CheckoutSuccess />
-                </PublicRoute>
-                <PublicRoute exact path="/cart/error">
+                </PublicRoute> */}
+                {/* <PublicRoute exact path="/cart/error">
                     <CartError />
-                </PublicRoute>
+                </PublicRoute> */}
                 <Route exact path="/admin/login">
                     <AdminLogin />
                 </Route>

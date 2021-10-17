@@ -29,7 +29,7 @@ const Navbar = () => {
             {/* <NavLink to="/more-art" name="More Art" /> */}
             <NavLink to="/contact" name="Contact" />
             <NavLink to="/store" name="Store" />
-            <NavLink to="/cart" name={`Cart (${cart.length})`} />
+            {/* <NavLink to="/cart" name={`Cart (${cart.length})`} /> */}
         </StyledNav>
     );
 };

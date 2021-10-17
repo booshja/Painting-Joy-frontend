@@ -79,9 +79,9 @@ const Menu = () => {
                 <StyledLink to="/store" onClick={() => setMenuOpen(false)}>
                     Store
                 </StyledLink>
-                <StyledLink to="/cart" onClick={() => setMenuOpen(false)}>
+                {/* <StyledLink to="/cart" onClick={() => setMenuOpen(false)}>
                     Cart ({cart.length})
-                </StyledLink>
+                </StyledLink> */}
             </MenuWrapper>
         </StyledMenu>
     );

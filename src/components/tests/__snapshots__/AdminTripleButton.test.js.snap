@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, showArchived false 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c1 {
+  border: 2px solid #207070;
+  border-radius: 4px 0 0 4px;
+  background-color: #207070;
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c1:hover {
+  color: #207070;
+  background-color: #ffffff;
+}
+
+.c2 {
+  border: none;
+  border-top: 2px solid #207070;
+  border-bottom: 2px solid #207070;
+  color: #207070;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c2:hover {
+  color: #ffffff;
+  background-color: #207070;
+}
+
+.c3 {
+  border: 2px solid #db9487;
+  background-color: #db9487;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  font-family: "News Cycle",sans-serif;
+  cursor: pointer;
+}
+
+.c3:hover {
+  color: #db9487;
+  background-color: #ffffff;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    margin-left: 2rem;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+    >
+      Edit
+    </button>
+    <button
+      class="c2"
+    >
+      Archive
+    </button>
+    <button
+      class="c3"
+    >
+      Delete
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, showArchived true 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1rem;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.c1 {
+  border: 2px solid #207070;
+  border-radius: 4px 0 0 4px;
+  background-color: #207070;
+  color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c1:hover {
+  color: #207070;
+  background-color: #ffffff;
+}
+
+.c2 {
+  border: none;
+  border-top: 2px solid #207070;
+  border-bottom: 2px solid #207070;
+  color: #207070;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  cursor: pointer;
+}
+
+.c2:hover {
+  color: #ffffff;
+  background-color: #207070;
+}
+
+.c3 {
+  border: 2px solid #db9487;
+  background-color: #db9487;
+  color: #ffffff;
+  border-radius: 0 4px 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 24px;
+  font-family: "News Cycle",sans-serif;
+  cursor: pointer;
+}
+
+.c3:hover {
+  color: #db9487;
+  background-color: #ffffff;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    margin-left: 2rem;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+    >
+      Edit
+    </button>
+    <button
+      class="c2"
+    >
+      Unarchive
+    </button>
+    <button
+      class="c3"
+    >
+      Delete
+    </button>
+  </div>
+</DocumentFragment>
+`;

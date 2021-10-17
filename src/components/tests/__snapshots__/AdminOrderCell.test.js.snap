@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  .c9 {
+  background-color: #207070;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.c9:hover:not(:disabled) {
+  color: #207070;
+  background-color: #ffffff;
+  border: 2px solid #207070;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.c9:disabled {
+  background-color: #dadada;
+}
+
+.c7 {
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-family: "News Cycle",sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 2.5px 5px;
+  border: 2px solid #207a7a;
+  color: #207a7a;
+}
+
+.c7:hover:not(:disabled) {
+  color: #ffffff;
+  background-color: #207a7a;
+  cursor: pointer;
+}
+
+.c7:disabled {
+  color: #dadada;
+  border: 2px solid #dadada;
+}
+
+.c1 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c3 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #207070;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline;
+  margin: 0.5rem 0 0.5rem 1rem;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2 {
+  font-weight: 700;
+  display: inline;
+}
+
+.c4 {
+  margin-bottom: 0.5rem;
+}
+
+.c8 {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.c5 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fb9487;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <p
+      class="c1 c2"
+    >
+      Order:
+    </p>
+    <a
+      class="c3"
+      href="/admin/orders/1"
+    >
+      #transactionid123
+    </a>
+    <p
+      class="c1 c4"
+    >
+      Paid: $1299.99
+    </p>
+    <p
+      class="c1 c4"
+    >
+      Status: Confirmed
+    </p>
+    <a
+      class="c5"
+      href="mailto:johndoe@email.com"
+    >
+      Email Customer
+    </a>
+    <div
+      class="c6"
+    >
+      <button
+        class="c7 c8"
+        color="#207a7a"
+      >
+        Mark Shipped
+      </button>
+      <button
+        class="c9"
+        disabled=""
+      >
+        Mark Complete
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

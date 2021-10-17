@@ -1,26 +1,55 @@
 // dependencies
-import React from "react";
-import styled from "styled-components";
-// pages
-import Construction from "./Pages/Construction/Construction";
+import React, { useEffect, useState } from "react";
+// context
+import MenuContext from "./context/MenuContext";
+import ItemsContext from "./context/ItemsContext";
+import CartContext from "./context/CartContext";
+// custom hooks
+import useLocalStorage from "./hooks/useLocalStorage";
+// router
+import Router from "./Router";
 // global styles
 import GlobalStyle from "./globalStyles";
 
-const StyledApp = styled.div`
-    min-height: 100vh;
-    background-color: rgb(230, 211, 169);
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
 function App() {
+    // set up states
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [items, setItems] = useState([]);
+    const [cart, setCart] = useState([]);
+    const [orderId, setOrderId] = useState(null);
+    // set up hooks
+    const [localStorageCart, setLocalStorageCart] = useLocalStorage();
+
+    useEffect(() => {
+        // when localStorageCart changes, update cart and localStorage
+        setCart(localStorageCart);
+    }, [localStorageCart]);
+
+    const removeFromCart = (id) => {
+        // find item in cart, remove it, update localStorage
+        const idx = cart.findIndex((item) => item.id === id);
+        const cartContents = [...cart];
+        cartContents.splice(idx, 1);
+        setLocalStorageCart(() => cartContents);
+    };
+
     return (
-        <StyledApp className="App">
-            <GlobalStyle />
-            <Construction />
-        </StyledApp>
+        <MenuContext.Provider value={{ menuOpen, setMenuOpen }}>
+            <ItemsContext.Provider value={{ items, setItems }}>
+                <CartContext.Provider
+                    value={{
+                        cart,
+                        setLocalStorageCart,
+                        removeFromCart,
+                        orderId,
+                        setOrderId,
+                    }}
+                >
+                    <GlobalStyle />
+                    <Router />
+                </CartContext.Provider>
+            </ItemsContext.Provider>
+        </MenuContext.Provider>
     );
 }
 

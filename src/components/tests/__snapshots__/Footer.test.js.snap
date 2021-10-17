@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 {
+  width: 150px;
+  height: 150px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 125px;
+}
+
+.c7 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.2rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.c0 {
+  background-color: #012e34;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  color: #ffffff;
+  padding: 1rem;
+  min-height: 150px;
+  margin-top: 2rem;
+}
+
+.c1 {
+  font-family: "Barlow Condensed",sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c8 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 0.6rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c3 {
+  margin: 1rem 0 2rem 0;
+}
+
+@media screen and (min-width:414px) {
+  .c1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:414px) {
+  .c8 {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width:360px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c3 {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c3 {
+    width: 60%;
+  }
+}
+
+<footer
+    class="c0"
+  >
+    <a
+      class="c1"
+      href="/"
+    >
+      Painting Joy Mural Co.
+    </a>
+    <a
+      class="c2"
+      href="/contact"
+    >
+      Contact Me
+    </a>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <a
+          href="/"
+        >
+          <img
+            alt="Painting Joy Mural Co. Logo"
+            class="c5"
+            src="painting-joy-logo-white.jpg"
+          />
+        </a>
+      </div>
+      <div
+        class="c6"
+      >
+        <a
+          class="c7"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="c7"
+          href="/murals"
+        >
+          Murals
+        </a>
+        <a
+          class="c7"
+          href="/contact"
+        >
+          Contact
+        </a>
+        <a
+          class="c7"
+          href="/store"
+        >
+          Store
+        </a>
+      </div>
+    </div>
+    <p
+      class="c8"
+    >
+      Copyright © 2021 - Painting Joy Mural Co.
+    </p>
+  </footer>
+</DocumentFragment>
+`;

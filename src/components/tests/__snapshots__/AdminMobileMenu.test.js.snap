@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, menuOpen false 1`] = `
+<DocumentFragment>
+  .c0 {
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #207070;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c3 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #207070;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c3.active {
+  font-weight: 700;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<nav
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <a
+        class="c2"
+        href="/admin/dashboard"
+      >
+        Dashboard
+      </a>
+      <a
+        class="c2"
+        href="/admin/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="c2"
+        href="/admin/messages"
+      >
+        Messages
+      </a>
+      <a
+        class="c2"
+        href="/admin/items"
+      >
+        Store Items
+      </a>
+      <a
+        class="c2"
+        href="/admin/orders"
+      >
+        Orders
+      </a>
+      <a
+        class="c3"
+      >
+        Log Out
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, menuOpen true 1`] = `
+<DocumentFragment>
+  .c0 {
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c2 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #207070;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c2.active {
+  font-weight: 700;
+}
+
+.c3 {
+  font-family: "News Cycle",sans-serif;
+  font-weight: 400;
+  -webkit-letter-spacing: 2px;
+  -moz-letter-spacing: 2px;
+  -ms-letter-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  color: #207070;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.c3.active {
+  font-weight: 700;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<nav
+    class="c0"
+    open=""
+  >
+    <div
+      class="c1"
+    >
+      <a
+        class="c2"
+        href="/admin/dashboard"
+      >
+        Dashboard
+      </a>
+      <a
+        class="c2"
+        href="/admin/murals"
+      >
+        Murals
+      </a>
+      <a
+        class="c2"
+        href="/admin/messages"
+      >
+        Messages
+      </a>
+      <a
+        class="c2"
+        href="/admin/items"
+      >
+        Store Items
+      </a>
+      <a
+        class="c2"
+        href="/admin/orders"
+      >
+        Orders
+      </a>
+      <a
+        class="c3"
+      >
+        Log Out
+      </a>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

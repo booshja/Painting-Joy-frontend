@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot, footer false 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 95%;
+  max-width: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c2 {
+  width: 95%;
+  border-width: 2px;
+  background-color: #db9487;
+}
+
+.c5 {
+  width: 95%;
+  border-width: 2px;
+  background-color: #ffffff;
+}
+
+.c4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    width: 50%;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <p
+        class="c3 c4"
+      >
+        This is a title
+      </p>
+    </div>
+    <div
+      class="c1 c5"
+    >
+      <h1>
+        testy
+      </h1>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot, footer true 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border: 1px solid #207070;
+  width: 100%;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.c3 {
+  font-size: 1.2rem;
+  font-family: "News Cycle",sans-serif;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 95%;
+  max-width: 600px;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+.c2 {
+  width: 95%;
+  border-width: 2px;
+  background-color: #db9487;
+}
+
+.c5 {
+  width: 95%;
+  border-width: 2px;
+  background-color: #ffffff;
+}
+
+.c4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+.c6 {
+  font-family: "News Cycle",sans-serif;
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: 700;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+
+.c6:hover {
+  font-style: italic;
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    width: 50%;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <p
+        class="c3 c4"
+      >
+        This is a title
+      </p>
+    </div>
+    <div
+      class="c1 c5"
+    >
+      <h1>
+        testy
+      </h1>
+    </div>
+    <div
+      class="c1 c2"
+    >
+      <a
+        class="c6"
+        href="/linkhere"
+      >
+        See All &gt;
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;

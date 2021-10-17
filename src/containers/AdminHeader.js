@@ -50,7 +50,7 @@ const AdminHeader = ({ login }) => {
     const handleLogout = () => {
         // on click, call auth0 logout api, redirect to homepage
         logout({
-            returnTo: "http://localhost:3000",
+            returnTo: "https://paintingjoy.art",
         });
     };
 

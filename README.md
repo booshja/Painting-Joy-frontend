@@ -173,6 +173,13 @@ _Note:_ This hierarchy is from the proposal and may not reflect the final state 
 <hr>
 <br>
 
+## **Changelog**
+
+View Changelog [HERE.](https://github.com/booshja/Painting-Joy-frontend/blob/main/CHANGELOG.md)
+
+<hr>
+<br>
+
 ## **Support**
 
 Reach out to me at the following places:

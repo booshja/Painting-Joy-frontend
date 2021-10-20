@@ -39,12 +39,17 @@ const Homepage = () => {
 
         async function getData() {
             // get homepage data on component mount
-            const res = await axios.get(
-                process.env.REACT_APP_BACKEND_URL + "homepage/",
-                { cancelToken: source.token }
-            );
-            setHomepage(res.data.homepage);
-            setIsLoading(false);
+            try {
+                const res = await axios.get(
+                    process.env.REACT_APP_BACKEND_URL + "homepage/",
+                    { cancelToken: source.token }
+                );
+                setHomepage(res.data.homepage);
+                setIsLoading(false);
+            } catch (err) {
+                console.log(err);
+                setIsLoading(false);
+            }
         }
         getData();
 

@@ -69,7 +69,7 @@ const Construction = () => {
                 <StyledText>
                     In the meantime, check out my Instagram!
                 </StyledText>
-                <StyledLink href="">
+                <StyledLink href="https://www.instagram.com/paintingjoymc/">
                     <i className="fab fa-instagram"></i>
                 </StyledLink>
             </StyledContent>
